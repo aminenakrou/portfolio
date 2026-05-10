@@ -1,4 +1,29 @@
 /* ======================
+THEME TOGGLE (Dark / Light)
+====================== */
+const themeToggle = document.getElementById('themeToggle');
+const themeIcon = document.getElementById('themeIcon');
+
+function syncThemeIcon() {
+  const current = document.documentElement.getAttribute('data-theme') || 'dark';
+  if (themeIcon) {
+    themeIcon.className = current === 'light' ? 'fas fa-moon' : 'fas fa-sun';
+  }
+}
+
+syncThemeIcon();
+
+if (themeToggle) {
+  themeToggle.addEventListener('click', () => {
+    const current = document.documentElement.getAttribute('data-theme') || 'dark';
+    const next = current === 'light' ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+    syncThemeIcon();
+  });
+}
+
+/* ======================
 SAFE DOM REFERENCES
 ====================== */
 document.body.classList.add('js-loaded');
@@ -381,7 +406,7 @@ const translations = {
     'nav.contact': 'Contact',
     'nav.cv': 'CV',
 
-    'hero.tag': 'Disponible · Stage 4 mois · Avril 2026',
+    'hero.tag': 'En stage chez GRDF · Data Engineering & BI',
     'hero.role1': 'Data Science',
     'hero.role2': 'Machine Learning',
     'hero.role3': 'Polytech Lille',
@@ -391,17 +416,17 @@ const translations = {
     'hero.stat1': 'Projets ML',
     'hero.stat2': 'Langages',
     'hero.stat3': 'Expertise Statistique',
-    'hero.stat4': 'Mois XP',
-    'hero.fc3val': 'Disponible',
+    'hero.stat4': 'Stages',
+    'hero.fc3val': 'En stage',
 
     'about.title': 'Data-Driven',
     'about.p1': 'Je suis <strong>Amine Nakrou</strong>, élève-ingénieur en 4e année à <strong>Polytech Lille</strong> (ISIA). Passionné par la Data Science et le ML, je conçois des pipelines <em>end-to-end</em> du preprocessing jusqu\'à la mise en production via Docker & MLflow.',
-    'about.p2': 'Curieux, rigoureux et orienté résultats, je recherche un <strong>stage de 4 mois à partir du 13 avril 2026</strong> pour contribuer à des projets ambitieux et à fort impact.',
+    'about.p2': 'Actuellement en stage chez <strong>GRDF</strong> à Saint-Denis (Data Engineering & BI). Disponible pour de nouvelles opportunités à partir d\'<strong>octobre 2026</strong>.',
     'about.chip1': '<i class="fas fa-map-marker-alt"></i> Villeneuve-d\'Ascq, France',
     'about.chip2': '<i class="fas fa-graduation-cap"></i> Polytech Lille — ISIA',
     'about.chip3': '<i class="fas fa-language"></i> FR · EN (C1) · AR · ES',
-    'about.chip4': '<i class="fas fa-calendar-check"></i> Dispo. Avril 2026',
-    'about.badge': 'Open to Work',
+    'about.chip4': '<i class="fas fa-briefcase"></i> Stage GRDF · 2026',
+    'about.badge': 'En Stage · GRDF',
 
     'featured.title': 'Phares',
     'proj1.title': 'Customer Churn Prediction',
@@ -427,6 +452,9 @@ const translations = {
 
     'exp.title': 'Expérience & Formation',
     'xp.badge': 'Expérience',
+    'xp.t2': 'Stagiaire Data Engineering & BI',
+    'xp.l3': 'Data Engineering et Business Intelligence au sein de GRDF, gestionnaire du réseau de distribution de gaz naturel en France.',
+    'xp.l4': 'Développement de pipelines de données, tableaux de bord Power BI et analyses pour le pilotage métier.',
     'xp.t1': 'Stagiaire Développeur Data & Web',
     'xp.l1': 'Conception d\'une base de données relationnelle (modélisation, normalisation, SQL) et développement d\'un site web interne Flask pour la gestion et visualisation des données.',
     'xp.l2': 'Analyses exploratoires et préparation des données pour la production de rapports décisionnels.',
@@ -439,7 +467,7 @@ const translations = {
     'edu.mention': 'Mention Très Bien ✦',
 
     'contact.title': 'Travaillons<br>Ensemble',
-    'contact.sub': 'Disponible pour un stage de 4 mois<br>à partir du <strong>13 avril 2026</strong>.<br>N\'hésitez pas à me contacter !',
+    'contact.sub': 'Actuellement en stage chez <strong>GRDF</strong> — Data Engineering & BI.<br>Saint-Denis, Île-de-France.<br>N\'hésitez pas à me contacter !',
     'contact.cv': 'Télécharger CV <i class="fas fa-download"></i>',
 
     'footer.text': '© 2026 Amine Nakrou — GitHub Pages',
@@ -459,7 +487,7 @@ const translations = {
     'nav.contact': 'Contact',
     'nav.cv': 'Resume',
 
-    'hero.tag': 'Available · 4-month Internship · April 2026',
+    'hero.tag': 'Currently at GRDF · Data Engineering & BI',
     'hero.role1': 'Data Science',
     'hero.role2': 'Machine Learning',
     'hero.role3': 'Polytech Lille',
@@ -469,17 +497,17 @@ const translations = {
     'hero.stat1': 'ML Projects',
     'hero.stat2': 'Languages',
     'hero.stat3': 'Statistical Expertise',
-    'hero.stat4': 'Months XP',
-    'hero.fc3val': 'Available',
+    'hero.stat4': 'Internships',
+    'hero.fc3val': 'Internship',
 
     'about.title': 'Data-Driven',
     'about.p1': 'I am <strong>Amine Nakrou</strong>, a 4th-year engineering student at <strong>Polytech Lille</strong> (ISIA). Passionate about Data Science and ML, I build <em>end-to-end</em> pipelines from preprocessing to production via Docker & MLflow.',
-    'about.p2': 'Curious, rigorous and results-driven, I am seeking a <strong>4-month internship starting April 13, 2026</strong> to contribute to ambitious, high-impact projects.',
+    'about.p2': 'Currently interning at <strong>GRDF</strong> in Saint-Denis (Data Engineering & BI). Available for new opportunities from <strong>October 2026</strong>.',
     'about.chip1': '<i class="fas fa-map-marker-alt"></i> Villeneuve-d\'Ascq, France',
     'about.chip2': '<i class="fas fa-graduation-cap"></i> Polytech Lille — ISIA',
     'about.chip3': '<i class="fas fa-language"></i> FR · EN (C1) · AR · ES',
-    'about.chip4': '<i class="fas fa-calendar-check"></i> Available April 2026',
-    'about.badge': 'Open to Work',
+    'about.chip4': '<i class="fas fa-briefcase"></i> GRDF Internship · 2026',
+    'about.badge': 'Interning · GRDF',
 
     'featured.title': 'Projects',
     'proj1.title': 'Customer Churn Prediction',
@@ -505,6 +533,9 @@ const translations = {
 
     'exp.title': 'Experience & Education',
     'xp.badge': 'Experience',
+    'xp.t2': 'Data Engineering & BI Intern',
+    'xp.l3': 'Data Engineering and Business Intelligence at GRDF, the natural gas distribution network operator in France.',
+    'xp.l4': 'Building data pipelines, Power BI dashboards and analyses for business reporting.',
     'xp.t1': 'Data & Web Developer Intern',
     'xp.l1': 'Designed a relational database (modeling, normalization, SQL) and developed an internal Flask web application for data management and visualization.',
     'xp.l2': 'Exploratory data analysis and data preparation for decision-making reports.',
@@ -517,7 +548,7 @@ const translations = {
     'edu.mention': 'Highest Honors ✦',
 
     'contact.title': 'Let\'s Work<br>Together',
-    'contact.sub': 'Available for a 4-month internship<br>starting <strong>April 13, 2026</strong>.<br>Feel free to reach out!',
+    'contact.sub': 'Currently interning at <strong>GRDF</strong> — Data Engineering & BI.<br>Saint-Denis, Île-de-France.<br>Feel free to reach out!',
     'contact.cv': 'Download Resume <i class="fas fa-download"></i>',
 
     'footer.text': '© 2026 Amine Nakrou — GitHub Pages',
@@ -541,7 +572,7 @@ const translations = {
     'nav.contact': 'تواصل',
     'nav.cv': 'السيرة الذاتية',
 
-    'hero.tag': 'متاح · تدريب 4 أشهر · أبريل 2026',
+    'hero.tag': 'في تدريب لدى GRDF · هندسة البيانات وذكاء الأعمال',
     'hero.role1': 'علم البيانات',
     'hero.role2': 'تعلم الآلة',
     'hero.role3': 'بوليتك ليل',
@@ -551,17 +582,17 @@ const translations = {
     'hero.stat1': 'مشاريع ML',
     'hero.stat2': 'لغات برمجة',
     'hero.stat3': 'خبرة إحصائية',
-    'hero.stat4': 'أشهر خبرة',
-    'hero.fc3val': 'متاح',
+    'hero.stat4': 'تدريبات',
+    'hero.fc3val': 'في تدريب',
 
     'about.title': 'موجه بالبيانات',
     'about.p1': 'أنا <strong>أمين نقرو</strong>، طالب هندسة في السنة الرابعة بـ <strong>بوليتك ليل</strong> (ISIA). أبني خطوط أنابيب <em>ML</em> متكاملة من المعالجة إلى النشر عبر Docker و MLflow.',
-    'about.p2': 'أبحث عن <strong>تدريب مدته 4 أشهر ابتداءً من 13 أبريل 2026</strong> للمساهمة في مشاريع طموحة وذات تأثير كبير.',
+    'about.p2': 'أتدرب حالياً لدى <strong>GRDF</strong> في سان-دوني (هندسة البيانات وذكاء الأعمال). متاح لفرص جديدة ابتداءً من <strong>أكتوبر 2026</strong>.',
     'about.chip1': '<i class="fas fa-map-marker-alt"></i> فيلنوف داسك، فرنسا',
     'about.chip2': '<i class="fas fa-graduation-cap"></i> بوليتك ليل — ISIA',
     'about.chip3': '<i class="fas fa-language"></i> FR · EN (C1) · AR · ES',
-    'about.chip4': '<i class="fas fa-calendar-check"></i> متاح أبريل 2026',
-    'about.badge': 'متاح للعمل',
+    'about.chip4': '<i class="fas fa-briefcase"></i> تدريب GRDF · 2026',
+    'about.badge': 'في تدريب · GRDF',
 
     'featured.title': 'المميزة',
     'proj1.title': 'التنبؤ بإلغاء اشتراك العملاء',
@@ -587,6 +618,9 @@ const translations = {
 
     'exp.title': 'الخبرة والتكوين',
     'xp.badge': 'خبرة',
+    'xp.t2': 'متدرب هندسة البيانات وذكاء الأعمال',
+    'xp.l3': 'هندسة البيانات وذكاء الأعمال لدى GRDF، مشغل شبكة توزيع الغاز الطبيعي في فرنسا.',
+    'xp.l4': 'تطوير خطوط أنابيب البيانات ولوحات Power BI والتحليلات لدعم قرار الأعمال.',
     'xp.t1': 'متدرب مطور بيانات وويب',
     'xp.l1': 'تصميم قاعدة بيانات علائقية (نمذجة، تطبيع، SQL) وتطوير تطبيق Flask داخلي لإدارة البيانات وتصورها.',
     'xp.l2': 'تحليلات استكشافية وإعداد البيانات لإنتاج تقارير دعم القرار.',
@@ -599,7 +633,7 @@ const translations = {
     'edu.mention': 'مرتبة الشرف الأولى ✦',
 
     'contact.title': 'لنعمل<br>معًا',
-    'contact.sub': 'متاح لتدريب مدته 4 أشهر<br>ابتداءً من <strong>13 أبريل 2026</strong>.<br>لا تتردد في التواصل!',
+    'contact.sub': 'أتدرب حالياً لدى <strong>GRDF</strong> — هندسة البيانات وذكاء الأعمال.<br>سان-دوني، إيل-دو-فرانس.<br>لا تتردد في التواصل!',
     'contact.cv': 'تحميل السيرة الذاتية <i class="fas fa-download"></i>',
 
     'footer.text': '© 2026 أمين نقرو — GitHub Pages',
