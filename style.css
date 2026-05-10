@@ -21,6 +21,92 @@ ROOT & RESET
   --r: 14px;
 }
 
+/* ===========================
+LIGHT THEME
+=========================== */
+[data-theme="light"] {
+  --bg: #f5f7fa;
+  --bg2: #edf0f5;
+  --bg3: #e4e8f0;
+  --bg4: #d8dde8;
+  --accent: #5c8700;
+  --accent2: #4a6e00;
+  --white: #111827;
+  --grey: #6b7280;
+  --grey2: #374151;
+  --border: rgba(0,0,0,.08);
+  --border2: rgba(0,0,0,.13);
+  --shadow: 0 20px 60px rgba(0,0,0,.1);
+}
+
+/* Keep mockups dark in light mode for visual consistency */
+[data-theme="light"] .feat-screen,
+[data-theme="light"] .browser-mockup {
+  --bg: #070707;
+  --bg2: #0d0d0d;
+  --bg3: #131313;
+  --bg4: #1a1a1a;
+  --white: #ffffff;
+  --grey: #666666;
+  --grey2: #aaaaaa;
+  --border: rgba(255,255,255,.07);
+  --border2: rgba(255,255,255,.13);
+}
+[data-theme="light"] .feat-screen { background: #131313; }
+[data-theme="light"] .browser-mockup { background: #131313; }
+
+[data-theme="light"] #navbar.scrolled {
+  background: rgba(245,247,250,.92);
+}
+[data-theme="light"] .hero-grid {
+  background-image:
+    linear-gradient(rgba(0,0,0,.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,.04) 1px, transparent 1px);
+}
+[data-theme="light"] .scroll-track {
+  border-color: rgba(0,0,0,.18);
+}
+[data-theme="light"] .role-pill {
+  background: rgba(0,0,0,.04);
+}
+[data-theme="light"] .loader-bar-wrap {
+  background: rgba(0,0,0,.1);
+}
+[data-theme="light"] .btn-primary {
+  color: #111827;
+}
+[data-theme="light"] .nav-cta:hover {
+  color: #111827;
+}
+[data-theme="light"] .pi-num {
+  color: rgba(0,0,0,.06);
+}
+[data-theme="light"] .project-item:hover .pi-num {
+  color: rgba(92,135,0,.1);
+}
+[data-theme="light"] .feat-num {
+  color: rgba(0,0,0,.06);
+}
+[data-theme="light"] .pi-tags span {
+  background: rgba(0,0,0,.04);
+}
+[data-theme="light"] .ji-tags span {
+  background: rgba(0,0,0,.04);
+}
+[data-theme="light"] .edu-badge {
+  background: rgba(0,0,0,.06);
+}
+[data-theme="light"] .muted-line {
+  background: rgba(0,0,0,.2);
+}
+[data-theme="light"] .float-card {
+  background: rgba(245,247,250,.96);
+  box-shadow: 0 10px 30px rgba(0,0,0,.12);
+}
+[data-theme="light"] .pi-hover-bg {
+  background: linear-gradient(135deg, rgba(92,135,0,.05), transparent);
+}
+
 *,
 *::before,
 *::after {
@@ -407,6 +493,27 @@ NAVBAR
 
 .burger.open .burger-line:last-child {
   transform: rotate(-45deg) translate(4px,-6px);
+}
+
+/* ======================
+THEME TOGGLE
+====================== */
+.theme-toggle {
+  width: 38px;
+  height: 38px;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--grey2);
+  font-size: .85rem;
+  transition: all .3s;
+}
+
+.theme-toggle:hover {
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
 /* ======================
