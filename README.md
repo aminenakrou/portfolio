@@ -1,26 +1,39 @@
 # Amine Nakrou - Portfolio
 
-Voici le dépôt de mon portfolio personnel.
+Dépôt de mon portfolio personnel, publié avec GitHub Pages.
 
-Le site est disponible ici :
+Site en ligne :
 https://aminenakrou.github.io/portfolio/
 
-J'y présente mon parcours, mes projets et les sujets sur lesquels je souhaite continuer à évoluer : actuariat, statistiques, data science, machine learning, data engineering et business intelligence.
+Le site présente mon profil, mon parcours et mes projets autour de l'actuariat, des statistiques, de la data science, du machine learning, de la data engineering et de la BI.
 
-Le portfolio est statique et volontairement simple côté stack : HTML, CSS et JavaScript. L'objectif est de garder un site rapide, facile à maintenir et compatible avec GitHub Pages.
+La stack reste volontairement simple : HTML, CSS et JavaScript. C'est suffisant pour un portfolio rapide, lisible et facile à maintenir.
 
 ## Contenu
 
-- une présentation de mon profil
-- mon parcours académique et professionnel
-- une sélection de projets data, statistiques et machine learning
-- quelques pages de case study pour détailler certains projets
-- mes liens de contact, mon GitHub, mon LinkedIn et mon CV
-- trois langues : français, anglais et arabe
+- présentation du profil et de la recherche de CDI pour la suite
+- expérience actuelle chez Swiss Life et expériences précédentes
+- projets phares avec problème, données, méthode, résultat et liens
+- portfolio technique plus large avec les projets publics disponibles
+- pages de case study pour les projets les mieux documentés
+- CV, LinkedIn, GitHub et email
+- versions française, anglaise et arabe
 
-## Lancer le site en local
+## Projets mis en avant
 
-Depuis la racine du projet :
+- Customer Churn Prediction
+- Scoring de crédit
+- Dashboard interactif
+- Analyse EA Sports FC / FIFA
+- PageRank sur Wikispeedia
+- Promenade aléatoire du cavalier
+- Dinic / flot maximum
+- CKOALA
+- Flood It
+- Pente
+- QUESACO
+
+## Lancer en local
 
 ```bash
 python3 -m http.server 8000
@@ -40,11 +53,12 @@ style.css
 script.js
 case-studies/
 assets/
+.github/workflows/static.yml
 ```
 
 ## Déploiement
 
-Le site est déployé automatiquement avec GitHub Pages à chaque mise à jour de la branche `main`.
+Le déploiement se fait avec GitHub Pages depuis la branche `main`.
 
 ## Contact
 

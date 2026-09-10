@@ -20,6 +20,9 @@ const translations = {
     'hero.projects': 'Voir mes projets',
     'hero.cv': 'Télécharger mon CV',
     'hero.contact': 'Me contacter',
+    'hero.proof1': '12 projets publics intégrés',
+    'hero.proof2': 'Actuariat · Data · ML',
+    'hero.proof3': 'FR · EN · AR',
     'hero.panelStatus': 'Ouvert aux opportunités CDI',
     'hero.focus1Label': 'Actuel',
     'hero.focus1': 'Chargé d\'études actuarielles, assurance non-vie',
@@ -76,6 +79,9 @@ const translations = {
     'hero.projects': 'View projects',
     'hero.cv': 'Download resume',
     'hero.contact': 'Contact me',
+    'hero.proof1': '12 public projects integrated',
+    'hero.proof2': 'Actuarial · Data · ML',
+    'hero.proof3': 'FR · EN · AR',
     'hero.panelStatus': 'Open to future full-time roles',
     'hero.focus1Label': 'Current',
     'hero.focus1': 'Actuarial studies, non-life insurance',
@@ -132,6 +138,9 @@ const translations = {
     'hero.projects': 'عرض المشاريع',
     'hero.cv': 'تحميل السيرة الذاتية',
     'hero.contact': 'تواصل معي',
+    'hero.proof1': '12 مشروعا عاما مدمجا',
+    'hero.proof2': 'اكتواريا · بيانات · تعلم آلة',
+    'hero.proof3': 'FR · EN · AR',
     'hero.panelStatus': 'منفتح على فرص عمل دائمة لاحقا',
     'hero.focus1Label': 'حاليا',
     'hero.focus1': 'دراسات اكتوارية، تأمين غير الحياة',
@@ -180,52 +189,60 @@ const projectTexts = {
   fr: {
     churn: ['Customer Churn Prediction', 'Prédire l\'attrition client et rendre le score exploitable via un tableau de bord et une API.', 'Données client déséquilibrées, traitées avec feature engineering.', 'Comparaison Random Forest et XGBoost, suivi d\'expériences et exposition applicative.', 'AUC 0.91 indiquée dans le projet existant.', 'Pipeline ML end-to-end avec dashboard Streamlit, API Flask containerisée et suivi MLflow.'],
     credit: ['Scoring de Crédit - ROC & SMOTE', 'Évaluer le risque client avant l\'accord d\'un crédit.', 'Données financières avec fort déséquilibre de classes indiqué dans le rapport.', 'Régression logistique, arbre de décision, forêt aléatoire, SMOTE, ROC et seuil de Youden.', 'Résultats présentés dans un rapport RMarkdown interactif, sans ajouter de nouvelle métrique.', 'Projet statistique très pertinent pour risque, actuariat et modélisation.'],
+    dashboard: ['Dashboard interactif - Indicateurs USA', 'Rendre lisibles des tendances statistiques longues par état, genre et âge.', 'Données USA 2000-2018 selon le projet existant.', 'Dashboard interactif HTML, CSS et JavaScript.', 'Visualisation web disponible en démonstration.', 'Projet de data visualisation et d\'exploration interactive.'],
     fifa: ['EA Sports FC - Analyse FIFA', 'Explorer les facteurs associés aux performances et valeurs de joueurs.', 'Profils de joueurs FIFA 2016-2024 mentionnés dans le projet.', 'Analyse exploratoire, corrélations, détection d\'outliers et classification supervisée.', 'Notebook d\'analyse; métriques détaillées à documenter dans une future case study.', 'Analyse data orientée statistiques descriptives et machine learning.'],
-    dashboard: ['Suicide Rates Dashboard - USA', 'Rendre lisibles des tendances statistiques longues par état, genre et âge.', 'Données USA 2000-2018 selon le projet existant.', 'Dashboard interactif HTML, CSS et JavaScript.', 'Visualisation web disponible en démonstration.', 'Projet de data visualisation et d\'exploration interactive.'],
-    markov: ['Promenade aléatoire du cavalier', 'Étudier le retour possible d\'un cavalier aléatoire sur un échiquier infini.', 'Simulations et cadre mathématique.', 'Chaînes de Markov, simulation Python et rapport LaTeX.', 'Rapport mathématique complet disponible.', 'Projet statistique/mathématique utile pour montrer le socle quantitatif.'],
+    markov: ['Promenade aléatoire du cavalier', 'Étudier le retour possible d\'un cavalier aléatoire sur un échiquier infini.', 'Simulations et cadre mathématique.', 'Chaînes de Markov, simulation Python et rapport LaTeX.', 'Rapport mathématique complet disponible.', 'Projet statistique et mathématique utile pour montrer le socle quantitatif.'],
     pagerank: ['PageRank - Wikispeedia', 'Classer l\'importance de pages dans un graphe de liens.', 'Dataset Wikispeedia.', 'Implémentation PageRank standard et personnalisée.', 'Analyse de graphes disponible sur GitHub et demo.', 'Projet big data, graphes et algorithmique.'],
     dinic: ['Algorithme de Dinic - Flot Maximum', 'Calculer un flot maximum dans un réseau orienté.', 'Graphes au format DIMACS.', 'Implémentation C de l\'algorithme de Dinic.', 'Code source et page projet disponibles.', 'Projet d\'algorithmique avancée et optimisation de réseaux.'],
-    flood: ['Flood It - Jeu de puzzle', 'Développer une expérience web interactive autour d\'un puzzle de couleurs.', 'Grilles générées dans le navigateur.', 'HTML, CSS et JavaScript.', 'Jeu jouable en ligne.', 'Projet web interactif conservé comme preuve de développement front-end.'],
     ckoala: ['CKOALA - Moteur de recherche', 'Explorer et rechercher dans des arbres de typologies.', 'Structures hiérarchiques.', 'Développement Java.', 'Code source et page projet disponibles.', 'Projet logiciel autour des structures de données.'],
+    flood: ['Flood It - Jeu de puzzle', 'Développer une expérience web interactive autour d\'un puzzle de couleurs.', 'Grilles générées dans le navigateur.', 'HTML, CSS et JavaScript.', 'Jeu jouable en ligne.', 'Projet web interactif conservé comme preuve de développement front-end.'],
+    pente: ['Pente - Jeu de plateau 19x19', 'Implémenter un jeu de plateau jouable à deux avec règles de capture et conditions de victoire.', 'Plateau 19x19 et états de jeu manipulés en C.', 'Programmation procédurale, validation des coups, captures, alignements et gestion de fin de partie.', 'Code source disponible sur GitHub.', 'Projet C utile pour montrer rigueur algorithmique et structuration logicielle.'],
+    quesaco: ['QUESACO', 'Projet web public disponible sur GitHub et en démonstration.', 'Informations détaillées à compléter depuis le contenu du projet.', 'HTML, CSS et JavaScript selon le dépôt public.', 'Démo GitHub Pages disponible.', 'Projet web conservé dans le portfolio élargi, avec description volontairement neutre.'],
     optimization: ['Optimisation de la production', 'Maximiser un profit sous contraintes de ressources.', 'Cas de programmation linéaire issu du projet.', 'Modélisation en programmation linéaire et résolution avec Lindo.', 'Analyse de robustesse de la solution optimale.', 'Projet de recherche opérationnelle pertinent pour modélisation et décision.']
   },
   en: {
     churn: ['Customer Churn Prediction', 'Predict customer attrition and make the score usable through a dashboard and API.', 'Imbalanced customer data handled with feature engineering.', 'Random Forest and XGBoost comparison, experiment tracking and application layer.', 'AUC 0.91 stated in the existing project.', 'End-to-end ML pipeline with Streamlit dashboard, Dockerized Flask API and MLflow tracking.'],
     credit: ['Credit Scoring - ROC & SMOTE', 'Assess customer risk before granting credit.', 'Financial data with strong class imbalance stated in the report.', 'Logistic regression, decision tree, random forest, SMOTE, ROC and Youden threshold.', 'Results presented in an interactive RMarkdown report, without adding new metrics.', 'Statistical project relevant to risk, actuarial work and modelling.'],
+    dashboard: ['Interactive Dashboard - US Indicators', 'Make long-term statistical trends readable by state, gender and age.', 'US data from 2000-2018 according to the existing project.', 'Interactive HTML, CSS and JavaScript dashboard.', 'Web visualisation available as a demo.', 'Data visualisation and interactive exploration project.'],
     fifa: ['EA Sports FC - FIFA Analysis', 'Explore factors associated with player performance and value.', 'FIFA 2016-2024 player profiles mentioned in the project.', 'Exploratory analysis, correlations, outlier detection and supervised classification.', 'Analysis notebook; detailed metrics should be documented in a future case study.', 'Data analysis project around descriptive statistics and machine learning.'],
-    dashboard: ['Suicide Rates Dashboard - USA', 'Make long-term statistical trends readable by state, gender and age.', 'US data from 2000-2018 according to the existing project.', 'Interactive HTML, CSS and JavaScript dashboard.', 'Web visualisation available as a demo.', 'Data visualisation and interactive exploration project.'],
     markov: ['Random Knight Walk', 'Study whether a random knight can return to its starting square on an infinite board.', 'Simulations and mathematical framework.', 'Markov chains, Python simulation and LaTeX report.', 'Full mathematical report available.', 'Statistics and mathematics project showing the quantitative base.'],
     pagerank: ['PageRank - Wikispeedia', 'Rank page importance in a link graph.', 'Wikispeedia dataset.', 'Standard and personalised PageRank implementation.', 'Graph analysis available on GitHub and demo.', 'Big data, graphs and algorithms project.'],
     dinic: ['Dinic Algorithm - Maximum Flow', 'Compute maximum flow in a directed network.', 'Graphs in DIMACS format.', 'C implementation of Dinic algorithm.', 'Source code and project page available.', 'Advanced algorithms and network optimisation project.'],
-    flood: ['Flood It - Puzzle Game', 'Build an interactive web experience around a colour puzzle.', 'Browser-generated grids.', 'HTML, CSS and JavaScript.', 'Playable online game.', 'Interactive web project kept as front-end development evidence.'],
     ckoala: ['CKOALA - Search Engine', 'Explore and search typology trees.', 'Hierarchical structures.', 'Java development.', 'Source code and project page available.', 'Software project around data structures.'],
+    flood: ['Flood It - Puzzle Game', 'Build an interactive web experience around a colour puzzle.', 'Browser-generated grids.', 'HTML, CSS and JavaScript.', 'Playable online game.', 'Interactive web project kept as front-end development evidence.'],
+    pente: ['Pente - 19x19 Board Game', 'Implement a two-player board game with captures and winning alignments.', '19x19 board and game states handled in C.', 'Procedural programming, move validation, captures, alignments and end-game handling.', 'Source code available on GitHub.', 'C project showing algorithmic rigour and software structure.'],
+    quesaco: ['QUESACO', 'Public web project available on GitHub and as a demo.', 'Detailed information to complete from the project content.', 'HTML, CSS and JavaScript according to the public repository.', 'GitHub Pages demo available.', 'Web project kept in the broader portfolio with a neutral description.'],
     optimization: ['Production Optimisation', 'Maximise profit under resource constraints.', 'Linear programming case from the project.', 'Linear programming modelling and Lindo solving.', 'Robustness analysis of the optimal solution.', 'Operations research project relevant to modelling and decision-making.']
   },
   ar: {
     churn: ['التنبؤ بإلغاء اشتراك العملاء', 'توقع مغادرة العملاء وجعل النتيجة قابلة للاستعمال عبر لوحة وواجهة API.', 'بيانات عملاء غير متوازنة مع هندسة خصائص.', 'مقارنة Random Forest وXGBoost مع تتبع التجارب وطبقة تطبيقية.', 'AUC 0.91 كما هو مذكور في المشروع.', 'خط تعلم آلة متكامل مع Streamlit وFlask وDocker وMLflow.'],
     credit: ['تقييم الائتمان - ROC وSMOTE', 'تقييم مخاطر العميل قبل منح الائتمان.', 'بيانات مالية مع عدم توازن واضح في الفئات حسب التقرير.', 'انحدار لوجستي، شجرة قرار، غابة عشوائية، SMOTE، ROC وعتبة Youden.', 'نتائج في تقرير RMarkdown تفاعلي دون إضافة مقاييس جديدة.', 'مشروع إحصائي مناسب للمخاطر والاكتواريا والنمذجة.'],
+    dashboard: ['لوحة تفاعلية - مؤشرات USA', 'تسهيل قراءة اتجاهات إحصائية طويلة حسب الولاية والجنس والعمر.', 'بيانات الولايات المتحدة 2000-2018 حسب المشروع.', 'لوحة تفاعلية HTML وCSS وJavaScript.', 'تصور ويب متاح كتجربة.', 'مشروع تصور بيانات واستكشاف تفاعلي.'],
     fifa: ['تحليل FIFA / EA Sports FC', 'استكشاف العوامل المرتبطة بأداء وقيمة اللاعبين.', 'ملفات لاعبي FIFA 2016-2024 كما يذكر المشروع.', 'تحليل استكشافي، ارتباطات، قيم شاذة وتصنيف موجه.', 'دفتر تحليل؛ التفاصيل الرقمية تحتاج توثيقا لاحقا.', 'مشروع تحليل بيانات حول الإحصاء الوصفي وتعلم الآلة.'],
-    dashboard: ['لوحة معدلات الانتحار - USA', 'تسهيل قراءة اتجاهات إحصائية طويلة حسب الولاية والجنس والعمر.', 'بيانات الولايات المتحدة 2000-2018 حسب المشروع.', 'لوحة تفاعلية HTML وCSS وJavaScript.', 'تصور ويب متاح كتجربة.', 'مشروع تصور بيانات واستكشاف تفاعلي.'],
     markov: ['المشي العشوائي للفارس', 'دراسة إمكانية عودة فارس عشوائي إلى نقطة البداية على رقعة لا نهائية.', 'محاكاة وإطار رياضي.', 'سلاسل ماركوف، محاكاة Python وتقرير LaTeX.', 'تقرير رياضي كامل متاح.', 'مشروع رياضي وإحصائي يبرز الأساس الكمي.'],
     pagerank: ['PageRank - Wikispeedia', 'ترتيب أهمية الصفحات في رسم بياني للروابط.', 'مجموعة Wikispeedia.', 'تطبيق PageRank قياسي ومخصص.', 'تحليل رسوم بيانية متاح على GitHub وتجربة.', 'مشروع بيانات ضخمة ورسوم بيانية وخوارزميات.'],
     dinic: ['خوارزمية Dinic - الجريان الأقصى', 'حساب الجريان الأقصى في شبكة موجهة.', 'رسوم بيانية بصيغة DIMACS.', 'تطبيق C لخوارزمية Dinic.', 'الكود وصفحة المشروع متاحان.', 'مشروع خوارزميات متقدمة وتحسين شبكات.'],
-    flood: ['Flood It - لعبة ألغاز', 'بناء تجربة ويب تفاعلية حول لغز ألوان.', 'شبكات مولدة في المتصفح.', 'HTML وCSS وJavaScript.', 'لعبة قابلة للتجربة عبر الإنترنت.', 'مشروع ويب تفاعلي كدليل على تطوير الواجهات.'],
     ckoala: ['CKOALA - محرك بحث', 'استكشاف والبحث داخل أشجار تصنيف.', 'بنى هرمية.', 'تطوير Java.', 'الكود وصفحة المشروع متاحان.', 'مشروع برمجي حول هياكل البيانات.'],
+    flood: ['Flood It - لعبة ألغاز', 'بناء تجربة ويب تفاعلية حول لغز ألوان.', 'شبكات مولدة في المتصفح.', 'HTML وCSS وJavaScript.', 'لعبة قابلة للتجربة عبر الإنترنت.', 'مشروع ويب تفاعلي كدليل على تطوير الواجهات.'],
+    pente: ['Pente - لعبة لوحة 19x19', 'تنفيذ لعبة لشخصين مع قواعد الالتقاط وشروط الفوز.', 'لوحة 19x19 وحالات لعب بلغة C.', 'برمجة إجرائية، التحقق من الحركات، الالتقاط، الاصطفاف ونهاية اللعبة.', 'الكود متاح على GitHub.', 'مشروع C يبرز الصرامة الخوارزمية وتنظيم الكود.'],
+    quesaco: ['QUESACO', 'مشروع ويب عام متاح على GitHub وكتجربة.', 'تفاصيل المشروع تحتاج استكمالا من محتواه.', 'HTML وCSS وJavaScript حسب المستودع العام.', 'تجربة GitHub Pages متاحة.', 'مشروع ويب محفوظ ضمن المحفظة الموسعة بوصف محايد.'],
     optimization: ['تحسين الإنتاج', 'تعظيم الربح تحت قيود الموارد.', 'حالة برمجة خطية من المشروع.', 'نمذجة برمجة خطية وحل باستخدام Lindo.', 'تحليل متانة الحل الأمثل.', 'مشروع بحوث عمليات مناسب للنمذجة واتخاذ القرار.']
   }
 };
 
 const projects = [
-  { id: 'churn', featured: true, tech: ['Python', 'XGBoost', 'Random Forest', 'Streamlit', 'Flask', 'Docker', 'MLflow'], links: { github: 'https://github.com/aminenakrou/Projet-de-prediction-du-churn-client', demo: 'https://aminenakrou.github.io/Projet-de-prediction-du-churn-client/', case: 'case-studies/churn.html' } },
-  { id: 'credit', featured: true, tech: ['R', 'RMarkdown', 'Logistic Regression', 'Random Forest', 'SMOTE', 'ROC'], links: { github: 'https://github.com/aminenakrou/Projet-Statistiques', demo: 'https://aminenakrou.github.io/Projet-Statistiques/', case: 'case-studies/credit-scoring.html' } },
-  { id: 'fifa', featured: true, tech: ['Python', 'Pandas', 'Matplotlib', 'Seaborn', 'Scikit-learn'], links: { github: 'https://github.com/aminenakrou?tab=repositories' } },
-  { id: 'dashboard', featured: false, tech: ['JavaScript', 'HTML', 'CSS', 'Data Visualisation'], links: {} },
-  { id: 'markov', featured: false, tech: ['Python', 'Markov Chains', 'Simulation', 'LaTeX'], links: { github: 'https://github.com/aminenakrou/Etude_Markovienne_de_la_promenade_du_cavalier_sur_un_echiquier', demo: 'https://aminenakrou.github.io/Etude_Markovienne_de_la_promenade_du_cavalier_sur_un_echiquier/' } },
-  { id: 'pagerank', featured: false, tech: ['Python', 'PageRank', 'Graphs', 'Wikispeedia'], links: { github: 'https://github.com/aminenakrou/Big_Data_Project-PageRank_Analysis_on_Wikispeedia_Dataset', demo: 'https://aminenakrou.github.io/Big_Data_Project-PageRank_Analysis_on_Wikispeedia_Dataset/' } },
-  { id: 'dinic', featured: false, tech: ['C', 'Algorithms', 'Graph Theory', 'DIMACS'], links: { github: 'https://github.com/aminenakrou/Dinic-Algorithme_de_flot_maximum', demo: 'https://aminenakrou.github.io/Dinic-Algorithme_de_flot_maximum/' } },
-  { id: 'optimization', featured: false, tech: ['Linear Programming', 'Lindo', 'Operations Research'], links: { github: 'https://github.com/aminenakrou?tab=repositories' } },
-  { id: 'ckoala', featured: false, tech: ['Java', 'Trees', 'Search Engine'], links: { github: 'https://github.com/aminenakrou/CKOALA-Moteur_de_recherche_dans_des_arbres_de_typologies', demo: 'https://aminenakrou.github.io/CKOALA-Moteur_de_recherche_dans_des_arbres_de_typologies/' } },
-  { id: 'flood', featured: false, tech: ['JavaScript', 'HTML', 'CSS', 'Game Dev'], links: { github: 'https://github.com/aminenakrou/Flood_It_Game', demo: 'https://aminenakrou.github.io/Flood_It_Game/' } }
+  { id: 'churn', category: { fr: 'Machine Learning', en: 'Machine Learning', ar: 'تعلم الآلة' }, featured: true, tech: ['Python', 'XGBoost', 'Random Forest', 'Streamlit', 'Flask', 'Docker', 'MLflow'], links: { github: 'https://github.com/aminenakrou/Projet-de-prediction-du-churn-client', demo: 'https://aminenakrou.github.io/Projet-de-prediction-du-churn-client/', case: 'case-studies/churn.html' } },
+  { id: 'credit', category: { fr: 'Risque & Statistiques', en: 'Risk & Statistics', ar: 'مخاطر وإحصاء' }, featured: true, tech: ['R', 'RMarkdown', 'Logistic Regression', 'Random Forest', 'SMOTE', 'ROC'], links: { github: 'https://github.com/aminenakrou/Projet-Statistiques', demo: 'https://aminenakrou.github.io/Projet-Statistiques/', case: 'case-studies/credit-scoring.html' } },
+  { id: 'dashboard', category: { fr: 'Data Visualisation', en: 'Data Visualisation', ar: 'تصور البيانات' }, featured: true, tech: ['JavaScript', 'HTML', 'CSS', 'Data Visualisation'], links: { github: 'https://github.com/aminenakrou/Dashboard', demo: 'https://aminenakrou.github.io/Dashboard/' } },
+  { id: 'fifa', category: { fr: 'Analyse exploratoire', en: 'Exploratory Analysis', ar: 'تحليل استكشافي' }, featured: true, tech: ['Python', 'Pandas', 'Matplotlib', 'Seaborn', 'Scikit-learn'], links: { github: 'https://github.com/aminenakrou?tab=repositories' } },
+  { id: 'markov', category: { fr: 'Statistiques', en: 'Statistics', ar: 'إحصاء' }, featured: false, tech: ['Python', 'Markov Chains', 'Simulation', 'LaTeX'], links: { github: 'https://github.com/aminenakrou/Etude_Markovienne_de_la_promenade_du_cavalier_sur_un_echiquier', demo: 'https://aminenakrou.github.io/Etude_Markovienne_de_la_promenade_du_cavalier_sur_un_echiquier/' } },
+  { id: 'pagerank', category: { fr: 'Graphes & Big Data', en: 'Graphs & Big Data', ar: 'رسوم وبيانات ضخمة' }, featured: false, tech: ['Python', 'PageRank', 'Graphs', 'Wikispeedia'], links: { github: 'https://github.com/aminenakrou/Big_Data_Project-PageRank_Analysis_on_Wikispeedia_Dataset', demo: 'https://aminenakrou.github.io/Big_Data_Project-PageRank_Analysis_on_Wikispeedia_Dataset/' } },
+  { id: 'dinic', category: { fr: 'Algorithmique', en: 'Algorithms', ar: 'خوارزميات' }, featured: false, tech: ['C', 'Algorithms', 'Graph Theory', 'DIMACS'], links: { github: 'https://github.com/aminenakrou/Dinic-Algorithme_de_flot_maximum', demo: 'https://aminenakrou.github.io/Dinic-Algorithme_de_flot_maximum/' } },
+  { id: 'ckoala', category: { fr: 'Java & Structures', en: 'Java & Structures', ar: 'Java وهياكل' }, featured: false, tech: ['Java', 'Trees', 'Search Engine'], links: { github: 'https://github.com/aminenakrou/CKOALA-Moteur_de_recherche_dans_des_arbres_de_typologies', demo: 'https://aminenakrou.github.io/CKOALA-Moteur_de_recherche_dans_des_arbres_de_typologies/' } },
+  { id: 'pente', category: { fr: 'C & Jeux', en: 'C & Games', ar: 'C وألعاب' }, featured: false, tech: ['C', 'Game Logic', 'Algorithms'], links: { github: 'https://github.com/aminenakrou/Pente-Jeu_de_plateau_19x19' } },
+  { id: 'flood', category: { fr: 'Web interactif', en: 'Interactive Web', ar: 'ويب تفاعلي' }, featured: false, tech: ['JavaScript', 'HTML', 'CSS', 'Game Dev'], links: { github: 'https://github.com/aminenakrou/Flood_It_Game', demo: 'https://aminenakrou.github.io/Flood_It_Game/' } },
+  { id: 'quesaco', category: { fr: 'Web', en: 'Web', ar: 'ويب' }, featured: false, tech: ['HTML', 'CSS', 'JavaScript'], links: { github: 'https://github.com/aminenakrou/QUESACO', demo: 'https://aminenakrou.github.io/QUESACO/' } },
+  { id: 'optimization', category: { fr: 'Recherche opérationnelle', en: 'Operations Research', ar: 'بحوث عمليات' }, featured: false, tech: ['Linear Programming', 'Lindo', 'Operations Research'], links: { github: 'https://github.com/aminenakrou?tab=repositories' } }
 ];
 
 const skills = [
@@ -306,15 +323,22 @@ function renderActions(links) {
 
 function renderProjectCard(project, index, featured) {
   const text = getProjectText(project.id);
+  const category = project.category[currentLang] || project.category.fr;
   const card = createElement('article', featured ? 'featured-card project-card anim-fade-up' : 'project-card anim-fade-up');
+  card.dataset.area = category;
+
   const top = createElement('div', 'project-top');
-  const titleWrap = createElement('div');
-  titleWrap.appendChild(createElement('span', 'project-label', featured ? translate('nav.featured') : translate('projects.kicker')));
+  const titleWrap = createElement('div', 'project-title-wrap');
+  const labelRow = createElement('div', 'project-label-row');
+  labelRow.appendChild(createElement('span', 'project-label', featured ? translate('nav.featured') : translate('projects.kicker')));
+  labelRow.appendChild(createElement('span', 'project-area', category));
+  titleWrap.appendChild(labelRow);
   titleWrap.appendChild(createElement('h3', '', text.title));
   top.appendChild(titleWrap);
   top.appendChild(createElement('span', 'project-index', String(index).padStart(2, '0')));
   card.appendChild(top);
-  card.appendChild(createElement('p', '', text.summary));
+
+  card.appendChild(createElement('p', 'project-summary', text.summary));
 
   const facts = createElement('div', 'project-facts');
   const list = createElement('dl');
@@ -324,17 +348,21 @@ function renderProjectCard(project, index, featured) {
     ['label.method', text.method],
     ['label.result', text.result]
   ].forEach(([label, value]) => {
-    list.appendChild(createElement('dt', '', translate(label)));
-    list.appendChild(createElement('dd', '', value));
+    const item = createElement('div', 'fact-item');
+    item.appendChild(createElement('dt', '', translate(label)));
+    item.appendChild(createElement('dd', '', value));
+    list.appendChild(item);
   });
   facts.appendChild(list);
   card.appendChild(facts);
 
+  const footer = createElement('div', 'project-footer');
   const tags = createElement('div', 'project-tags');
   project.tech.forEach(item => tags.appendChild(createElement('span', '', item)));
-  card.appendChild(tags);
+  footer.appendChild(tags);
   const actions = renderActions(project.links);
-  if (actions) card.appendChild(actions);
+  if (actions) footer.appendChild(actions);
+  card.appendChild(footer);
   return card;
 }
 
