@@ -3,1292 +3,209 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Amine Nakrou - Élève-Ingénieur Informatique, Statistiques et IA à Polytech Lille" />
+  <meta name="description" content="Portfolio d'Amine Nakrou, chargé d'études actuarielles chez Swiss Life à Roubaix, profil actuariat, statistiques, data science, machine learning, Python, SQL et BI." />
   <meta name="author" content="Amine Nakrou" />
-
-  <meta property="og:title" content="Amine Nakrou - Élève-Ingénieur Informatique, Statistiques et IA" />
-  <meta property="og:description" content="Élève-Ingénieur ISIA Polytech Lille - Disponible à partir de septembre 2026" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://aminenakrou.github.io/portfolio/" />
+  <meta property="og:title" content="Amine Nakrou - Actuarial Studies, Data Science & Machine Learning" />
+  <meta property="og:description" content="Chargé d'études actuarielles chez Swiss Life. Profil quantitatif orienté actuariat, statistiques, data science, machine learning, Python, SQL et BI." />
+  <meta property="og:image" content="https://aminenakrou.github.io/portfolio/assets/img/og-preview.png" />
+  <meta property="og:url" content="https://aminenakrou.github.io/portfolio/" />
   <meta property="og:type" content="website" />
-
-  <title>Amine Nakrou — Data Science & ML</title>
-
-  <script>
-    (function(){var t=localStorage.getItem('theme')||'dark';if(t==='light')document.documentElement.setAttribute('data-theme','light');}());
-  </script>
-
+  <meta property="og:locale" content="fr_FR" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Amine Nakrou - Actuarial Studies, Data Science & Machine Learning" />
+  <meta name="twitter:description" content="Chargé d'études actuarielles chez Swiss Life. Portfolio actuariat, statistiques, data science et machine learning." />
+  <meta name="twitter:image" content="https://aminenakrou.github.io/portfolio/assets/img/og-preview.png" />
+  <title>Amine Nakrou - Actuariat, Data Science & Machine Learning</title>
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800;900&display=swap"
-    rel="stylesheet"
-  />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-  />
+  <script>
+    (function () {
+      var theme = localStorage.getItem('theme') || 'dark';
+      if (theme === 'light') document.documentElement.setAttribute('data-theme', 'light');
+    }());
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Amine Nakrou",
+      "url": "https://aminenakrou.github.io/portfolio/",
+      "jobTitle": "Chargé d'études actuarielles",
+      "worksFor": {"@type": "Organization", "name": "Swiss Life"},
+      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Polytech Lille"},
+      "sameAs": ["https://linkedin.com/in/amine-nakrou", "https://github.com/aminenakrou"],
+      "knowsAbout": ["Actuariat", "Statistiques", "Data Science", "Machine Learning", "Python", "SQL", "Business Intelligence", "Data Engineering"]
+    }
+  </script>
 </head>
 <body>
+  <a class="skip-link" href="#main" data-i18n="a11y.skip">Aller au contenu</a>
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
-  <!-- NOISE TEXTURE -->
-  <div class="noise"></div>
-
-  <!-- SCROLL PROGRESS -->
-  <div class="scroll-progress" id="scrollProgress"></div>
-
-  <!-- LOADER -->
-  <div id="loader">
-    <div class="loader-inner">
-      <div class="loader-logo">
-        <span class="l-a">A</span><span class="l-n">N</span>
-      </div>
-      <div class="loader-bar-wrap">
-        <div class="loader-bar-fill" id="loaderFill"></div>
-      </div>
-      <span class="loader-pct" id="loaderPct">0%</span>
-    </div>
-  </div>
-
-  <!-- CUSTOM CURSOR -->
-  <div class="cursor" id="cursor">
-    <div class="cursor-dot"></div>
-  </div>
-  <div class="cursor-ring" id="cursorRing"></div>
-
-  <!-- NAVBAR -->
-  <nav id="navbar">
-    <a href="#hero" class="nav-logo">AN<span class="accent">.</span></a>
-
+  <nav class="navbar" id="navbar" aria-label="Navigation principale">
+    <a href="#hero" class="nav-logo" aria-label="Amine Nakrou">AN<span>.</span></a>
     <ul class="nav-links">
       <li><a href="#about" class="nav-item" data-i18n="nav.about">À propos</a></li>
-      <li><a href="#featured" class="nav-item" data-i18n="nav.featured">Showcase</a></li>
-      <li><a href="#skills" class="nav-item" data-i18n="nav.skills">Skills</a></li>
-      <li><a href="#projects" class="nav-item" data-i18n="nav.projects">Projets</a></li>
-      <li><a href="#experience" class="nav-item" data-i18n="nav.parcours">Parcours</a></li>
+      <li><a href="#featured" class="nav-item" data-i18n="nav.featured">Projets phares</a></li>
+      <li><a href="#skills" class="nav-item" data-i18n="nav.skills">Compétences</a></li>
+      <li><a href="#experience" class="nav-item" data-i18n="nav.experience">Parcours</a></li>
       <li><a href="#contact" class="nav-item" data-i18n="nav.contact">Contact</a></li>
     </ul>
-
-    <div class="nav-right">
-      <div class="lang-switcher">
-        <button class="lang-btn active" data-lang="fr">FR</button>
-        <span class="lang-sep">|</span>
-        <button class="lang-btn" data-lang="en">EN</button>
-        <span class="lang-sep">|</span>
-        <button class="lang-btn" data-lang="ar">AR</button>
+    <div class="nav-actions">
+      <div class="lang-switcher" aria-label="Choix de langue">
+        <button class="lang-btn active" type="button" data-lang="fr">FR</button>
+        <button class="lang-btn" type="button" data-lang="en">EN</button>
+        <button class="lang-btn" type="button" data-lang="ar">AR</button>
       </div>
-
-      <a href="assets/cv/cv_amine_nakrou_fr.pdf" class="btn-magnetic nav-cta" id="cvLink" download>
-        <span class="btn-inner">
-          <i class="fas fa-download"></i>
-          <span data-i18n="nav.cv">CV</span>
-        </span>
-      </a>
-
-      <button class="theme-toggle btn-magnetic" id="themeToggle" aria-label="Toggle theme">
-        <span class="btn-inner">
-          <i class="fas fa-sun" id="themeIcon"></i>
-        </span>
-      </button>
-
-      <button class="burger" id="burger" aria-label="Menu">
-        <span class="burger-line"></span>
-        <span class="burger-line"></span>
-      </button>
+      <a href="assets/cv/cv_amine_nakrou_fr.pdf" class="nav-cv" id="cvLink" download data-i18n="nav.cv">CV</a>
+      <button class="icon-btn" id="themeToggle" type="button" aria-label="Changer le theme" title="Theme"><span id="themeIcon" aria-hidden="true">☀</span></button>
+      <button class="burger" id="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span></button>
     </div>
   </nav>
 
-  <!-- MOBILE MENU -->
-  <div class="mobile-overlay" id="mobileOverlay">
-    <div class="mobile-menu-inner">
-      <ul class="mobile-links">
-        <li><a href="#about" class="mob-link"><span class="mob-num">01</span><span data-i18n="nav.about">À propos</span></a></li>
-        <li><a href="#featured" class="mob-link"><span class="mob-num">02</span><span data-i18n="nav.featured">Showcase</span></a></li>
-        <li><a href="#skills" class="mob-link"><span class="mob-num">03</span><span data-i18n="nav.skills">Skills</span></a></li>
-        <li><a href="#projects" class="mob-link"><span class="mob-num">04</span><span data-i18n="nav.projects">Projets</span></a></li>
-        <li><a href="#experience" class="mob-link"><span class="mob-num">05</span><span data-i18n="nav.parcours">Parcours</span></a></li>
-        <li><a href="#contact" class="mob-link"><span class="mob-num">06</span><span data-i18n="nav.contact">Contact</span></a></li>
-      </ul>
-
-      <div class="mob-lang">
-        <button class="lang-btn active" data-lang="fr">FR</button>
-        <span class="lang-sep">|</span>
-        <button class="lang-btn" data-lang="en">EN</button>
-        <span class="lang-sep">|</span>
-        <button class="lang-btn" data-lang="ar">AR</button>
-      </div>
-
-      <div class="mob-socials">
-        <a href="mailto:aminenakrou635@gmail.com"><i class="fas fa-envelope"></i></a>
-        <a href="https://linkedin.com/in/amine-nakrou" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
-        <a href="https://github.com/aminenakrou" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
-      </div>
+  <div class="mobile-menu" id="mobileMenu" hidden>
+    <a href="#about" class="mobile-link" data-i18n="nav.about">À propos</a>
+    <a href="#featured" class="mobile-link" data-i18n="nav.featured">Projets phares</a>
+    <a href="#skills" class="mobile-link" data-i18n="nav.skills">Compétences</a>
+    <a href="#experience" class="mobile-link" data-i18n="nav.experience">Parcours</a>
+    <a href="#contact" class="mobile-link" data-i18n="nav.contact">Contact</a>
+    <div class="mobile-socials">
+      <a href="mailto:aminenakrou635@gmail.com" data-i18n="contact.emailLabel">Email</a>
+      <a href="https://linkedin.com/in/amine-nakrou" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="https://github.com/aminenakrou" target="_blank" rel="noopener noreferrer">GitHub</a>
     </div>
   </div>
 
-  <!-- HERO -->
-  <section id="hero">
-    <div class="hero-grid"></div>
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
-
-    <div class="hero-wrap">
-      <!-- HERO LEFT -->
-      <div class="hero-left">
-        <div class="hero-tag">
-          <span class="tag-dot"></span>
-          <span data-i18n="hero.tag">En stage chez GRDF · Data Engineering & BI</span>
-        </div>
-
-        <h1 class="hero-name">
-          <span class="split-line" data-text="AMINE">AMINE</span>
-          <span class="accent-line" data-text="NAKROU">NAKROU</span>
-        </h1>
-
-        <div class="hero-role">
-          <span class="role-pill" data-i18n="hero.role1">Data Science</span>
-          <span class="role-dot">•</span>
-          <span class="role-pill" data-i18n="hero.role2">Machine Learning</span>
-          <span class="role-dot">•</span>
-          <span class="role-pill" data-i18n="hero.role3">Polytech Lille</span>
-        </div>
-
-        <p class="hero-desc" data-i18n="hero.desc">
-          Élève-Ingénieur ISIA · Passionné par les pipelines ML end-to-end, la valorisation des données et la mise en production.
-        </p>
-
-        <div class="hero-actions">
-          <a href="#projects" class="btn-magnetic btn-primary">
-            <span class="btn-inner" data-i18n="hero.btn1">
-              Voir mes projets <i class="fas fa-arrow-right"></i>
-            </span>
-          </a>
-
-          <a href="#contact" class="btn-magnetic btn-ghost">
-            <span class="btn-inner" data-i18n="hero.btn2">Me contacter</span>
-          </a>
-        </div>
-
-        <div class="hero-stats-row">
-          <div class="hsr-item">
-            <span class="hs-num" data-val="10">10</span>
-            <span class="hs-label" data-i18n="hero.stat1">Projets</span>
-          </div>
-          <div class="hsr-divider"></div>
-
-          <div class="hsr-item">
-            <span class="hs-num" data-val="9">9</span>
-            <span class="hs-label" data-i18n="hero.stat2">Langages</span>
-          </div>
-          <div class="hsr-divider"></div>
-
-          <div class="hsr-item">
-            <span class="hs-num" data-val="100" data-suffix="%">100%</span>
-            <span class="hs-label" data-i18n="hero.stat3">Expertise Statistique</span>
-          </div>
-          <div class="hsr-divider"></div>
-
-          <div class="hsr-item">
-            <span class="hs-num" data-val="2">2</span>
-            <span class="hs-label" data-i18n="hero.stat4">Stages</span>
+  <main id="main">
+    <section id="hero" class="hero section">
+      <div class="section-inner hero-inner">
+        <div class="hero-copy anim-fade-up">
+          <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span><span data-i18n="hero.current">Chargé d'études actuarielles @ Swiss Life</span></p>
+          <h1><span>Amine</span><span>Nakrou</span></h1>
+          <p class="hero-position" data-i18n="hero.position">Actuarial Studies · Data Science · Machine Learning</p>
+          <p class="hero-summary" data-i18n="hero.summary">Profil quantitatif formé à Polytech Lille ISIA, actuellement en assurance non-vie chez Swiss Life à Roubaix. Je travaille sur le reporting actuariel, la fiabilisation des données, la modélisation et des outils d'aide au pilotage.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#featured" data-i18n="hero.projects">Voir mes projets</a>
+            <a class="btn btn-secondary" href="assets/cv/cv_amine_nakrou_fr.pdf" id="cvLinkHero" download data-i18n="hero.cv">Télécharger mon CV</a>
+            <a class="btn btn-secondary" href="#contact" data-i18n="hero.contact">Me contacter</a>
+            <a class="btn btn-link" href="https://linkedin.com/in/amine-nakrou" target="_blank" rel="noopener noreferrer">LinkedIn</a>
           </div>
         </div>
+        <aside class="hero-panel anim-fade-up" aria-label="Resume du profil">
+          <div class="panel-head"><span>AN.</span><span data-i18n="hero.panelStatus">Ouvert aux opportunités CDI</span></div>
+          <div class="focus-grid">
+            <div><span class="focus-label" data-i18n="hero.focus1Label">Actuel</span><strong>Swiss Life</strong><p data-i18n="hero.focus1">Chargé d'études actuarielles, assurance non-vie</p></div>
+            <div><span class="focus-label" data-i18n="hero.focus2Label">Recherche</span><strong data-i18n="hero.focus2Title">CDI après l'expérience actuelle</strong><p data-i18n="hero.focus2">Actuariat, Data, ML, Risk, BI</p></div>
+            <div><span class="focus-label" data-i18n="hero.focus3Label">Socle</span><strong>Python · SQL · Stats</strong><p data-i18n="hero.focus3">Modélisation, pipelines data, visualisation</p></div>
+          </div>
+        </aside>
       </div>
+    </section>
 
-      <!-- HERO RIGHT -->
-      <div class="hero-right">
-        <div class="browser-mockup">
-          <div class="bm-bar">
-            <div class="bm-dots">
-              <span class="bm-dot red"></span>
-              <span class="bm-dot yellow"></span>
-              <span class="bm-dot green"></span>
-            </div>
-
-            <div class="bm-url">
-              <i class="fas fa-lock bm-lock"></i>
-              <span>aminenakrou.github.io</span>
-            </div>
-
-            <div class="bm-actions">
-              <i class="fas fa-arrow-left"></i>
-              <i class="fas fa-rotate-right"></i>
-            </div>
-          </div>
-
-          <div class="bm-screen">
-            <div class="bm-nav">
-              <span class="bm-logo">AN<span>.</span></span>
-              <div class="bm-nav-links">
-                <span></span><span></span><span></span><span></span>
-              </div>
-            </div>
-
-            <div class="bm-hero">
-              <div class="bm-tag"></div>
-              <div class="bm-h1">
-                <div class="bm-line bm-line-1"></div>
-                <div class="bm-line bm-line-2 accent-bg"></div>
-              </div>
-              <div class="bm-btns">
-                <div class="bm-btn filled"></div>
-                <div class="bm-btn outline"></div>
-              </div>
-              <div class="bm-stats">
-                <div class="bm-stat-box">
-                  <div class="bm-stat-num"></div>
-                  <div class="bm-stat-lbl"></div>
-                </div>
-                <div class="bm-stat-box">
-                  <div class="bm-stat-num"></div>
-                  <div class="bm-stat-lbl"></div>
-                </div>
-                <div class="bm-stat-box">
-                  <div class="bm-stat-num"></div>
-                  <div class="bm-stat-lbl"></div>
-                </div>
-              </div>
-            </div>
-
-            <div class="bm-section">
-              <div class="bm-sec-title"></div>
-              <div class="bm-pills-row">
-                <div class="bm-pill"></div>
-                <div class="bm-pill accent-border"></div>
-                <div class="bm-pill"></div>
-                <div class="bm-pill accent-border"></div>
-                <div class="bm-pill"></div>
-              </div>
-            </div>
-
-            <div class="bm-cards">
-              <div class="bm-card">
-                <div class="bm-card-num"></div>
-                <div class="bm-card-lines">
-                  <div></div><div></div><div></div>
-                </div>
-              </div>
-              <div class="bm-card">
-                <div class="bm-card-num"></div>
-                <div class="bm-card-lines">
-                  <div></div><div></div><div></div>
-                </div>
-              </div>
-            </div>
-
-            <div class="bm-cursor" id="bmCursor"></div>
-          </div>
-        </div>
-
-        <div class="float-card fc-1">
-          <div class="fc-icon"><i class="fas fa-brain"></i></div>
-          <div class="fc-body">
-            <span class="fc-val" data-i18n="hero.stat3">Expertise Statistique</span>
-            <span class="fc-lbl">100%</span>
-          </div>
-        </div>
-
-        <div class="float-card fc-2">
-          <div class="fc-icon"><i class="fab fa-python"></i></div>
-          <div class="fc-body">
-            <span class="fc-val">Python</span>
-            <span class="fc-lbl">Primary Lang</span>
-          </div>
-        </div>
-
-        <div class="float-card fc-3">
-          <div class="fc-icon"><i class="fas fa-building"></i></div>
-          <div class="fc-body">
-            <span class="fc-val" data-i18n="hero.fc3val">En stage</span>
-            <span class="fc-lbl">GRDF · Saint-Denis</span>
-          </div>
-        </div>
+    <section class="marquee" aria-label="Domaines principaux">
+      <div class="marquee-track">
+        <span>Actuariat</span><span>Statistiques</span><span>Data Science</span><span>Machine Learning</span><span>Python</span><span>SQL</span><span>Data Engineering</span><span>Power BI</span><span>Risk</span>
+        <span>Actuariat</span><span>Statistiques</span><span>Data Science</span><span>Machine Learning</span><span>Python</span><span>SQL</span><span>Data Engineering</span><span>Power BI</span><span>Risk</span>
       </div>
-    </div>
+    </section>
 
-    <div class="hero-scroll-hint">
-      <div class="scroll-track">
-        <div class="scroll-thumb"></div>
-      </div>
-      <span>SCROLL</span>
-    </div>
-  </section>
-
-  <!-- MARQUEE 1 -->
-  <div class="marquee-section" aria-hidden="true">
-    <div class="marquee-track">
-      <div class="marquee-content">
-        <span>Python</span><span class="sep">•</span>
-        <span>Machine Learning</span><span class="sep">•</span>
-        <span>XGBoost</span><span class="sep">•</span>
-        <span>Data Science</span><span class="sep">•</span>
-        <span>PyTorch</span><span class="sep">•</span>
-        <span>Streamlit</span><span class="sep">•</span>
-        <span>Docker</span><span class="sep">•</span>
-        <span>MLflow</span><span class="sep">•</span>
-        <span>Pandas</span><span class="sep">•</span>
-        <span>Apache Spark</span><span class="sep">•</span>
-        <span>Deep Learning</span><span class="sep">•</span>
-        <span>SQL / NoSQL</span><span class="sep">•</span>
-        <span>Power BI</span><span class="sep">•</span>
-        <span>Polytech Lille ISIA</span><span class="sep">•</span>
-      </div>
-
-      <div class="marquee-content" aria-hidden="true">
-        <span>Python</span><span class="sep">•</span>
-        <span>Machine Learning</span><span class="sep">•</span>
-        <span>XGBoost</span><span class="sep">•</span>
-        <span>Data Science</span><span class="sep">•</span>
-        <span>PyTorch</span><span class="sep">•</span>
-        <span>Streamlit</span><span class="sep">•</span>
-        <span>Docker</span><span class="sep">•</span>
-        <span>MLflow</span><span class="sep">•</span>
-        <span>Pandas</span><span class="sep">•</span>
-        <span>Apache Spark</span><span class="sep">•</span>
-        <span>Deep Learning</span><span class="sep">•</span>
-        <span>SQL / NoSQL</span><span class="sep">•</span>
-        <span>Power BI</span><span class="sep">•</span>
-        <span>Polytech Lille ISIA</span><span class="sep">•</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- ABOUT -->
-  <section id="about" class="section">
-    <div class="section-inner">
-      <div class="section-header anim-fade-up">
-        <span class="section-index">01</span>
-        <span class="section-label-text" data-i18n="nav.about">À propos</span>
-      </div>
-
-      <div class="about-grid">
-        <div class="about-left">
-          <h2 class="section-big-title anim-fade-up">
-            <span data-i18n-prefix="about.prefix">Ingénieur </span><br><em class="accent" data-i18n="about.title">Data-Driven</em>
-          </h2>
-
-          <p class="anim-fade-up" data-i18n="about.p1">
-            Je suis <strong>Amine Nakrou</strong>, élève-ingénieur en 4e année à <strong>Polytech Lille</strong> (ISIA).
-            Passionné par la Data Science et le ML, je conçois des pipelines <em>end-to-end</em> du preprocessing jusqu'à la mise en production via Docker & MLflow.
-          </p>
-
-          <p class="anim-fade-up" data-i18n="about.p2">
-            Actuellement en stage chez <strong>GRDF</strong> à Saint-Denis (Data Engineering & BI).
-            Disponible pour de nouvelles opportunités à partir de <strong>septembre 2026</strong>.
-          </p>
-
-          <ul class="about-chips anim-fade-up">
-            <li data-i18n="about.chip1"><i class="fas fa-map-marker-alt"></i> Villeneuve-d'Ascq, France</li>
-            <li data-i18n="about.chip2"><i class="fas fa-graduation-cap"></i> Polytech Lille — ISIA</li>
-            <li data-i18n="about.chip3"><i class="fas fa-language"></i> FR · EN (C1) · AR · ES</li>
-            <li data-i18n="about.chip4"><i class="fas fa-briefcase"></i> Stage GRDF · 2026</li>
+    <section id="about" class="section">
+      <div class="section-inner about-grid">
+        <div>
+          <p class="section-kicker">01 / <span data-i18n="nav.about">À propos</span></p>
+          <h2 data-i18n="about.title">Profil quantitatif, actuariat et data</h2>
+          <div class="rich-text">
+            <p data-i18n="about.p1">Je suis Amine Nakrou, élève ingénieur à Polytech Lille en spécialité Informatique, Statistiques et Intelligence Artificielle. Mon parcours combine statistiques appliquées, modélisation, programmation et projets data.</p>
+            <p data-i18n="about.p2">Depuis le 1er septembre 2026, je suis chargé d'études actuarielles chez Swiss Life à Roubaix, dans le domaine de l'assurance non-vie. Mes sujets couvrent notamment le reporting actuariel, l'analyse et la fiabilisation des données, ainsi que des travaux de modélisation et de prédiction.</p>
+            <p data-i18n="about.p3">Cette expérience me permet de mobiliser conjointement actuariat, statistiques, analyse de données et programmation pour automatiser les analyses, améliorer les processus de reporting et transformer les données en informations utiles à la prise de décision. Pour la suite, je souhaite construire un CDI sur des problématiques quantitatives: actuariat, data science, risque, modélisation statistique, data engineering ou BI.</p>
+          </div>
+          <ul class="info-chips">
+            <li data-i18n="about.chipSwiss">Swiss Life · Roubaix</li>
+            <li data-i18n="about.chipSchool">Polytech Lille · ISIA</li>
+            <li>Python · SQL · R</li>
+            <li>FR · EN · AR · ES</li>
           </ul>
-
-          <div class="about-socials anim-fade-up">
-            <a href="mailto:aminenakrou635@gmail.com" class="soc-btn btn-magnetic">
-              <span class="btn-inner"><i class="fas fa-envelope"></i></span>
-            </a>
-            <a href="https://linkedin.com/in/amine-nakrou" target="_blank" rel="noopener noreferrer" class="soc-btn btn-magnetic">
-              <span class="btn-inner"><i class="fab fa-linkedin-in"></i></span>
-            </a>
-            <a href="https://github.com/aminenakrou" target="_blank" rel="noopener noreferrer" class="soc-btn btn-magnetic">
-              <span class="btn-inner"><i class="fab fa-github"></i></span>
-            </a>
-          </div>
         </div>
-
-        <div class="about-right anim-fade-up">
-          <div class="profile-wrapper">
-            <div class="profile-img-container">
-              <img src="assets/img/profile.jpg" alt="Amine Nakrou - Photo de profil" class="profile-photo" onerror="this.style.opacity='0'" />
-              <div class="profile-overlay"></div>
-            </div>
-
-            <div class="profile-deco-line line-h"></div>
-            <div class="profile-deco-line line-v"></div>
-            <div class="profile-corner c-tl"></div>
-            <div class="profile-corner c-br"></div>
-
-            <div class="open-badge">
-              <span class="badge-pulse"></span>
-              <span data-i18n="about.badge">En Stage · GRDF</span>
-            </div>
-
-            <div class="tech-float tf-1">Python</div>
-            <div class="tech-float tf-2">ML</div>
-            <div class="tech-float tf-3">Data</div>
-          </div>
+        <div class="profile-card anim-fade-up">
+          <img src="assets/img/profile.jpg" width="720" height="840" loading="lazy" decoding="async" alt="Portrait d'Amine Nakrou" />
+          <div class="profile-caption"><span data-i18n="about.badge">Actuellement chez Swiss Life</span><strong data-i18n="about.caption">Actuariat · Statistiques · Data</strong></div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- FEATURED -->
-  <section id="featured" class="section section-dark">
-    <div class="section-inner">
-      <div class="section-header anim-fade-up">
-        <span class="section-index">02</span>
-        <span class="section-label-text" data-i18n="nav.featured">Showcase</span>
+    <section id="featured" class="section section-muted">
+      <div class="section-inner">
+        <p class="section-kicker">02 / <span data-i18n="nav.featured">Projets phares</span></p>
+        <div class="section-title-row"><h2 data-i18n="featured.title">Preuves par les projets</h2><p data-i18n="featured.sub">Chaque projet met en avant le problème, les données, la méthode, les technologies et les livrables disponibles.</p></div>
+        <div class="featured-grid" id="featuredProjects"></div>
       </div>
+    </section>
 
-      <h2 class="section-big-title anim-fade-up">
-        <span data-i18n-prefix="featured.prefix">Projets </span><em class="accent" data-i18n="featured.title">Phares</em>
-      </h2>
+    <section id="skills" class="section">
+      <div class="section-inner">
+        <p class="section-kicker">03 / <span data-i18n="nav.skills">Compétences</span></p>
+        <h2 data-i18n="skills.title">Compétences organisées pour les postes actuariat et data</h2>
+        <div class="skills-grid" id="skillsGrid"></div>
+      </div>
+    </section>
 
-      <!-- FEAT 1 -->
-      <div class="feat-card anim-fade-up">
-        <div class="feat-visual">
-          <div class="feat-screen">
-            <div class="feat-screen-bar">
-              <span class="dot-r"></span>
-              <span class="dot-y"></span>
-              <span class="dot-g"></span>
-              <span class="fsb-url">localhost:8501 — Churn Prediction Dashboard</span>
-            </div>
+    <section id="projects" class="section section-muted">
+      <div class="section-inner">
+        <p class="section-kicker">04 / <span data-i18n="projects.kicker">Autres projets</span></p>
+        <div class="section-title-row"><h2 data-i18n="projects.title">Portfolio technique</h2><p data-i18n="projects.sub">Une sélection plus large de projets data, statistiques, algorithmique et web. Les liens pointent vers les ressources existantes.</p></div>
+        <div class="projects-list" id="otherProjects"></div>
+      </div>
+    </section>
 
-            <div class="feat-screen-body">
-              <div class="fsb-sidebar">
-                <div class="fsb-logo">ML<span>.</span></div>
-                <div class="fsb-menu">
-                  <div class="fsb-mi active"><i class="fas fa-chart-line"></i></div>
-                  <div class="fsb-mi"><i class="fas fa-table"></i></div>
-                  <div class="fsb-mi"><i class="fas fa-cogs"></i></div>
-                  <div class="fsb-mi"><i class="fas fa-bell"></i></div>
-                </div>
-              </div>
-
-              <div class="fsb-main">
-                <div class="fsb-kpis">
-                  <div class="fsb-kpi">
-                    <span class="kpi-val accent">0.91</span>
-                    <span class="kpi-lbl">AUC Score</span>
-                    <span class="kpi-badge up"><i class="fas fa-arrow-up"></i> 12%</span>
-                  </div>
-                  <div class="fsb-kpi">
-                    <span class="kpi-val">87%</span>
-                    <span class="kpi-lbl">Accuracy</span>
-                    <span class="kpi-badge up"><i class="fas fa-arrow-up"></i> 5%</span>
-                  </div>
-                  <div class="fsb-kpi">
-                    <span class="kpi-val">2.3k</span>
-                    <span class="kpi-lbl">Samples</span>
-                    <span class="kpi-badge neutral">—</span>
-                  </div>
-                </div>
-
-                <div class="fsb-chart-box">
-                  <div class="fsb-chart-title">ROC Curve — XGBoost vs Random Forest</div>
-                  <div class="fsb-svg-wrap">
-                    <svg viewBox="0 0 200 80" preserveAspectRatio="none">
-                      <defs>
-                        <linearGradient id="ga" x1="0" y1="0" x2="0" y2="1">
-                          <stop offset="0%" stop-color="#c8f135" stop-opacity="0.3"></stop>
-                          <stop offset="100%" stop-color="#c8f135" stop-opacity="0"></stop>
-                        </linearGradient>
-                      </defs>
-
-                      <path d="M0,80 C20,60 40,35 60,18 S110,5 160,3 S185,2 200,1 L200,80Z" fill="url(#ga)"></path>
-                      <path d="M0,80 C20,60 40,35 60,18 S110,5 160,3 S185,2 200,1" fill="none" stroke="#c8f135" stroke-width="1.5"></path>
-
-                      <path d="M0,80 C30,65 60,45 90,28 S145,14 180,10 S195,9 200,8 L200,80Z" fill="rgba(255,255,255,0.04)"></path>
-                      <path d="M0,80 C30,65 60,45 90,28 S145,14 180,10 S195,9 200,8" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="1" stroke-dasharray="3,2"></path>
-
-                      <line x1="0" y1="80" x2="200" y2="0" stroke="rgba(255,255,255,0.08)" stroke-width="0.8" stroke-dasharray="4,3"></line>
-                    </svg>
-                  </div>
-
-                  <div class="fsb-legend">
-                    <span class="leg accent"><span class="leg-line accent-line-l"></span> XGBoost 0.91</span>
-                    <span class="leg muted"><span class="leg-line muted-line"></span> Random Forest</span>
-                  </div>
-                </div>
-
-                <div class="fsb-bars">
-                  <div class="fsb-bar-row">
-                    <span class="bar-lbl">Precision</span>
-                    <div class="bar-track"><div class="bar-fill" style="width: 89%;"></div></div>
-                    <span class="bar-val">89%</span>
-                  </div>
-                  <div class="fsb-bar-row">
-                    <span class="bar-lbl">Recall</span>
-                    <div class="bar-track"><div class="bar-fill" style="width: 83%;"></div></div>
-                    <span class="bar-val">83%</span>
-                  </div>
-                  <div class="fsb-bar-row">
-                    <span class="bar-lbl">F1-Score</span>
-                    <div class="bar-track"><div class="bar-fill accent-fill" style="width: 91%;"></div></div>
-                    <span class="bar-val accent">91%</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="feat-glow"></div>
-        </div>
-
-        <div class="feat-info">
-          <span class="feat-num">01</span>
-          <h3 data-i18n="proj1.title">Customer Churn Prediction</h3>
-          <p data-i18n="proj1.desc">
-            Pipeline ML end-to-end complet. Feature engineering sur données déséquilibrées, comparaison Random Forest vs XGBoost.
-            Dashboard interactif Streamlit, API Flask sous Docker, tracking MLflow.
-          </p>
-
-          <div class="feat-tags">
-            <span>Python</span>
-            <span>XGBoost</span>
-            <span>Streamlit</span>
-            <span>Flask</span>
-            <span>Docker</span>
-            <span>MLflow</span>
-          </div>
-
-          <div class="feat-metric">
-            <span class="fm-val">0.91</span>
-            <span class="fm-lbl">AUC Score</span>
-          </div>
-
-          <a href="https://github.com/aminenakrou?tab=repositories" target="_blank" rel="noopener noreferrer" class="btn-magnetic btn-primary" style="display:inline-flex; margin-top:1.5rem;">
-            <span class="btn-inner" data-i18n="feat.github">Voir sur GitHub <i class="fab fa-github"></i></span>
-          </a>
+    <section id="case-studies" class="section">
+      <div class="section-inner">
+        <p class="section-kicker">05 / Case studies</p>
+        <div class="section-title-row"><h2 data-i18n="case.title">Structure de case studies</h2><p data-i18n="case.sub">Deux pages détaillées sont préparées pour les projets les mieux documentés actuellement. Les sections sans information vérifiée restent volontairement neutres.</p></div>
+        <div class="case-grid">
+          <a class="case-card" href="case-studies/churn.html"><span>01</span><strong data-project-title="churn">Customer Churn Prediction</strong><p data-i18n="case.churn">Pipeline ML, données déséquilibrées, modèles comparés, Streamlit, Flask, Docker et MLflow.</p></a>
+          <a class="case-card" href="case-studies/credit-scoring.html"><span>02</span><strong data-project-title="credit">Scoring de Crédit - ROC & SMOTE</strong><p data-i18n="case.credit">Projet statistique autour du risque crédit, du déséquilibre de classes, de SMOTE et de la courbe ROC.</p></a>
         </div>
       </div>
+    </section>
 
-      <!-- FEAT 2 -->
-      <div class="feat-card feat-reverse anim-fade-up">
-        <div class="feat-visual">
-          <div class="feat-screen">
-            <div class="feat-screen-bar">
-              <span class="dot-r"></span>
-              <span class="dot-y"></span>
-              <span class="dot-g"></span>
-              <span class="fsb-url">fifa_analysis.ipynb — Jupyter Notebook</span>
-            </div>
+    <section id="experience" class="section section-muted">
+      <div class="section-inner">
+        <p class="section-kicker">06 / <span data-i18n="nav.experience">Parcours</span></p>
+        <h2 data-i18n="experience.title">Expérience et formation</h2>
+        <div class="timeline" id="timeline"></div>
+      </div>
+    </section>
 
-            <div class="nb-body">
-              <div class="nb-cell">
-                <span class="nb-in">In [1]</span>
-                <div class="nb-code">
-                  <span class="ck">import</span> pandas <span class="ck">as</span> pd<br>
-                  <span class="ck">import</span> matplotlib.pyplot <span class="ck">as</span> plt<br>
-                  <span class="ck">import</span> seaborn <span class="ck">as</span> sns<br>
-                  <span class="ck">from</span> sklearn.tree <span class="ck">import</span> DecisionTreeClassifier
-                </div>
-              </div>
-
-              <div class="nb-cell">
-                <span class="nb-in">In [3]</span>
-                <div class="nb-code">
-                  <span class="cv">df</span> = pd.read_csv(<span class="cs">'fifa2024.csv'</span>)<br>
-                  <span class="cc"># Shape: (18944, 89) — FIFA 2016 to 2024</span><br>
-                  df.head()
-                </div>
-              </div>
-
-              <div class="nb-vis">
-                <div class="nb-vis-title">Top 5 Players Overall Rating Distribution</div>
-                <div class="nb-chart">
-                  <div class="nb-bar-row">
-                    <span>Mbappé</span>
-                    <div class="nb-track"><div class="nb-fill" style="width: 96%"><span>96</span></div></div>
-                  </div>
-                  <div class="nb-bar-row">
-                    <span>Vinicius</span>
-                    <div class="nb-track"><div class="nb-fill" style="width: 92%"><span>92</span></div></div>
-                  </div>
-                  <div class="nb-bar-row">
-                    <span>Haaland</span>
-                    <div class="nb-track"><div class="nb-fill" style="width: 91%"><span>91</span></div></div>
-                  </div>
-                  <div class="nb-bar-row">
-                    <span>Bellingham</span>
-                    <div class="nb-track"><div class="nb-fill" style="width: 90%"><span>90</span></div></div>
-                  </div>
-                  <div class="nb-bar-row">
-                    <span>Rodri</span>
-                    <div class="nb-track"><div class="nb-fill" style="width: 89%"><span>89</span></div></div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="nb-cell">
-                <span class="nb-in">Out [7]</span>
-                <div class="nb-out">Accuracy = 0.847 · Best features: wage_eur, age, potential</div>
-              </div>
-            </div>
-          </div>
-          <div class="feat-glow glow-blue"></div>
+    <section id="contact" class="section contact-section">
+      <div class="section-inner contact-grid">
+        <div>
+          <p class="section-kicker">07 / <span data-i18n="nav.contact">Contact</span></p>
+          <h2 data-i18n="contact.title">Vous recrutez sur des sujets actuariat, data ou statistiques ?</h2>
+          <p data-i18n="contact.sub">Échangeons autour d'opportunités CDI pour la suite de mon expérience actuelle chez Swiss Life.</p>
+          <a class="btn btn-primary" href="assets/cv/cv_amine_nakrou_fr.pdf" id="cvLinkContact" download data-i18n="contact.cv">Télécharger le CV</a>
         </div>
-
-        <div class="feat-info">
-          <span class="feat-num">02</span>
-          <h3 data-i18n="proj2.title">EA Sports FC — Analyse FIFA</h3>
-          <p data-i18n="proj2.desc">
-            Exploration d'une base FIFA 2016–2024. Analyse de corrélation salaire/performance,
-            détection d'outliers, portraits statistiques des 10 meilleurs joueurs. Classification supervisée.
-          </p>
-
-          <div class="feat-tags">
-            <span>Python</span>
-            <span>Pandas</span>
-            <span>Matplotlib</span>
-            <span>Seaborn</span>
-            <span>Scikit-learn</span>
-          </div>
-
-          <a href="https://github.com/aminenakrou?tab=repositories" target="_blank" rel="noopener noreferrer" class="btn-magnetic btn-primary" style="display:inline-flex; margin-top:1.5rem;">
-            <span class="btn-inner" data-i18n="feat.github">Voir sur GitHub <i class="fab fa-github"></i></span>
-          </a>
+        <div class="contact-links">
+          <a href="mailto:aminenakrou635@gmail.com"><span data-i18n="contact.emailLabel">Email</span><strong>aminenakrou635@gmail.com</strong></a>
+          <a href="https://linkedin.com/in/amine-nakrou" target="_blank" rel="noopener noreferrer"><span>LinkedIn</span><strong>linkedin.com/in/amine-nakrou</strong></a>
+          <a href="https://github.com/aminenakrou" target="_blank" rel="noopener noreferrer"><span>GitHub</span><strong>github.com/aminenakrou</strong></a>
+          <a href="assets/cv/cv_amine_nakrou_fr.pdf" id="cvLinkList" download><span>CV</span><strong data-i18n="contact.cvAlt">Version PDF selon la langue</strong></a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <!-- MARQUEE 2 -->
-  <div class="marquee-section marquee-reverse" aria-hidden="true">
-    <div class="marquee-track">
-      <div class="marquee-content">
-        <span>Churn Prediction</span><span class="sep">•</span>
-        <span>AUC 0.91</span><span class="sep">•</span>
-        <span>FIFA Analysis</span><span class="sep">•</span>
-        <span>End-to-End ML</span><span class="sep">•</span>
-        <span>Flask API</span><span class="sep">•</span>
-        <span>Stage GRDF · Data Engineering</span><span class="sep">•</span>
-        <span>RMarkdown</span><span class="sep">•</span>
-        <span>Optimisation PL</span><span class="sep">•</span>
-        <span>Polytech Lille ISIA</span><span class="sep">•</span>
-        <span>Prépa MPSI / MP</span><span class="sep">•</span>
-        <span>Bac Mention TB</span><span class="sep">•</span>
-      </div>
-
-      <div class="marquee-content" aria-hidden="true">
-        <span>Churn Prediction</span><span class="sep">•</span>
-        <span>AUC 0.91</span><span class="sep">•</span>
-        <span>FIFA Analysis</span><span class="sep">•</span>
-        <span>End-to-End ML</span><span class="sep">•</span>
-        <span>Flask API</span><span class="sep">•</span>
-        <span>Stage GRDF · Data Engineering</span><span class="sep">•</span>
-        <span>RMarkdown</span><span class="sep">•</span>
-        <span>Optimisation PL</span><span class="sep">•</span>
-        <span>Polytech Lille ISIA</span><span class="sep">•</span>
-        <span>Prépa MPSI / MP</span><span class="sep">•</span>
-        <span>Bac Mention TB</span><span class="sep">•</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- SKILLS -->
-  <section id="skills" class="section">
-    <div class="section-inner">
-      <div class="section-header anim-fade-up">
-        <span class="section-index">03</span>
-        <span class="section-label-text" data-i18n="nav.skills">Compétences</span>
-      </div>
-
-      <h2 class="section-big-title anim-fade-up">
-        <span data-i18n-prefix="skills.prefix">Mon </span><em class="accent" data-i18n="skills.title">Stack</em>
-      </h2>
-
-      <div class="skills-container">
-        <div class="skill-row anim-fade-up">
-          <div class="skill-row-label">
-            <span class="sr-num">01</span>
-            <h3 data-i18n="skills.s1">Langages</h3>
-          </div>
-          <div class="skill-pills">
-            <span class="pill">Python</span>
-            <span class="pill">R</span>
-            <span class="pill">Java</span>
-            <span class="pill">C / C++</span>
-            <span class="pill">SQL</span>
-            <span class="pill">JavaScript</span>
-            <span class="pill">HTML / CSS</span>
-            <span class="pill">PHP</span>
-          </div>
-        </div>
-
-        <div class="skill-row anim-fade-up">
-          <div class="skill-row-label">
-            <span class="sr-num">02</span>
-            <h3 data-i18n="skills.s2">ML / Data</h3>
-          </div>
-          <div class="skill-pills">
-            <span class="pill ap">Scikit-learn</span>
-            <span class="pill ap">XGBoost</span>
-            <span class="pill ap">PyTorch</span>
-            <span class="pill ap">Pandas</span>
-            <span class="pill ap">NumPy</span>
-            <span class="pill ap">Matplotlib</span>
-            <span class="pill ap">Streamlit</span>
-            <span class="pill ap">MLflow</span>
-          </div>
-        </div>
-
-        <div class="skill-row anim-fade-up">
-          <div class="skill-row-label">
-            <span class="sr-num">03</span>
-            <h3 data-i18n="skills.s3">Big Data & SI</h3>
-          </div>
-          <div class="skill-pills">
-            <span class="pill">Hadoop</span>
-            <span class="pill">Apache Spark</span>
-            <span class="pill">Kafka</span>
-            <span class="pill">Architecture SI</span>
-            <span class="pill">Pipelines données</span>
-          </div>
-        </div>
-
-        <div class="skill-row anim-fade-up">
-          <div class="skill-row-label">
-            <span class="sr-num">04</span>
-            <h3 data-i18n="skills.s4">Databases</h3>
-          </div>
-          <div class="skill-pills">
-            <span class="pill">MySQL</span>
-            <span class="pill">PostgreSQL</span>
-            <span class="pill">MongoDB</span>
-            <span class="pill">NoSQL</span>
-          </div>
-        </div>
-
-        <div class="skill-row anim-fade-up">
-          <div class="skill-row-label">
-            <span class="sr-num">05</span>
-            <h3 data-i18n="skills.s5">Outils & Méthodes</h3>
-          </div>
-          <div class="skill-pills">
-            <span class="pill">Docker</span>
-            <span class="pill">Git / GitHub</span>
-            <span class="pill">Power BI</span>
-            <span class="pill">Tableau</span>
-            <span class="pill">LaTeX</span>
-            <span class="pill">RMarkdown</span>
-            <span class="pill">Agile / Scrum</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROJECTS -->
-  <section id="projects" class="section">
-    <div class="section-inner">
-      <div class="section-header anim-fade-up">
-        <span class="section-index">04</span>
-        <span class="section-label-text" data-i18n="nav.projects">Projets</span>
-      </div>
-
-      <h2 class="section-big-title anim-fade-up">
-        <span data-i18n-prefix="projects.prefix">Mes </span><em class="accent" data-i18n="projects.title">Réalisations</em>
-      </h2>
-
-      <div class="projects-list">
-
-        <div class="project-item anim-fade-up">
-          <div class="pi-left"><span class="pi-num">01</span></div>
-          <div class="pi-body">
-            <div class="pi-header">
-              <h3 class="pi-title" data-i18n="proj1.title">Customer Churn Prediction</h3>
-              <div class="pi-links">
-                <a href="https://github.com/aminenakrou/Projet-de-prediction-du-churn-client" target="_blank" rel="noopener noreferrer" class="pi-link btn-magnetic">
-                  <span class="btn-inner"><i class="fab fa-github"></i></span>
-                </a>
-                <a href="https://aminenakrou.github.io/Projet-de-prediction-du-churn-client/" target="_blank" rel="noopener noreferrer" class="pi-link btn-magnetic">
-                  <span class="btn-inner"><i class="fas fa-arrow-up-right-from-square"></i></span>
-                </a>
-              </div>
-            </div>
-            <p class="pi-desc" data-i18n="proj1.long">
-              J'ai construit un pipeline ML complet pour prédire l'attrition clients : feature engineering sur données déséquilibrées,
-              comparaison XGBoost vs Random Forest (AUC 0.91). Le tout accessible via un dashboard Streamlit et une API Flask containerisée avec Docker, tracking MLflow.
-            </p>
-            <div class="pi-footer">
-              <div class="pi-tags">
-                <span>Python</span><span>XGBoost</span><span>Streamlit</span><span>Docker</span><span>MLflow</span>
-              </div>
-              <div class="pi-score">
-                <span class="score-lbl">AUC</span>
-                <span class="score-val">0.91</span>
-              </div>
-            </div>
-          </div>
-          <div class="pi-hover-bg"></div>
-        </div>
-
-        <div class="project-item anim-fade-up">
-          <div class="pi-left"><span class="pi-num">02</span></div>
-          <div class="pi-body">
-            <div class="pi-header">
-              <h3 class="pi-title" data-i18n="proj2.title">EA Sports FC — Analyse FIFA</h3>
-              <div class="pi-links">
-                <a href="https://github.com/aminenakrou?tab=repositories" target="_blank" rel="noopener noreferrer" class="pi-link btn-magnetic">
-                  <span class="btn-inner"><i class="fab fa-github"></i></span>
-                </a>
-              </div>
-            </div>
-            <p class="pi-desc" data-i18n="proj2.long">
-              Une plongée dans 18 000+ profils de joueurs sur 8 saisons FIFA (2016–2024). Analyse des liens salaire/performance,
-              chasse aux outliers, portrait statistique des 10 meilleurs. En bonus : un modèle de classification pour prédire la catégorie d'un joueur.
-            </p>
-            <div class="pi-footer">
-              <div class="pi-tags">
-                <span>Python</span><span>Pandas</span><span>Matplotlib</span><span>Seaborn</span><span>Scikit-learn</span>
-              </div>
-            </div>
-          </div>
-          <div class="pi-hover-bg"></div>
-        </div>
-
-        <div class="project-item anim-fade-up">
-          <div class="pi-left"><span class="pi-num">03</span></div>
-          <div class="pi-body">
-            <div class="pi-header">
-              <h3 class="pi-title" data-i18n="proj5.title">Suicide Rates Dashboard — USA</h3>
-              <div class="pi-links">
-                <a href="https://github.com/aminenakrou/Projet_Dashboard_Interactif" target="_blank" rel="noopener noreferrer" class="pi-link btn-magnetic">
-                  <span class="btn-inner"><i class="fab fa-github"></i></span>
-                </a>
-                <a href="https://aminenakrou.github.io/Projet_Dashboard_Interactif/" target="_blank" rel="noopener noreferrer" class="pi-link btn-magnetic">
-                  <span class="btn-inner"><i class="fas fa-arrow-up-right-from-square"></i></span>
-                </a>
-              </div>
-            </div>
-            <p class="pi-desc" data-i18n="proj5.long">
-              Dix-huit ans de données sur les taux de suicide aux États-Unis (2000–2018), visualisées dans un dashboard interactif JavaScript.
-              L'outil permet d'explorer les tendances par état, genre et tranche d'âge — pour donner du sens aux chiffres derrière les statistiques.
-            </p>
-            <div class="pi-footer">
-              <div class="pi-tags">
-                <span>JavaScript</span><span>HTML/CSS</span><span>Data Visualisation</span>
-              </div>
-            </div>
-          </div>
-          <div class="pi-hover-bg"></div>
-        </div>
-
-        <div class="project-item anim-fade-up">
-          <div class="pi-left"><span class="pi-num">04</span></div>
-          <div class="pi-body">
-            <div class="pi-header">
-              <h3 class="pi-title" data-i18n="proj6.title">Promenade Aléatoire du Cavalier</h3>
-              <div class="pi-links">
-                <a href="https://github.com/aminenakrou/Etude_Markovienne_de_la_promenade_du_cavalier_sur_un_echiquier" target="_blank" rel="noopener noreferrer" class="pi-link btn-magnetic">
-                  <span class="btn-inner"><i class="fab fa-github"></i></span>
-                </a>
-                <a href="https://aminenakrou.github.io/Etude_Markovienne_de_la_promenade_du_cavalier_sur_un_echiquier/" target="_blank" rel="noopener noreferrer" class="pi-link btn-magnetic">
-                  <span class="btn-inner"><i class="fas fa-arrow-up-right-from-square"></i></span>
-                </a>
-              </div>
-            </div>
-            <p class="pi-desc" data-i18n="proj6.long">
-              Un cavalier sur un échiquier infini qui se déplace au hasard — reviendra-t-il à son point de départ ?
-              Via les chaînes de Markov et des simulations Python, j'ai modélisé ce problème et rédigé un rapport complet en LaTeX sur ses propriétés mathématiques.
-            </p>
-            <div class="pi-footer">
-              <div class="pi-tags">
-                <span>Python</span><span>Chaînes de Markov</span><span>LaTeX</span><span>Simulation</span>
-              </div>
-            </div>
-          </div>
-          <div class="pi-hover-bg"></div>
-        </div>
-
-        <div class="project-item anim-fade-up">
-          <div class="pi-left"><span class="pi-num">05</span></div>
-          <div class="pi-body">
-            <div class="pi-header">
-              <h3 class="pi-title" data-i18n="proj7.title">PageRank — Wikispeedia</h3>
-              <div class="pi-links">
-                <a href="https://github.com/aminenakrou/Big_Data_Project-PageRank_Analysis_on_Wikispeedia_Dataset" target="_blank" rel="noopener noreferrer" class="pi-link btn-magnetic">
-                  <span class="btn-inner"><i class="fab fa-github"></i></span>
-                </a>
-                <a href="https://aminenakrou.github.io/Big_Data_Project-PageRank_Analysis_on_Wikispeedia_Dataset/" target="_blank" rel="noopener noreferrer" class="pi-link btn-magnetic">
-                  <span class="btn-inner"><i class="fas fa-arrow-up-right-from-square"></i></span>
-                </a>
-              </div>
-            </div>
-            <p class="pi-desc" data-i18n="proj7.long">
-              Vous connaissez l'algorithme qui propulse Google ? Je l'ai réimplémenté et appliqué à Wikispeedia, un jeu basé sur la structure des liens Wikipédia.
-              Deux versions : standard et personnalisée — pour classer l'importance des articles selon la topologie du réseau.
-            </p>
-            <div class="pi-footer">
-              <div class="pi-tags">
-                <span>Python</span><span>PageRank</span><span>Graphes</span><span>Wikispeedia</span>
-              </div>
-            </div>
-          </div>
-          <div class="pi-hover-bg"></div>
-        </div>
-
-        <div class="project-item anim-fade-up">
-          <div class="pi-left"><span class="pi-num">06</span></div>
-          <div class="pi-body">
-            <div class="pi-header">
-              <h3 class="pi-title" data-i18n="proj8.title">Algorithme de Dinic — Flot Maximum</h3>
-              <div class="pi-links">
-                <a href="https://github.com/aminenakrou/Dinic-Algorithme_de_flot_maximum" target="_blank" rel="noopener noreferrer" class="pi-link btn-magnetic">
-                  <span class="btn-inner"><i class="fab fa-github"></i></span>
-                </a>
-                <a href="https://aminenakrou.github.io/Dinic-Algorithme_de_flot_maximum/" target="_blank" rel="noopener noreferrer" class="pi-link btn-magnetic">
-                  <span class="btn-inner"><i class="fas fa-arrow-up-right-from-square"></i></span>
-                </a>
-              </div>
-            </div>
-            <p class="pi-desc" data-i18n="proj8.long">
-              Implémentation en C de l'algorithme de Dinic pour calculer le flot maximum dans un réseau orienté (format DIMACS).
-              Un problème fondamental en théorie des graphes, aux applications allant de la logistique à la distribution d'énergie.
-            </p>
-            <div class="pi-footer">
-              <div class="pi-tags">
-                <span>C</span><span>Algorithmique</span><span>Théorie des Graphes</span><span>DIMACS</span>
-              </div>
-            </div>
-          </div>
-          <div class="pi-hover-bg"></div>
-        </div>
-
-        <div class="project-item anim-fade-up">
-  <div class="pi-left"><span class="pi-num">07</span></div>
-  <div class="pi-body">
-    <div class="pi-header">
-      <h3 class="pi-title" data-i18n="proj3.title">Scoring de Crédit — Courbe ROC & SMOTE</h3>
-      <div class="pi-links">
-        <a href="https://aminenakrou.github.io/Projet-Statistiques/" target="_blank" rel="noopener noreferrer" class="pi-link btn-magnetic" aria-label="Voir le site">
-          <span class="btn-inner"><i class="fas fa-external-link-alt"></i></span>
-        </a>
-        <a href="https://github.com/aminenakrou/Projet-Statistiques" target="_blank" rel="noopener noreferrer" class="pi-link btn-magnetic" aria-label="Code source">
-          <span class="btn-inner"><i class="fab fa-github"></i></span>
-        </a>
-      </div>
-    </div>
-    <p class="pi-desc" data-i18n="proj3.long">
-      Comment détecter un client à risque avant d'accorder un crédit ? Sur des données financières réelles (86.7% d'impayés),
-      j'ai comparé Régression Logistique, Arbre de Décision et Forêt Aléatoire — avec rééquilibrage SMOTE pour corriger le déséquilibre des classes.
-      Évaluation complète via courbe ROC, AUC et seuil optimal de Youden, présentés dans un rapport RMarkdown interactif.
-    </p>
-    <div class="pi-footer">
-      <div class="pi-tags">
-        <span>R</span><span>RMarkdown</span><span>Régression Logistique</span><span>Random Forest</span><span>SMOTE</span><span>Courbe ROC</span>
-      </div>
-    </div>
-  </div>
-  <div class="pi-hover-bg"></div>
-</div>
-
-
-        <div class="project-item anim-fade-up">
-          <div class="pi-left"><span class="pi-num">08</span></div>
-          <div class="pi-body">
-            <div class="pi-header">
-              <h3 class="pi-title" data-i18n="proj9.title">Flood It — Jeu de Puzzle</h3>
-              <div class="pi-links">
-                <a href="https://github.com/aminenakrou/Flood_It_Game" target="_blank" rel="noopener noreferrer" class="pi-link btn-magnetic">
-                  <span class="btn-inner"><i class="fab fa-github"></i></span>
-                </a>
-                <a href="https://aminenakrou.github.io/Flood_It_Game/" target="_blank" rel="noopener noreferrer" class="pi-link btn-magnetic">
-                  <span class="btn-inner"><i class="fas fa-arrow-up-right-from-square"></i></span>
-                </a>
-              </div>
-            </div>
-            <p class="pi-desc" data-i18n="proj9.long">
-              Un jeu de puzzle développé de zéro en HTML/CSS/JavaScript. Le principe : remplir toute la grille d'une seule couleur
-              en partant du coin supérieur gauche, en un minimum de coups. Simple à expliquer, mais la stratégie optimale est un vrai casse-tête.
-            </p>
-            <div class="pi-footer">
-              <div class="pi-tags">
-                <span>JavaScript</span><span>HTML/CSS</span><span>Game Dev</span>
-              </div>
-            </div>
-          </div>
-          <div class="pi-hover-bg"></div>
-        </div>
-
-        <div class="project-item anim-fade-up">
-          <div class="pi-left"><span class="pi-num">09</span></div>
-          <div class="pi-body">
-            <div class="pi-header">
-              <h3 class="pi-title" data-i18n="proj10.title">CKOALA — Moteur de Recherche</h3>
-              <div class="pi-links">
-                <a href="https://github.com/aminenakrou/CKOALA-Moteur_de_recherche_dans_des_arbres_de_typologies" target="_blank" rel="noopener noreferrer" class="pi-link btn-magnetic">
-                  <span class="btn-inner"><i class="fab fa-github"></i></span>
-                </a>
-                <a href="https://aminenakrou.github.io/CKOALA-Moteur_de_recherche_dans_des_arbres_de_typologies/" target="_blank" rel="noopener noreferrer" class="pi-link btn-magnetic">
-                  <span class="btn-inner"><i class="fas fa-arrow-up-right-from-square"></i></span>
-                </a>
-              </div>
-            </div>
-            <p class="pi-desc" data-i18n="proj10.long">
-              Un moteur de recherche Java conçu pour explorer et analyser des arbres de typologies.
-              CKOALA parcourt des structures hiérarchiques complexes et permet d'en extraire de l'information de façon efficace.
-            </p>
-            <div class="pi-footer">
-              <div class="pi-tags">
-                <span>Java</span><span>Arbres</span><span>Moteur de Recherche</span>
-              </div>
-            </div>
-          </div>
-          <div class="pi-hover-bg"></div>
-        </div>
-
-        <div class="project-item anim-fade-up">
-          <div class="pi-left"><span class="pi-num">10</span></div>
-          <div class="pi-body">
-            <div class="pi-header">
-              <h3 class="pi-title" data-i18n="proj4.title">Optimisation de la Production</h3>
-              <div class="pi-links">
-                <a href="https://github.com/aminenakrou?tab=repositories" target="_blank" rel="noopener noreferrer" class="pi-link btn-magnetic">
-                  <span class="btn-inner"><i class="fab fa-github"></i></span>
-                </a>
-              </div>
-            </div>
-            <p class="pi-desc" data-i18n="proj4.long">
-              Une société de parfums cherche à maximiser ses profits avec des ressources limitées — un classique de la recherche opérationnelle.
-              J'ai modélisé le problème en programmation linéaire, résolu avec Lindo, puis analysé la robustesse de la solution optimale.
-            </p>
-            <div class="pi-footer">
-              <div class="pi-tags">
-                <span>Prog. Linéaire</span><span>Lindo</span><span>Optimisation</span><span>Recherche Opérationnelle</span>
-              </div>
-            </div>
-          </div>
-          <div class="pi-hover-bg"></div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- EXPERIENCE -->
-  <section id="experience" class="section">
-    <div class="section-inner">
-      <div class="section-header anim-fade-up">
-        <span class="section-index">05</span>
-        <span class="section-label-text" data-i18n="nav.parcours">Parcours</span>
-      </div>
-
-      <h2 class="section-big-title anim-fade-up">
-        <em class="accent" data-i18n="exp.title">Expérience & Formation</em>
-      </h2>
-
-      <div class="journey">
-        <div class="journey-item anim-fade-up">
-          <div class="ji-tl">
-            <div class="ji-dot active"></div>
-            <div class="ji-line"></div>
-          </div>
-
-          <div class="ji-card">
-            <div class="ji-top">
-              <div class="ji-meta">
-                <span class="ji-badge xp-badge" data-i18n="xp.badge">Expérience</span>
-                <span class="ji-date">Mai 2026 · En cours · Saint-Denis, France</span>
-              </div>
-              <div class="ji-arrow"><i class="fas fa-arrow-up-right-from-square"></i></div>
-            </div>
-
-            <h3 class="ji-title" data-i18n="xp.t2">Stagiaire Data Engineering & BI</h3>
-            <h4 class="ji-company">GRDF — Gaz Réseau Distribution France</h4>
-
-            <ul class="ji-points">
-              <li data-i18n="xp.l3">
-                Data Engineering et Business Intelligence au sein de GRDF,
-                gestionnaire du réseau de distribution de gaz naturel en France.
-              </li>
-              <li data-i18n="xp.l4">
-                Développement de pipelines de données, tableaux de bord Power BI
-                et analyses pour le pilotage métier.
-              </li>
-            </ul>
-
-            <div class="ji-tags">
-              <span>Data Engineering</span>
-              <span>Power BI</span>
-              <span>SQL</span>
-              <span>Python</span>
-              <span>Business Intelligence</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="journey-item anim-fade-up">
-          <div class="ji-tl">
-            <div class="ji-dot"></div>
-            <div class="ji-line"></div>
-          </div>
-
-          <div class="ji-card">
-            <div class="ji-top">
-              <div class="ji-meta">
-                <span class="ji-badge xp-badge" data-i18n="xp.badge">Expérience</span>
-                <span class="ji-date">Été 2025 · 2 mois · Maroc</span>
-              </div>
-              <div class="ji-arrow"><i class="fas fa-arrow-up-right-from-square"></i></div>
-            </div>
-
-            <h3 class="ji-title" data-i18n="xp.t1">Stagiaire Développeur Data & Web</h3>
-            <h4 class="ji-company">HAMATEL S.A.R.L</h4>
-
-            <ul class="ji-points">
-              <li data-i18n="xp.l1">
-                Conception d'une base de données relationnelle (modélisation, normalisation, SQL) et développement
-                d'un site web interne Flask pour la gestion et visualisation des données.
-              </li>
-              <li data-i18n="xp.l2">
-                Analyses exploratoires et préparation des données pour la production de rapports décisionnels.
-              </li>
-            </ul>
-
-            <div class="ji-tags">
-              <span>Flask</span>
-              <span>SQL</span>
-              <span>Python</span>
-              <span>Data Analysis</span>
-              <span>HTML/CSS</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="journey-item anim-fade-up">
-          <div class="ji-tl">
-            <div class="ji-dot"></div>
-            <div class="ji-line"></div>
-          </div>
-
-          <div class="ji-card">
-            <div class="ji-top">
-              <div class="ji-meta">
-                <span class="ji-badge edu-badge" data-i18n="edu.badge">Formation</span>
-                <span class="ji-date">2024 — 2027 · Lille, France</span>
-              </div>
-            </div>
-
-            <h3 class="ji-title" data-i18n="edu.t1">Cycle Ingénieur ISIA</h3>
-            <h4 class="ji-company">Polytech Lille</h4>
-            <p class="ji-desc" data-i18n="edu.d1">
-              ML, Data mining, SQL/NoSQL, Modèles markoviens, Statistiques avancées, Algorithmique,
-              Big Data (Spark, Hadoop), Architecture SI, Gestion de projets (Agile/Scrum).
-            </p>
-          </div>
-        </div>
-
-        <div class="journey-item anim-fade-up">
-          <div class="ji-tl">
-            <div class="ji-dot"></div>
-            <div class="ji-line"></div>
-          </div>
-
-          <div class="ji-card">
-            <div class="ji-top">
-              <div class="ji-meta">
-                <span class="ji-badge edu-badge" data-i18n="edu.badge">Formation</span>
-                <span class="ji-date">2022 — 2024 · Fès, Maroc</span>
-              </div>
-            </div>
-
-            <h3 class="ji-title" data-i18n="edu.t2">Classes Préparatoires MPSI / MP</h3>
-            <h4 class="ji-company">Lycée Moulay Idriss Fès</h4>
-            <p class="ji-desc" data-i18n="edu.d2">
-              Algèbre linéaire, Analyse, Algorithmique, Python, Statistiques.
-            </p>
-          </div>
-        </div>
-
-        <div class="journey-item anim-fade-up">
-          <div class="ji-tl">
-            <div class="ji-dot"></div>
-          </div>
-
-          <div class="ji-card">
-            <div class="ji-top">
-              <div class="ji-meta">
-                <span class="ji-badge edu-badge" data-i18n="edu.badge">Formation</span>
-                <span class="ji-date">2022 · Taounate, Maroc</span>
-              </div>
-            </div>
-
-            <h3 class="ji-title" data-i18n="edu.t3">Baccalauréat Sciences Mathématiques</h3>
-            <h4 class="ji-company">
-              <span data-i18n="edu.mention">Mention Très Bien ✦</span>
-            </h4>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="section">
-    <div class="section-inner">
-      <div class="section-header anim-fade-up">
-        <span class="section-index">06</span>
-        <span class="section-label-text" data-i18n="nav.contact">Contact</span>
-      </div>
-
-      <div class="contact-wrap">
-        <div class="contact-left">
-          <h2 class="contact-big anim-fade-up" data-i18n="contact.title">
-            Travaillons<br>Ensemble
-          </h2>
-
-          <p class="contact-sub anim-fade-up" data-i18n="contact.sub">
-            Actuellement en stage chez <strong>GRDF</strong> — Data Engineering & BI.<br>
-            Saint-Denis, Île-de-France.<br>
-            N'hésitez pas à me contacter !
-          </p>
-
-          <a href="assets/cv/cv_amine_nakrou_fr.pdf" download id="cvLinkContact" class="btn-magnetic btn-primary anim-fade-up" style="display:inline-flex; margin-top:2rem;">
-            <span class="btn-inner" data-i18n="contact.cv">
-              Télécharger CV <i class="fas fa-download"></i>
-            </span>
-          </a>
-        </div>
-
-        <div class="contact-right anim-fade-up">
-          <a href="mailto:aminenakrou635@gmail.com" class="contact-link btn-magnetic">
-            <span class="btn-inner">
-              <div class="cl-icon"><i class="fas fa-envelope"></i></div>
-              <div class="cl-text">
-                <span class="cl-lbl">Email</span>
-                <span class="cl-val">aminenakrou635@gmail.com</span>
-              </div>
-              <i class="fas fa-arrow-right cl-arr"></i>
-            </span>
-          </a>
-
-          <a href="https://linkedin.com/in/amine-nakrou" target="_blank" rel="noopener noreferrer" class="contact-link btn-magnetic">
-            <span class="btn-inner">
-              <div class="cl-icon"><i class="fab fa-linkedin-in"></i></div>
-              <div class="cl-text">
-                <span class="cl-lbl">LinkedIn</span>
-                <span class="cl-val">linkedin.com/in/amine-nakrou</span>
-              </div>
-              <i class="fas fa-arrow-right cl-arr"></i>
-            </span>
-          </a>
-
-          <a href="https://github.com/aminenakrou" target="_blank" rel="noopener noreferrer" class="contact-link btn-magnetic">
-            <span class="btn-inner">
-              <div class="cl-icon"><i class="fab fa-github"></i></div>
-              <div class="cl-text">
-                <span class="cl-lbl">GitHub</span>
-                <span class="cl-val">github.com/aminenakrou</span>
-              </div>
-              <i class="fas fa-arrow-right cl-arr"></i>
-            </span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
   <footer>
-    <div class="footer-inner">
-      <span class="footer-logo">AN<span class="accent">.</span></span>
-      <p data-i18n="footer.text">© 2026 Amine Nakrou — GitHub Pages</p>
-      <a href="#hero" class="back-top btn-magnetic" aria-label="Retour en haut">
-        <i class="fas fa-arrow-up"></i>
-      </a>
+    <div class="section-inner footer-inner">
+      <span class="footer-logo">AN<span>.</span></span>
+      <p data-i18n="footer.text">© 2026 Amine Nakrou - Portfolio GitHub Pages</p>
+      <a href="#hero" class="back-top" data-i18n="footer.top">Retour en haut</a>
     </div>
   </footer>
-
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>
