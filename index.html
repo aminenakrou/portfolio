@@ -21,12 +21,13 @@
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=20260910-3" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css?v=20260910-4" />
   <script>
     (function () {
-      var theme = localStorage.getItem('theme') || 'dark';
-      if (theme === 'light') document.documentElement.setAttribute('data-theme', 'light');
+      try {
+        if (localStorage.getItem('theme') === 'light') document.documentElement.setAttribute('data-theme', 'light');
+      } catch (_) { /* The default theme also works without storage. */ }
     }());
   </script>
   <script type="application/ld+json">
@@ -47,7 +48,7 @@
   <a class="skip-link" href="#main" data-i18n="a11y.skip">Aller au contenu</a>
   <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
-  <nav class="navbar" id="navbar" aria-label="Navigation principale">
+  <nav data-i18n-aria="a11y.navigation" class="navbar" id="navbar" aria-label="Navigation principale">
     <a href="#hero" class="nav-logo" aria-label="Amine Nakrou">AN<span>.</span></a>
     <ul class="nav-links">
       <li><a href="#about" class="nav-item" data-i18n="nav.about">À propos</a></li>
@@ -57,7 +58,7 @@
       <li><a href="#contact" class="nav-item" data-i18n="nav.contact">Contact</a></li>
     </ul>
     <div class="nav-actions">
-      <div class="lang-switcher" aria-label="Choix de langue">
+      <div class="lang-switcher" data-i18n-aria="a11y.language" aria-label="Choix de langue">
         <button class="lang-btn active" type="button" data-lang="fr">FR</button>
         <button class="lang-btn" type="button" data-lang="en">EN</button>
         <button class="lang-btn" type="button" data-lang="ar">AR</button>
@@ -86,48 +87,55 @@
       <div class="section-inner hero-inner">
         <div class="hero-copy anim-fade-up">
           <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span><span data-i18n="hero.current">Chargé d'études actuarielles @ Swiss Life</span></p>
-          <h1><span>Amine</span><span>Nakrou</span></h1>
-          <p class="hero-position" data-i18n="hero.position">Actuarial Studies · Data Science · Machine Learning</p>
-          <p class="hero-summary" data-i18n="hero.summary">Profil quantitatif formé à Polytech Lille ISIA, actuellement en assurance non-vie chez Swiss Life à Roubaix. Je travaille sur le reporting actuariel, la fiabilisation des données, la modélisation et des outils d'aide au pilotage.</p>
+          <p class="hero-overline">PORTFOLIO / 2026 — 2027</p>
+          <h1><span>Amine</span><span>Nakrou<span class="name-dot">.</span></span></h1>
+          <p class="hero-position" data-i18n="hero.position">Actuariat. Statistiques. Data Science.</p>
+          <p class="hero-summary" data-i18n="hero.summary">Élève ingénieur à Polytech Lille ISIA et chargé d’études actuarielles chez Swiss Life. J’associe statistiques et programmation pour fiabiliser les données, modéliser et éclairer les décisions.</p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#featured" data-i18n="hero.projects">Voir mes projets</a>
             <a class="btn btn-secondary" href="assets/cv/cv_amine_nakrou_fr.pdf" id="cvLinkHero" download data-i18n="hero.cv">Télécharger mon CV</a>
             <a class="btn btn-secondary" href="#contact" data-i18n="hero.contact">Me contacter</a>
             <a class="btn btn-link" href="https://linkedin.com/in/amine-nakrou" target="_blank" rel="noopener noreferrer">LinkedIn</a>
           </div>
-          <div class="hero-proof-row" aria-label="Points clés du portfolio">
-            <span data-i18n="hero.proof1">12 projets publics intégrés</span>
+          <div class="hero-proof-row">
+            <span data-i18n="hero.proof1">Polytech Lille · ISIA</span>
             <span data-i18n="hero.proof2">Actuariat · Data · ML</span>
-            <span data-i18n="hero.proof3">FR · EN · AR</span>
+            <span data-i18n="hero.proof3">Python · SQL · R</span>
           </div>
         </div>
-        <aside class="hero-panel anim-fade-up" aria-label="Resume du profil">
-          <div class="panel-head"><span>AN.</span><span data-i18n="hero.panelStatus">Ouvert aux opportunités CDI</span></div>
-          <div class="focus-grid">
-            <div><span class="focus-label" data-i18n="hero.focus1Label">Actuel</span><strong>Swiss Life</strong><p data-i18n="hero.focus1">Chargé d'études actuarielles, assurance non-vie</p></div>
-            <div><span class="focus-label" data-i18n="hero.focus2Label">Recherche</span><strong data-i18n="hero.focus2Title">CDI après l'expérience actuelle</strong><p data-i18n="hero.focus2">Actuariat, Data, ML, Risk, BI</p></div>
-            <div><span class="focus-label" data-i18n="hero.focus3Label">Socle</span><strong>Python · SQL · Stats</strong><p data-i18n="hero.focus3">Modélisation, pipelines data, visualisation</p></div>
+        <aside class="hero-portrait" aria-label="Amine Nakrou">
+          <div class="portrait-topline"><span>AN / PROFILE</span><span>ROUBAIX, FR</span></div>
+          <div class="portrait-frame">
+            <picture><source srcset="assets/img/profile.webp" type="image/webp" /><img src="assets/img/profile.jpg" width="720" height="840" fetchpriority="high" decoding="async" alt="Amine Nakrou" /></picture>
+            <span class="portrait-cross" aria-hidden="true">+</span>
+            <div class="portrait-caption"><span data-i18n="hero.focus1Label">Actuel</span><strong>Swiss Life<span class="status-dot" aria-hidden="true"></span></strong><p data-i18n="hero.focus1">Chargé d'études actuarielles, assurance non-vie</p><span class="portrait-date">09.2026 — 08.2027</span></div>
           </div>
+          <a class="availability" href="#contact"><span class="status-dot" aria-hidden="true"></span><span data-i18n="hero.panelStatus">CDI à l’issue de mon expérience actuelle</span><span aria-hidden="true">↗</span></a>
         </aside>
       </div>
     </section>
 
-    <section class="marquee" aria-label="Domaines principaux">
-      <div class="marquee-track">
-        <span>Actuariat</span><span>Statistiques</span><span>Data Science</span><span>Machine Learning</span><span>Python</span><span>SQL</span><span>Data Engineering</span><span>Power BI</span><span>Risk</span>
-        <span>Actuariat</span><span>Statistiques</span><span>Data Science</span><span>Machine Learning</span><span>Python</span><span>SQL</span><span>Data Engineering</span><span>Power BI</span><span>Risk</span>
+    <div class="expertise-strip"><div class="section-inner"><span data-i18n="hero.proof2">Actuariat · Data · ML</span><span>Python</span><span>SQL</span><span>R</span><span>Power BI</span><span>Scikit-learn</span><a href="#featured" data-i18n="hero.explore">Explorer les projets ↓</a></div></div>
+
+
+
+    <section id="featured" class="section section-muted">
+      <div class="section-inner">
+        <p class="section-kicker">01 / <span data-i18n="nav.featured">Projets phares</span></p>
+        <div class="section-title-row"><h2 data-i18n="featured.title">Des données aux projets.</h2><p data-i18n="featured.sub">Prédiction, risque crédit et visualisation : une sélection de travaux qui relient méthodes quantitatives et développement.</p></div>
+        <div class="featured-grid" id="featuredProjects"></div>
       </div>
     </section>
 
     <section id="about" class="section">
       <div class="section-inner about-grid">
         <div>
-          <p class="section-kicker">01 / <span data-i18n="nav.about">À propos</span></p>
-          <h2 data-i18n="about.title">Profil quantitatif, actuariat et data</h2>
+          <p class="section-kicker">02 / <span data-i18n="nav.about">À propos</span></p>
+          <h2 data-i18n="about.title">À la croisée de l’actuariat et de la data.</h2>
           <div class="rich-text">
             <p data-i18n="about.p1">Je suis Amine Nakrou, élève ingénieur à Polytech Lille en spécialité Informatique, Statistiques et Intelligence Artificielle. Mon parcours combine statistiques appliquées, modélisation, programmation et projets data.</p>
             <p data-i18n="about.p2">Depuis le 1er septembre 2026, je suis chargé d'études actuarielles chez Swiss Life à Roubaix, dans le domaine de l'assurance non-vie. Mes sujets couvrent notamment le reporting actuariel, l'analyse et la fiabilisation des données, ainsi que des travaux de modélisation et de prédiction.</p>
-            <p data-i18n="about.p3">Cette expérience me permet de mobiliser conjointement actuariat, statistiques, analyse de données et programmation pour automatiser les analyses, améliorer les processus de reporting et transformer les données en informations utiles à la prise de décision. Pour la suite, je souhaite construire un CDI sur des problématiques quantitatives: actuariat, data science, risque, modélisation statistique, data engineering ou BI.</p>
+            <p data-i18n="about.p3">J’y mobilise statistiques et programmation pour automatiser les analyses et développer des outils d’aide au pilotage. À l’issue de cette expérience, je souhaite poursuivre en CDI sur des sujets d’actuariat, de data science ou de modélisation.</p>
           </div>
           <ul class="info-chips">
             <li data-i18n="about.chipSwiss">Swiss Life · Roubaix</li>
@@ -136,25 +144,18 @@
             <li>FR · EN · AR · ES</li>
           </ul>
         </div>
-        <div class="profile-card anim-fade-up">
-          <img src="assets/img/profile.jpg" width="720" height="840" loading="lazy" decoding="async" alt="Portrait d'Amine Nakrou" />
-          <div class="profile-caption"><span data-i18n="about.badge">Actuellement chez Swiss Life</span><strong data-i18n="about.caption">Actuariat · Statistiques · Data</strong></div>
+        <div class="profile-principles">
+          <div><span>01</span><h3 data-i18n="about.axis1">Comprendre les données</h3><p data-i18n="about.axis1Text">Analyser, structurer et fiabiliser les données avant de modéliser.</p></div>
+          <div><span>02</span><h3 data-i18n="about.axis2">Modéliser avec méthode</h3><p data-i18n="about.axis2Text">Mobiliser les statistiques et le machine learning pour répondre à une question précise.</p></div>
+          <div><span>03</span><h3 data-i18n="about.axis3">Rendre l’analyse utile</h3><p data-i18n="about.axis3Text">Transformer les résultats en reporting et en outils d’aide à la décision.</p></div>
         </div>
-      </div>
-    </section>
-
-    <section id="featured" class="section section-muted">
-      <div class="section-inner">
-        <p class="section-kicker">02 / <span data-i18n="nav.featured">Projets phares</span></p>
-        <div class="section-title-row"><h2 data-i18n="featured.title">Preuves par les projets</h2><p data-i18n="featured.sub">Chaque projet met en avant le problème, les données, la méthode, les technologies et les livrables disponibles.</p></div>
-        <div class="featured-grid" id="featuredProjects"></div>
       </div>
     </section>
 
     <section id="skills" class="section">
       <div class="section-inner">
         <p class="section-kicker">03 / <span data-i18n="nav.skills">Compétences</span></p>
-        <h2 data-i18n="skills.title">Compétences organisées pour les postes actuariat et data</h2>
+        <h2 data-i18n="skills.title">Un socle quantitatif. Des outils concrets.</h2>
         <div class="skills-grid" id="skillsGrid"></div>
       </div>
     </section>
@@ -162,15 +163,22 @@
     <section id="projects" class="section section-muted">
       <div class="section-inner">
         <p class="section-kicker">04 / <span data-i18n="projects.kicker">Autres projets</span></p>
-        <div class="section-title-row"><h2 data-i18n="projects.title">Portfolio technique</h2><p data-i18n="projects.sub">Une sélection plus large de projets data, statistiques, algorithmique et web. Les liens pointent vers les ressources existantes.</p></div>
+        <div class="section-title-row"><h2 data-i18n="projects.title">Le reste du laboratoire.</h2><p data-i18n="projects.sub">Statistiques, graphes, développement et jeux : tous les autres projets de mon parcours.</p></div>
+        <div class="project-filters" role="group" data-i18n-aria="a11y.filters" aria-label="Filtrer les projets">
+          <button type="button" data-filter="all" aria-pressed="true" data-i18n="filter.all">Tous les projets</button>
+          <button type="button" data-filter="data" aria-pressed="false" data-i18n="filter.data">Data &amp; statistiques</button>
+          <button type="button" data-filter="software" aria-pressed="false" data-i18n="filter.software">Algorithmique &amp; logiciel</button>
+          <button type="button" data-filter="web" aria-pressed="false" data-i18n="filter.web">Web &amp; jeux</button>
+        </div>
+        <p class="filter-status" id="filterStatus" role="status" aria-live="polite"></p>
         <div class="projects-list" id="otherProjects"></div>
       </div>
     </section>
 
     <section id="case-studies" class="section">
       <div class="section-inner">
-        <p class="section-kicker">05 / Case studies</p>
-        <div class="section-title-row"><h2 data-i18n="case.title">Structure de case studies</h2><p data-i18n="case.sub">Deux pages détaillées sont préparées pour les projets les mieux documentés actuellement. Les sections sans information vérifiée restent volontairement neutres.</p></div>
+        <p class="section-kicker">05 / <span data-i18n="action.case">Étude de cas</span></p>
+        <div class="section-title-row"><h2 data-i18n="case.title">Dans le détail.</h2><p data-i18n="case.sub">Deux projets à explorer pour comprendre les méthodes utilisées et retrouver les ressources techniques.</p></div>
         <div class="case-grid">
           <a class="case-card" href="case-studies/churn.html"><span>01</span><strong data-project-title="churn">Customer Churn Prediction</strong><p data-i18n="case.churn">Pipeline ML, données déséquilibrées, modèles comparés, Streamlit, Flask, Docker et MLflow.</p></a>
           <a class="case-card" href="case-studies/credit-scoring.html"><span>02</span><strong data-project-title="credit">Scoring de Crédit - ROC & SMOTE</strong><p data-i18n="case.credit">Projet statistique autour du risque crédit, du déséquilibre de classes, de SMOTE et de la courbe ROC.</p></a>
@@ -190,15 +198,15 @@
       <div class="section-inner contact-grid">
         <div>
           <p class="section-kicker">07 / <span data-i18n="nav.contact">Contact</span></p>
-          <h2 data-i18n="contact.title">Vous recrutez sur des sujets actuariat, data ou statistiques ?</h2>
-          <p data-i18n="contact.sub">Échangeons autour d'opportunités CDI pour la suite de mon expérience actuelle chez Swiss Life.</p>
+          <h2 data-i18n="contact.title">Et si nous travaillions ensemble ?</h2>
+          <p data-i18n="contact.sub">Vous recrutez en actuariat, data ou statistiques ? Échangeons autour d’un CDI à l’issue de mon expérience chez Swiss Life.</p>
           <a class="btn btn-primary" href="assets/cv/cv_amine_nakrou_fr.pdf" id="cvLinkContact" download data-i18n="contact.cv">Télécharger le CV</a>
         </div>
         <div class="contact-links">
           <a href="mailto:aminenakrou635@gmail.com"><span data-i18n="contact.emailLabel">Email</span><strong>aminenakrou635@gmail.com</strong></a>
           <a href="https://linkedin.com/in/amine-nakrou" target="_blank" rel="noopener noreferrer"><span>LinkedIn</span><strong>linkedin.com/in/amine-nakrou</strong></a>
           <a href="https://github.com/aminenakrou" target="_blank" rel="noopener noreferrer"><span>GitHub</span><strong>github.com/aminenakrou</strong></a>
-          <a href="assets/cv/cv_amine_nakrou_fr.pdf" id="cvLinkList" download><span>CV</span><strong data-i18n="contact.cvAlt">Version PDF selon la langue</strong></a>
+          <a href="assets/cv/cv_amine_nakrou_fr.pdf" id="cvLinkList" download><span>CV</span><strong data-i18n="contact.cvAlt">Télécharger mon CV en français</strong></a>
         </div>
       </div>
     </section>
@@ -207,10 +215,11 @@
   <footer>
     <div class="section-inner footer-inner">
       <span class="footer-logo">AN<span>.</span></span>
-      <p data-i18n="footer.text">© 2026 Amine Nakrou - Portfolio GitHub Pages</p>
+      <p data-i18n="footer.text">© 2026 Amine Nakrou</p>
       <a href="#hero" class="back-top" data-i18n="footer.top">Retour en haut</a>
     </div>
   </footer>
-  <script src="script.js?v=20260910-3" defer></script>
+  <noscript><p class="section-inner">Les projets détaillés nécessitent JavaScript. <a href="https://github.com/aminenakrou">Voir les projets sur GitHub</a>.</p></noscript>
+  <script src="script.js?v=20260910-4" defer></script>
 </body>
 </html>
