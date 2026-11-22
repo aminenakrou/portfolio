@@ -5,7 +5,8 @@
 (function () {
   'use strict';
 
-  var CV_URL = 'assets/cv/cv_amine_nakrou_fr.pdf';
+  var CV_URLS = { fr: 'assets/cv/cv_amine_nakrou_fr.pdf', en: 'assets/cv/cv_amine_nakrou_en.pdf' };
+  function cvUrl() { return CV_URLS[lang] || CV_URLS.fr; }
   var GH = 'https://github.com/aminenakrou/';
   var PAGES = 'https://aminenakrou.github.io/';
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -98,7 +99,7 @@
       'footer.text': '© 2026 Amine Nakrou. Hand-coded in HTML, CSS and JavaScript. Updated November 2026.', 'footer.top': 'Back to top ↑',
       'wanted.label': "The role I'm looking for", 'wanted.k1': 'Target roles', 'wanted.v1': 'Actuarial analyst, data scientist, data engineer',
       'wanted.k2': 'Sectors', 'wanted.v2': 'Insurance, reinsurance, banking, consulting', 'wanted.k3': 'Locations', 'wanted.v3': 'Paris, Lille, Luxembourg',
-      'wanted.k4': 'Availability', 'wanted.v4': 'Full-time, September 2027', 'contact.cvMeta': 'Resume: PDF, 1 page, in French, updated November 2026',
+      'wanted.k4': 'Availability', 'wanted.v4': 'Full-time, September 2027', 'contact.cvMeta': 'Resume: PDF, 1 page, updated November 2026',
       'proj.meta': '{a} selected · {b} more',
       'cmd.section': 'Section', 'cmd.project': 'Project', 'cmd.action': 'Action', 'cmd.theme': 'Toggle theme',
       'cmd.lang': 'Passer en français', 'cmd.cv': 'Open resume (PDF)', 'cmd.copy': 'Copy email address',
@@ -667,7 +668,7 @@
     $$('[data-i18n-aria]').forEach(function (el) { el.setAttribute('aria-label', t(el.dataset.i18nAria)); });
     $$('[data-i18n-title]').forEach(function (el) { el.title = t(el.dataset.i18nTitle); });
     $$('.lang button').forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.lang === lang)); });
-    $$('.cv-link').forEach(function (a) { a.href = CV_URL; });
+    $$('.cv-link').forEach(function (a) { a.href = cvUrl(); });
     document.title = lang === 'fr' ? 'Amine Nakrou — Data science & actuariat' : 'Amine Nakrou — Data science & actuarial';
     renderTriangle(!!opts.animate);
     renderJobs(); renderFilters(); renderProjects(); renderLab(); renderOthers(); renderSkills(); renderEdu();
@@ -727,7 +728,7 @@
       } });
     });
     list.push(
-      { label: t('cmd.cv'), kind: t('cmd.action'), href: CV_URL },
+      { label: t('cmd.cv'), kind: t('cmd.action'), href: cvUrl() },
       { label: t('cmd.copy'), kind: t('cmd.action'), run: copyMail },
       { label: t('cmd.theme'), kind: t('cmd.action'), run: toggleTheme },
       { label: t('cmd.lang'), kind: t('cmd.action'), run: function () { applyLang(lang === 'fr' ? 'en' : 'fr'); } },
