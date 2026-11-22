@@ -249,14 +249,14 @@
     {
       id: 'health', cat: 'ml',
       title: { fr: 'Diagnostic sur radiographies thoraciques', en: 'Chest X-ray diagnosis' },
-      metric: { fr: '14 pathologies', en: '14 conditions' },
-      summary: { fr: 'Un réseau de neurones qui détecte 14 pathologies, évalué comme on évalue un test médical.', en: 'A neural network that detects 14 conditions, evaluated the way a medical test is evaluated.' },
+      metric: { fr: 'AUC 0,71 · 14 pathologies', en: 'AUC 0.71 · 14 conditions' },
+      summary: { fr: 'Détecter 14 pathologies sur des radiographies, puis évaluer le modèle comme on évalue un test médical.', en: 'Detect 14 conditions on chest X-rays, then evaluate the model the way a medical test is evaluated.' },
       facts: {
-        fr: ['Aider au diagnostic en détectant 14 pathologies sur des radiographies thoraciques.', 'NIH ChestX-ray8 : images annotées multi-label, classes très déséquilibrées, séparation par patient pour éviter toute fuite de données.', 'Transfer learning DenseNet121, perte pondérée, Grad-CAM pour montrer les zones qui justifient chaque prédiction.', 'AUC par pathologie, sensibilité et spécificité, VPP et VPN, intervalles de confiance par bootstrap, calibration de Platt.'],
-        en: ['Support diagnosis by detecting 14 conditions on chest X-rays.', 'NIH ChestX-ray8: multi-label annotated images, highly imbalanced classes, patient-level split to prevent leakage.', 'DenseNet121 transfer learning, weighted loss, Grad-CAM to show the regions behind each prediction.', 'Per-class AUC, sensitivity and specificity, PPV and NPV, bootstrap confidence intervals, Platt calibration.']
+        fr: ['Aider au tri des radiographies thoraciques en détectant 14 pathologies.', 'NIH ChestX-ray8 : 1 420 radiographies multi-étiquettes, classes très déséquilibrées, séparation par patient pour éviter toute fuite de données.', 'DenseNet121 pré-entraîné (transfert d\'apprentissage), classifieurs pondérés par pathologie, calibration de Platt, Grad-CAM pour voir les zones qui justifient chaque prédiction.', 'AUC moyenne 0,71 avec IC par bootstrap, sensibilité, spécificité, VPP et VPN ; la calibration divise par deux l\'erreur de Brier ; Grad-CAM révèle les limites du modèle.'],
+        en: ['Help triage chest X-rays by detecting 14 conditions.', 'NIH ChestX-ray8: 1,420 multi-label X-rays, highly imbalanced classes, patient-level split to prevent leakage.', 'Pre-trained DenseNet121 (transfer learning), class-weighted classifiers per condition, Platt calibration, Grad-CAM to show the regions behind each prediction.', 'Mean AUC 0.71 with bootstrap CIs, sensitivity, specificity, PPV and NPV; calibration halves the Brier score; Grad-CAM reveals the model\'s limits.']
       },
       stack: 'TensorFlow · Keras · DenseNet121 · scikit-learn',
-      links: {}
+      links: { github: GH + 'radiographies-thoraciques-densenet' }
     },
     {
       id: 'dashboard', cat: 'viz',
