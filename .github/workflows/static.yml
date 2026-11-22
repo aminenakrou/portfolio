@@ -12,6 +12,7 @@ on:
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
+  actions: read
   pages: write
   id-token: write
 
@@ -38,6 +39,9 @@ jobs:
         with:
           # Upload entire repository
           path: '.'
+      - name: Wait for artifact registration
+        # Laisse le temps à GitHub d'enregistrer l'artefact avant le déploiement
+        run: sleep 20
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
