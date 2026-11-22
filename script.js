@@ -1,641 +1,845 @@
-const SITE_TITLE = 'Amine Nakrou - Actuariat, Data Science & Machine Learning';
-const CV = {
-  fr: 'assets/cv/cv_amine_nakrou_fr.pdf',
-  en: 'assets/cv/cv_amine_nakrou_en.pdf',
-  ar: 'assets/cv/cv_amine_nakrou_fr.pdf'
-};
+/* =====================================================================
+   Portfolio Amine Nakrou — contenu (FR / EN) et interactions.
+   JavaScript natif, sans dépendance.
+   ===================================================================== */
+(function () {
+  'use strict';
 
-const translations = {
-  "fr": {
-    "a11y.skip": "Aller au contenu",
-    "nav.about": "À propos",
-    "nav.featured": "Projets phares",
-    "nav.skills": "Compétences",
-    "nav.experience": "Parcours",
-    "nav.contact": "Contact",
-    "nav.cv": "CV",
-    "hero.current": "Chargé d'études actuarielles @ Swiss Life",
-    "hero.position": "Actuariat. Statistiques. Data Science.",
-    "hero.summary": "Élève ingénieur à Polytech Lille ISIA et chargé d’études actuarielles chez Swiss Life. J’associe statistiques et programmation pour fiabiliser les données, modéliser et éclairer les décisions.",
-    "hero.projects": "Voir mes projets",
-    "hero.cv": "Télécharger mon CV",
-    "hero.contact": "Me contacter",
-    "hero.proof1": "Polytech Lille · ISIA",
-    "hero.proof2": "Actuariat · Data · ML",
-    "hero.proof3": "Python · SQL · R",
-    "hero.panelStatus": "CDI à l’issue de mon expérience actuelle",
-    "hero.focus1Label": "Actuel",
-    "hero.focus1": "Chargé d'études actuarielles, assurance non-vie",
-    "hero.focus2Label": "Recherche",
-    "hero.focus2Title": "CDI après l'expérience actuelle",
-    "hero.focus2": "Actuariat, Data, ML, Risk, BI",
-    "hero.focus3Label": "Socle",
-    "hero.focus3": "Reporting actuariel, fiabilisation, modélisation",
-    "about.title": "À la croisée de l’actuariat et de la data.",
-    "about.p1": "Je suis Amine Nakrou, élève ingénieur à Polytech Lille en spécialité Informatique, Statistiques et Intelligence Artificielle. Mon parcours combine statistiques appliquées, modélisation, programmation et projets data.",
-    "about.p2": "Depuis le 1er septembre 2026, je suis chargé d'études actuarielles chez Swiss Life à Roubaix, dans le domaine de l'assurance non-vie. Mes sujets couvrent notamment le reporting actuariel, l'analyse et la fiabilisation des données, ainsi que des travaux de modélisation et de prédiction.",
-    "about.p3": "J’y mobilise statistiques et programmation pour automatiser les analyses et développer des outils d’aide au pilotage. À l’issue de cette expérience, je souhaite poursuivre en CDI sur des sujets d’actuariat, de data science ou de modélisation.",
-    "about.chipSwiss": "Swiss Life · Roubaix",
-    "about.chipSchool": "Polytech Lille · ISIA",
-    "about.badge": "Actuellement chez Swiss Life",
-    "about.caption": "Actuariat · Statistiques · Data",
-    "featured.title": "Des données aux projets.",
-    "featured.sub": "Prédiction, risque crédit et visualisation : une sélection de travaux qui relient méthodes quantitatives et développement.",
-    "projects.kicker": "Autres projets",
-    "projects.title": "Le reste du laboratoire.",
-    "projects.sub": "Statistiques, graphes, développement et jeux : tous les autres projets de mon parcours.",
-    "case.title": "Dans le détail.",
-    "case.sub": "Deux projets à explorer pour comprendre les méthodes utilisées et retrouver les ressources techniques.",
-    "case.churn": "Pipeline ML, données déséquilibrées, modèles comparés, Streamlit, Flask, Docker et MLflow.",
-    "case.credit": "Projet statistique autour du risque crédit, du déséquilibre de classes, de SMOTE et de la courbe ROC.",
-    "skills.title": "Un socle quantitatif. Des outils concrets.",
-    "experience.title": "Expérience et formation",
-    "contact.title": "Et si nous travaillions ensemble ?",
-    "contact.sub": "Vous recrutez en actuariat, data ou statistiques ? Échangeons autour d’un CDI à l’issue de mon expérience chez Swiss Life.",
-    "contact.cv": "Télécharger le CV",
-    "contact.cvAlt": "Télécharger mon CV en français",
-    "contact.emailLabel": "Email",
-    "footer.text": "© 2026 Amine Nakrou",
-    "footer.top": "Retour en haut",
-    "label.problem": "Problème",
-    "label.data": "Données",
-    "label.method": "Méthode",
-    "label.result": "Résultat",
-    "action.demo": "Voir la démo",
-    "action.github": "GitHub",
-    "action.case": "Étude de cas",
-    "hero.explore": "Explorer les projets ↓",
-    "about.axis1": "Comprendre les données",
-    "about.axis1Text": "Analyser, structurer et fiabiliser les données avant de modéliser.",
-    "about.axis2": "Modéliser avec méthode",
-    "about.axis2Text": "Mobiliser les statistiques et le machine learning pour répondre à une question précise.",
-    "about.axis3": "Rendre l’analyse utile",
-    "about.axis3Text": "Transformer les résultats en reporting et en outils d’aide à la décision.",
-    "action.details": "Comprendre le projet",
-    "visual.caption": "Illustration du sujet",
-    "filter.all": "Tous les projets",
-    "filter.data": "Data & statistiques",
-    "filter.software": "Algorithmique & logiciel",
-    "filter.web": "Web & jeux",
-    "filter.count": "projets affichés",
-    "a11y.navigation": "Navigation principale",
-    "a11y.language": "Choix de langue",
-    "a11y.filters": "Filtrer les projets",
-    "a11y.open": "Ouvrir le menu",
-    "a11y.close": "Fermer le menu",
-    "a11y.light": "Activer le thème clair",
-    "a11y.dark": "Activer le thème sombre"
-  },
-  "en": {
-    "a11y.skip": "Skip to content",
-    "nav.about": "About",
-    "nav.featured": "Featured projects",
-    "nav.skills": "Skills",
-    "nav.experience": "Journey",
-    "nav.contact": "Contact",
-    "nav.cv": "Resume",
-    "hero.current": "Actuarial Studies Analyst @ Swiss Life",
-    "hero.position": "Actuarial studies. Statistics. Data Science.",
-    "hero.summary": "Engineering student at Polytech Lille ISIA and actuarial studies analyst at Swiss Life. I combine statistics and programming to improve data reliability, build models and support decisions.",
-    "hero.projects": "View projects",
-    "hero.cv": "Download resume",
-    "hero.contact": "Contact me",
-    "hero.proof1": "Polytech Lille · ISIA",
-    "hero.proof2": "Actuarial · Data · ML",
-    "hero.proof3": "Python · SQL · R",
-    "hero.panelStatus": "Open to a full-time role after this experience",
-    "hero.focus1Label": "Current",
-    "hero.focus1": "Actuarial studies, non-life insurance",
-    "hero.focus2Label": "Target",
-    "hero.focus2Title": "Full-time role after current experience",
-    "hero.focus2": "Actuarial, Data, ML, Risk, BI",
-    "hero.focus3Label": "Core",
-    "hero.focus3": "Actuarial reporting, data reliability, modelling",
-    "about.title": "Where actuarial science meets data.",
-    "about.p1": "I am Amine Nakrou, an engineering student at Polytech Lille in Computer Science, Statistics and Artificial Intelligence. My background combines applied statistics, modelling, programming and data projects.",
-    "about.p2": "Since September 1, 2026, I have been working as an actuarial studies analyst at Swiss Life in Roubaix, in non-life insurance. My work covers actuarial reporting, data analysis and reliability, as well as modelling and prediction tasks.",
-    "about.p3": "I use statistics and programming to automate analyses and develop decision-support tools. After this experience, I am looking to pursue a full-time role in actuarial work, data science or modelling.",
-    "about.chipSwiss": "Swiss Life · Roubaix",
-    "about.chipSchool": "Polytech Lille · ISIA",
-    "about.badge": "Currently at Swiss Life",
-    "about.caption": "Actuarial · Statistics · Data",
-    "featured.title": "From data to projects.",
-    "featured.sub": "Prediction, credit risk and visualisation: selected work connecting quantitative methods with software development.",
-    "projects.kicker": "Other projects",
-    "projects.title": "More from the lab.",
-    "projects.sub": "Statistics, graphs, software and games: explore the other projects from my journey.",
-    "case.title": "A closer look.",
-    "case.sub": "Explore the methods and technical resources behind two selected projects.",
-    "case.churn": "ML pipeline, imbalanced data, compared models, Streamlit, Flask, Docker and MLflow.",
-    "case.credit": "Statistical project around credit risk, class imbalance, SMOTE and ROC analysis.",
-    "skills.title": "Quantitative foundations. Practical tools.",
-    "experience.title": "Experience and education",
-    "contact.title": "Let’s work together.",
-    "contact.sub": "Hiring in actuarial science, data or statistics? Let’s discuss full-time opportunities after my experience at Swiss Life.",
-    "contact.cv": "Download resume",
-    "contact.cvAlt": "Download my English resume",
-    "contact.emailLabel": "Email",
-    "footer.text": "© 2026 Amine Nakrou",
-    "footer.top": "Back to top",
-    "label.problem": "Problem",
-    "label.data": "Data",
-    "label.method": "Method",
-    "label.result": "Result",
-    "action.demo": "Live demo",
-    "action.github": "GitHub",
-    "action.case": "Case Study",
-    "hero.explore": "Explore the projects ↓",
-    "about.axis1": "Understand the data",
-    "about.axis1Text": "Analyse, structure and validate data before modelling.",
-    "about.axis2": "Model with a purpose",
-    "about.axis2Text": "Use statistics and machine learning to answer a specific question.",
-    "about.axis3": "Make analysis useful",
-    "about.axis3Text": "Turn results into reporting and decision-support tools.",
-    "action.details": "Explore the project",
-    "visual.caption": "Concept illustration",
-    "filter.all": "All projects",
-    "filter.data": "Data & statistics",
-    "filter.software": "Algorithms & software",
-    "filter.web": "Web & games",
-    "filter.count": "projects shown",
-    "a11y.navigation": "Main navigation",
-    "a11y.language": "Choose a language",
-    "a11y.filters": "Filter projects",
-    "a11y.open": "Open menu",
-    "a11y.close": "Close menu",
-    "a11y.light": "Switch to light theme",
-    "a11y.dark": "Switch to dark theme"
-  },
-  "ar": {
-    "a11y.skip": "تجاوز إلى المحتوى",
-    "nav.about": "عني",
-    "nav.featured": "مشاريع مختارة",
-    "nav.skills": "المهارات",
-    "nav.experience": "المسار",
-    "nav.contact": "تواصل",
-    "nav.cv": "السيرة",
-    "hero.current": "مكلف بدراسات اكتوارية @ Swiss Life",
-    "hero.position": "دراسات اكتوارية. إحصاء. علم البيانات.",
-    "hero.summary": "طالب هندسة في Polytech Lille ISIA ومكلف بدراسات اكتوارية لدى Swiss Life. أجمع بين الإحصاء والبرمجة لتحسين موثوقية البيانات وبناء النماذج ودعم القرار.",
-    "hero.projects": "عرض المشاريع",
-    "hero.cv": "تحميل السيرة الذاتية",
-    "hero.contact": "تواصل معي",
-    "hero.proof1": "Polytech Lille · ISIA",
-    "hero.proof2": "اكتواريا · بيانات · تعلم الآلة",
-    "hero.proof3": "Python · SQL · R",
-    "hero.panelStatus": "مهتم بعمل دائم بعد التجربة الحالية",
-    "hero.focus1Label": "حاليا",
-    "hero.focus1": "دراسات اكتوارية، تأمين غير الحياة",
-    "hero.focus2Label": "الهدف",
-    "hero.focus2Title": "عمل دائم بعد التجربة الحالية",
-    "hero.focus2": "اكتواريا، بيانات، تعلم آلة، مخاطر، BI",
-    "hero.focus3Label": "الأساس",
-    "hero.focus3": "تقارير اكتوارية، موثوقية البيانات، نمذجة",
-    "about.title": "عند تقاطع الاكتواريا وعلم البيانات.",
-    "about.p1": "أنا أمين نقرو، طالب هندسة في Polytech Lille بتخصص المعلوماتية والإحصاء والذكاء الاصطناعي. يجمع مساري بين الإحصاء التطبيقي، النمذجة، البرمجة ومشاريع البيانات.",
-    "about.p2": "منذ 1 سبتمبر 2026، أعمل مكلفا بدراسات اكتوارية لدى Swiss Life في Roubaix، في مجال التأمين غير الحياة. تشمل مهامي التقارير الاكتوارية، تحليل وموثوقية البيانات، إضافة إلى أعمال النمذجة والتنبؤ.",
-    "about.p3": "أستخدم الإحصاء والبرمجة لأتمتة التحليلات وتطوير أدوات دعم القرار. بعد هذه التجربة، أتطلع إلى وظيفة دائمة في الاكتواريا أو علم البيانات أو النمذجة.",
-    "about.chipSwiss": "Swiss Life · Roubaix",
-    "about.chipSchool": "Polytech Lille · ISIA",
-    "about.badge": "حاليا لدى Swiss Life",
-    "about.caption": "اكتواريا · إحصاء · بيانات",
-    "featured.title": "من البيانات إلى المشاريع.",
-    "featured.sub": "التنبؤ ومخاطر الائتمان وتصور البيانات: أعمال مختارة تجمع بين الأساليب الكمية وتطوير البرمجيات.",
-    "projects.kicker": "مشاريع أخرى",
-    "projects.title": "المزيد من المشاريع.",
-    "projects.sub": "إحصاء ورسوم بيانية وبرمجيات وألعاب: استكشف بقية مشاريع مساري.",
-    "case.title": "نظرة أقرب.",
-    "case.sub": "اكتشف المنهجيات والموارد التقنية لمشروعين مختارين.",
-    "case.churn": "خط تعلم آلة، بيانات غير متوازنة، نماذج مقارنة، Streamlit وFlask وDocker وMLflow.",
-    "case.credit": "مشروع إحصائي حول مخاطر الائتمان، عدم توازن الفئات، SMOTE وتحليل ROC.",
-    "skills.title": "أسس كمية وأدوات عملية.",
-    "experience.title": "الخبرة والتكوين",
-    "contact.title": "لنعمل معاً.",
-    "contact.sub": "هل توظفون في الاكتواريا أو البيانات أو الإحصاء؟ لنتحدث عن فرص عمل دائمة بعد تجربتي لدى Swiss Life.",
-    "contact.cv": "تحميل السيرة الذاتية",
-    "contact.cvAlt": "تحميل السيرة الذاتية بالفرنسية",
-    "contact.emailLabel": "البريد",
-    "footer.text": "© 2026 أمين نقرو",
-    "footer.top": "العودة إلى الأعلى",
-    "label.problem": "المشكلة",
-    "label.data": "البيانات",
-    "label.method": "المنهجية",
-    "label.result": "النتيجة",
-    "action.demo": "تجربة مباشرة",
-    "action.github": "GitHub",
-    "action.case": "دراسة حالة",
-    "hero.explore": "اكتشف المشاريع ↓",
-    "about.axis1": "فهم البيانات",
-    "about.axis1Text": "تحليل البيانات وتنظيمها والتحقق من جودتها قبل النمذجة.",
-    "about.axis2": "النمذجة بمنهجية",
-    "about.axis2Text": "استخدام الإحصاء وتعلم الآلة للإجابة عن سؤال محدد.",
-    "about.axis3": "تحليل يدعم القرار",
-    "about.axis3Text": "تحويل النتائج إلى تقارير وأدوات مساعدة على اتخاذ القرار.",
-    "action.details": "تفاصيل المشروع",
-    "visual.caption": "رسم توضيحي للموضوع",
-    "filter.all": "كل المشاريع",
-    "filter.data": "بيانات وإحصاء",
-    "filter.software": "خوارزميات وبرمجيات",
-    "filter.web": "ويب وألعاب",
-    "filter.count": "مشاريع معروضة",
-    "a11y.navigation": "التنقل الرئيسي",
-    "a11y.language": "اختيار اللغة",
-    "a11y.filters": "تصفية المشاريع",
-    "a11y.open": "فتح القائمة",
-    "a11y.close": "إغلاق القائمة",
-    "a11y.light": "تفعيل المظهر الفاتح",
-    "a11y.dark": "تفعيل المظهر الداكن"
-  }
-};
+  var CV_URL = 'assets/cv/cv_amine_nakrou_fr.pdf';
+  var GH = 'https://github.com/aminenakrou/';
+  var PAGES = 'https://aminenakrou.github.io/';
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-const projectTexts = {
-  fr: {
-    churn: ['Customer Churn Prediction', 'Prédire l\'attrition client et rendre le score exploitable via un tableau de bord et une API.', 'Données client déséquilibrées, traitées avec feature engineering.', 'Comparaison Random Forest et XGBoost, suivi d\'expériences et exposition applicative.', 'Évaluation et résultats à consulter dans les ressources du projet.', 'Pipeline ML end-to-end avec dashboard Streamlit, API Flask containerisée et suivi MLflow.'],
-    credit: ['Scoring de Crédit - ROC & SMOTE', 'Évaluer le risque client avant l\'accord d\'un crédit.', 'Données financières avec fort déséquilibre de classes indiqué dans le rapport.', 'Régression logistique, arbre de décision, forêt aléatoire, SMOTE, ROC et seuil de Youden.', 'Comparaison des modèles dans un rapport RMarkdown interactif.', 'Évaluation du risque crédit : comparaison de modèles, déséquilibre des classes et analyse ROC.'],
-    dashboard: ['Dashboard interactif - Indicateurs USA', 'Rendre lisibles des tendances statistiques longues par état, genre et âge.', 'Données USA 2000-2018 selon le projet existant.', 'Dashboard interactif HTML, CSS et JavaScript.', 'Visualisation web disponible en démonstration.', 'Projet de data visualisation et d\'exploration interactive.'],
-    fifa: ['EA Sports FC - Analyse FIFA', 'Explorer les facteurs associés aux performances et valeurs de joueurs.', 'Profils de joueurs FIFA 2016-2024 mentionnés dans le projet.', 'Analyse exploratoire, corrélations, détection d\'outliers et classification supervisée.', 'Notebook d\'analyse exploratoire et de classification.', 'Analyse data orientée statistiques descriptives et machine learning.'],
-    water: ['Accès à l’eau potable - Tableau', 'Repérer les pays en difficulté d’accès à l’eau potable et où une ONG doit investir.', 'Données publiques OMS et FAO, 2000-2017 : eau, population, stabilité politique, mortalité.', 'Modèle de données Tableau (jointure et relations), indicateurs pondérés, calculs FIXED, histoire en 4 tableaux de bord.', 'Tableau de bord publié sur Tableau Public, chiffres vérifiés avec pandas.', 'Projet de data visualisation en équipe, Polytech Lille ISIA 5.'],
-    markov: ['Promenade aléatoire du cavalier', 'Étudier le retour possible d\'un cavalier aléatoire sur un échiquier infini.', 'Simulations et cadre mathématique.', 'Chaînes de Markov, simulation Python et rapport LaTeX.', 'Rapport mathématique complet disponible.', 'Étude probabiliste d\'une marche aléatoire, entre démonstration et simulation.'],
-    pagerank: ['PageRank - Wikispeedia', 'Classer l\'importance de pages dans un graphe de liens.', 'Dataset Wikispeedia.', 'Implémentation PageRank standard et personnalisée.', 'Analyse de graphes disponible sur GitHub et demo.', 'Projet big data, graphes et algorithmique.'],
-    dinic: ['Algorithme de Dinic - Flot Maximum', 'Calculer un flot maximum dans un réseau orienté.', 'Graphes au format DIMACS.', 'Implémentation C de l\'algorithme de Dinic.', 'Code source et page projet disponibles.', 'Projet d\'algorithmique avancée et optimisation de réseaux.'],
-    ckoala: ['CKOALA - Moteur de recherche', 'Explorer et rechercher dans des arbres de typologies.', 'Structures hiérarchiques.', 'Développement Java.', 'Code source et page projet disponibles.', 'Projet logiciel autour des structures de données.'],
-    flood: ['Flood It - Jeu de puzzle', 'Développer une expérience web interactive autour d\'un puzzle de couleurs.', 'Grilles générées dans le navigateur.', 'HTML, CSS et JavaScript.', 'Jeu jouable en ligne.', 'Puzzle de couleurs interactif, jouable dans le navigateur.'],
-    pente: ['Pente - Jeu de plateau 19x19', 'Implémenter un jeu de plateau jouable à deux avec règles de capture et conditions de victoire.', 'Plateau 19x19 et états de jeu manipulés en C.', 'Programmation procédurale, validation des coups, captures, alignements et gestion de fin de partie.', 'Code source disponible sur GitHub.', 'Jeu à deux en C, avec captures, validation des coups et conditions de victoire.'],
-    quesaco: ['QUESACO - Maquettes interactives', 'Concevoir une application d’identification de la faune et de la flore pour des collégiens.', 'Quatre parcours utilisateurs : collégien, modérateur, expert, administrateur.', 'Maquettes cliquables en React, dans un seul fichier HTML.', 'Démo GitHub Pages disponible.', 'Projet de conception d’interface réalisé en équipe.'],
-    optimization: ['Optimisation de la production', 'Maximiser un profit sous contraintes de ressources.', 'Cas de programmation linéaire issu du projet.', 'Modélisation en programmation linéaire et résolution avec Lindo.', 'Analyse de robustesse de la solution optimale.', 'Modélisation sous contraintes et analyse de la solution optimale.']
-  },
-  en: {
-    churn: ['Customer Churn Prediction', 'Predict customer attrition and make the score usable through a dashboard and API.', 'Imbalanced customer data handled with feature engineering.', 'Random Forest and XGBoost comparison, experiment tracking and application layer.', 'Evaluation and results are available in the project resources.', 'End-to-end ML pipeline with Streamlit dashboard, Dockerized Flask API and MLflow tracking.'],
-    credit: ['Credit Scoring - ROC & SMOTE', 'Assess customer risk before granting credit.', 'Financial data with strong class imbalance stated in the report.', 'Logistic regression, decision tree, random forest, SMOTE, ROC and Youden threshold.', 'Model comparison in an interactive RMarkdown report.', 'Credit risk assessment: model comparison, class imbalance and ROC analysis.'],
-    dashboard: ['Interactive Dashboard - US Indicators', 'Make long-term statistical trends readable by state, gender and age.', 'US data from 2000-2018 according to the existing project.', 'Interactive HTML, CSS and JavaScript dashboard.', 'Web visualisation available as a demo.', 'Data visualisation and interactive exploration project.'],
-    fifa: ['EA Sports FC - FIFA Analysis', 'Explore factors associated with player performance and value.', 'FIFA 2016-2024 player profiles mentioned in the project.', 'Exploratory analysis, correlations, outlier detection and supervised classification.', 'Exploratory analysis and classification notebook.', 'Data analysis project around descriptive statistics and machine learning.'],
-    water: ['Access to Drinking Water - Tableau', 'Identify countries struggling with access to drinking water and where an NGO should invest.', 'Public WHO and FAO data, 2000-2017: water, population, political stability, mortality.', 'Tableau data model (join and relationships), population-weighted indicators, FIXED calculations, story with 4 dashboards.', 'Dashboard published on Tableau Public, figures cross-checked with pandas.', 'Team data visualisation project, Polytech Lille ISIA 5.'],
-    markov: ['Random Knight Walk', 'Study whether a random knight can return to its starting square on an infinite board.', 'Simulations and mathematical framework.', 'Markov chains, Python simulation and LaTeX report.', 'Full mathematical report available.', 'Statistics and mathematics project showing the quantitative base.'],
-    pagerank: ['PageRank - Wikispeedia', 'Rank page importance in a link graph.', 'Wikispeedia dataset.', 'Standard and personalised PageRank implementation.', 'Graph analysis available on GitHub and demo.', 'Big data, graphs and algorithms project.'],
-    dinic: ['Dinic Algorithm - Maximum Flow', 'Compute maximum flow in a directed network.', 'Graphs in DIMACS format.', 'C implementation of Dinic algorithm.', 'Source code and project page available.', 'Advanced algorithms and network optimisation project.'],
-    ckoala: ['CKOALA - Search Engine', 'Explore and search typology trees.', 'Hierarchical structures.', 'Java development.', 'Source code and project page available.', 'Software project around data structures.'],
-    flood: ['Flood It - Puzzle Game', 'Build an interactive web experience around a colour puzzle.', 'Browser-generated grids.', 'HTML, CSS and JavaScript.', 'Playable online game.', 'Interactive web project kept as front-end development evidence.'],
-    pente: ['Pente - 19x19 Board Game', 'Implement a two-player board game with captures and winning alignments.', '19x19 board and game states handled in C.', 'Procedural programming, move validation, captures, alignments and end-game handling.', 'Source code available on GitHub.', 'C project showing algorithmic rigour and software structure.'],
-    quesaco: ['QUESACO - Interactive Mock-ups', 'Design a wildlife and plant identification app for secondary school pupils.', 'Four user journeys: pupil, moderator, expert, administrator.', 'Clickable React mock-ups in a single HTML file.', 'GitHub Pages demo available.', 'Team interface design project.'],
-    optimization: ['Production Optimisation', 'Maximise profit under resource constraints.', 'Linear programming case from the project.', 'Linear programming modelling and Lindo solving.', 'Robustness analysis of the optimal solution.', 'Operations research project relevant to modelling and decision-making.']
-  },
-  ar: {
-    churn: ['التنبؤ بإلغاء اشتراك العملاء', 'توقع مغادرة العملاء وجعل النتيجة قابلة للاستعمال عبر لوحة وواجهة API.', 'بيانات عملاء غير متوازنة مع هندسة خصائص.', 'مقارنة Random Forest وXGBoost مع تتبع التجارب وطبقة تطبيقية.', 'AUC 0.91 كما هو مذكور في المشروع.', 'خط تعلم آلة متكامل مع Streamlit وFlask وDocker وMLflow.'],
-    credit: ['تقييم الائتمان - ROC وSMOTE', 'تقييم مخاطر العميل قبل منح الائتمان.', 'بيانات مالية مع عدم توازن واضح في الفئات حسب التقرير.', 'انحدار لوجستي، شجرة قرار، غابة عشوائية، SMOTE، ROC وعتبة Youden.', 'نتائج في تقرير RMarkdown تفاعلي دون إضافة مقاييس جديدة.', 'مشروع إحصائي مناسب للمخاطر والاكتواريا والنمذجة.'],
-    dashboard: ['لوحة تفاعلية - مؤشرات USA', 'تسهيل قراءة اتجاهات إحصائية طويلة حسب الولاية والجنس والعمر.', 'بيانات الولايات المتحدة 2000-2018 حسب المشروع.', 'لوحة تفاعلية HTML وCSS وJavaScript.', 'تصور ويب متاح كتجربة.', 'مشروع تصور بيانات واستكشاف تفاعلي.'],
-    fifa: ['تحليل FIFA / EA Sports FC', 'استكشاف العوامل المرتبطة بأداء وقيمة اللاعبين.', 'ملفات لاعبي FIFA 2016-2024 كما يذكر المشروع.', 'تحليل استكشافي، ارتباطات، قيم شاذة وتصنيف موجه.', 'دفتر تحليل؛ التفاصيل الرقمية تحتاج توثيقا لاحقا.', 'مشروع تحليل بيانات حول الإحصاء الوصفي وتعلم الآلة.'],
-    water: ['الوصول إلى مياه الشرب - Tableau', 'تحديد الدول التي تعاني من صعوبة الوصول إلى مياه الشرب وأين يجب أن تستثمر منظمة غير حكومية.', 'بيانات عامة من منظمة الصحة العالمية والفاو، 2000-2017: المياه، السكان، الاستقرار السياسي، الوفيات.', 'نموذج بيانات في Tableau (ربط وعلاقات)، مؤشرات مرجحة بعدد السكان، حسابات FIXED، قصة من 4 لوحات.', 'لوحة منشورة على Tableau Public، مع التحقق من الأرقام باستخدام pandas.', 'مشروع جماعي في تصور البيانات، Polytech Lille ISIA 5.'],
-    markov: ['المشي العشوائي للفارس', 'دراسة إمكانية عودة فارس عشوائي إلى نقطة البداية على رقعة لا نهائية.', 'محاكاة وإطار رياضي.', 'سلاسل ماركوف، محاكاة Python وتقرير LaTeX.', 'تقرير رياضي كامل متاح.', 'مشروع رياضي وإحصائي يبرز الأساس الكمي.'],
-    pagerank: ['PageRank - Wikispeedia', 'ترتيب أهمية الصفحات في رسم بياني للروابط.', 'مجموعة Wikispeedia.', 'تطبيق PageRank قياسي ومخصص.', 'تحليل رسوم بيانية متاح على GitHub وتجربة.', 'مشروع بيانات ضخمة ورسوم بيانية وخوارزميات.'],
-    dinic: ['خوارزمية Dinic - الجريان الأقصى', 'حساب الجريان الأقصى في شبكة موجهة.', 'رسوم بيانية بصيغة DIMACS.', 'تطبيق C لخوارزمية Dinic.', 'الكود وصفحة المشروع متاحان.', 'مشروع خوارزميات متقدمة وتحسين شبكات.'],
-    ckoala: ['CKOALA - محرك بحث', 'استكشاف والبحث داخل أشجار تصنيف.', 'بنى هرمية.', 'تطوير Java.', 'الكود وصفحة المشروع متاحان.', 'مشروع برمجي حول هياكل البيانات.'],
-    flood: ['Flood It - لعبة ألغاز', 'بناء تجربة ويب تفاعلية حول لغز ألوان.', 'شبكات مولدة في المتصفح.', 'HTML وCSS وJavaScript.', 'لعبة قابلة للتجربة عبر الإنترنت.', 'مشروع ويب تفاعلي كدليل على تطوير الواجهات.'],
-    pente: ['Pente - لعبة لوحة 19x19', 'تنفيذ لعبة لشخصين مع قواعد الالتقاط وشروط الفوز.', 'لوحة 19x19 وحالات لعب بلغة C.', 'برمجة إجرائية، التحقق من الحركات، الالتقاط، الاصطفاف ونهاية اللعبة.', 'الكود متاح على GitHub.', 'مشروع C يبرز الصرامة الخوارزمية وتنظيم الكود.'],
-    quesaco: ['QUESACO - نماذج تفاعلية', 'تصميم تطبيق للتعرف على الحيوانات والنباتات موجه لتلاميذ الإعدادي.', 'أربعة مسارات للمستخدمين: تلميذ، مشرف، خبير، مسؤول.', 'نماذج قابلة للنقر مبنية بـ React في ملف HTML واحد.', 'تجربة GitHub Pages متاحة.', 'مشروع جماعي لتصميم الواجهات.'],
-    optimization: ['تحسين الإنتاج', 'تعظيم الربح تحت قيود الموارد.', 'حالة برمجة خطية من المشروع.', 'نمذجة برمجة خطية وحل باستخدام Lindo.', 'تحليل متانة الحل الأمثل.', 'مشروع بحوث عمليات مناسب للنمذجة واتخاذ القرار.']
-  }
-};
-
-const projects = [
-  { id: 'churn', category: { fr: 'Machine Learning', en: 'Machine Learning', ar: 'تعلم الآلة' }, featured: true, tech: ['Python', 'XGBoost', 'Random Forest', 'Streamlit', 'Flask', 'Docker', 'MLflow'], links: { github: 'https://github.com/aminenakrou/Projet-de-prediction-du-churn-client', demo: 'https://aminenakrou.github.io/Projet-de-prediction-du-churn-client/', case: 'case-studies/churn.html' } },
-  { id: 'credit', category: { fr: 'Risque & Statistiques', en: 'Risk & Statistics', ar: 'مخاطر وإحصاء' }, featured: true, tech: ['R', 'RMarkdown', 'Logistic Regression', 'Random Forest', 'SMOTE', 'ROC'], links: { github: 'https://github.com/aminenakrou/scoring-credit-courbe-roc', demo: 'https://aminenakrou.github.io/scoring-credit-courbe-roc/', case: 'case-studies/credit-scoring.html' } },
-  { id: 'dashboard', category: { fr: 'Data Visualisation', en: 'Data Visualisation', ar: 'تصور البيانات' }, featured: true, tech: ['JavaScript', 'HTML', 'CSS', 'Data Visualisation'], links: { github: 'https://github.com/aminenakrou/dashboard-suicide-usa', demo: 'https://aminenakrou.github.io/dashboard-suicide-usa/' } },
-  { id: 'fifa', category: { fr: 'Analyse exploratoire', en: 'Exploratory Analysis', ar: 'تحليل استكشافي' }, featured: true, tech: ['Python', 'Pandas', 'Matplotlib', 'Seaborn', 'Scikit-learn'], links: {} },
-  { id: 'water', category: { fr: 'Data Visualisation', en: 'Data Visualisation', ar: 'تصور البيانات' }, featured: false, tech: ['Tableau', 'Python', 'Pandas', 'Data Visualisation'], links: { github: 'https://github.com/aminenakrou/acces-eau-potable-tableau', demo: 'https://public.tableau.com/app/profile/amine.nakrou/viz/AccsleaupotabledanslemondeDWFA/HistoireDWFA' } },
-  { id: 'markov', category: { fr: 'Statistiques', en: 'Statistics', ar: 'إحصاء' }, featured: false, tech: ['Python', 'Markov Chains', 'Simulation', 'LaTeX'], links: { github: 'https://github.com/aminenakrou/promenade-aleatoire-cavalier-markov', demo: 'https://aminenakrou.github.io/promenade-aleatoire-cavalier-markov/' } },
-  { id: 'pagerank', category: { fr: 'Graphes & Big Data', en: 'Graphs & Big Data', ar: 'رسوم وبيانات ضخمة' }, featured: false, tech: ['Python', 'PageRank', 'Graphs', 'Wikispeedia'], links: { github: 'https://github.com/aminenakrou/pagerank-wikispeedia', demo: 'https://aminenakrou.github.io/pagerank-wikispeedia/' } },
-  { id: 'dinic', category: { fr: 'Algorithmique', en: 'Algorithms', ar: 'خوارزميات' }, featured: false, tech: ['C', 'Algorithms', 'Graph Theory', 'DIMACS'], links: { github: 'https://github.com/aminenakrou/dinic-flot-maximum', demo: 'https://aminenakrou.github.io/dinic-flot-maximum/' } },
-  { id: 'ckoala', category: { fr: 'Java & Structures', en: 'Java & Structures', ar: 'Java وهياكل' }, featured: false, tech: ['Java', 'Trees', 'Search Engine'], links: { github: 'https://github.com/aminenakrou/ckoala-recherche-typologies', demo: 'https://aminenakrou.github.io/ckoala-recherche-typologies/' } },
-  { id: 'pente', category: { fr: 'C & Jeux', en: 'C & Games', ar: 'C وألعاب' }, featured: false, tech: ['C', 'Game Logic', 'Algorithms'], links: { github: 'https://github.com/aminenakrou/pente-jeu-de-plateau' } },
-  { id: 'flood', category: { fr: 'Web interactif', en: 'Interactive Web', ar: 'ويب تفاعلي' }, featured: false, tech: ['JavaScript', 'HTML', 'CSS', 'Game Dev'], links: { github: 'https://github.com/aminenakrou/flood-it-jeu', demo: 'https://aminenakrou.github.io/flood-it-jeu/' } },
-  { id: 'quesaco', category: { fr: 'Web', en: 'Web', ar: 'ويب' }, featured: false, tech: ['React', 'HTML', 'CSS', 'UX'], links: { github: 'https://github.com/aminenakrou/quesaco-maquettes', demo: 'https://aminenakrou.github.io/quesaco-maquettes/' } },
-  { id: 'optimization', category: { fr: 'Recherche opérationnelle', en: 'Operations Research', ar: 'بحوث عمليات' }, featured: false, tech: ['Linear Programming', 'Lindo', 'Operations Research'], links: {} }
-];
-
-const skills = [
-  { title: 'Actuariat & Statistiques', items: ['Actuariat', 'Statistiques avancées', 'Modélisation', 'Chaînes de Markov', 'Recherche opérationnelle'] },
-  { title: 'Data Science & ML', items: ['Scikit-learn', 'XGBoost', 'PyTorch', 'Pandas', 'NumPy', 'Feature engineering'] },
-  { title: 'Data Engineering', items: ['Pipelines données', 'Apache Spark', 'Hadoop', 'Kafka', 'Architecture SI'] },
-  { title: 'Programmation', items: ['Python', 'R', 'SQL', 'Java', 'C / C++', 'JavaScript', 'HTML / CSS', 'PHP'] },
-  { title: 'Data Visualisation / BI', items: ['Power BI', 'Tableau', 'Matplotlib', 'Seaborn', 'Streamlit', 'Dashboards'] },
-  { title: 'Databases & Tools', items: ['MySQL', 'PostgreSQL', 'MongoDB', 'NoSQL', 'Docker', 'Git / GitHub', 'MLflow', 'LaTeX', 'RMarkdown'] }
-];
-
-const timelineTexts = {
-  fr: [
-    { type: 'Expérience', date: '01/09/2026 - 31/08/2027 · Roubaix, France', title: 'Chargé d\'études actuarielles', org: 'Swiss Life', current: true, points: ['Études actuarielles en assurance non-vie, reporting et analyse de données.', 'Fiabilisation des données, automatisation des analyses et amélioration des processus de reporting.', 'Travaux de modélisation et de prédiction destinés au suivi et au pilotage de l\'activité.', 'Production d\'études actuarielles sur mesure, analyse d\'indicateurs de risque et de performance, développement d\'outils d\'aide à la décision.'], tags: ['Actuariat', 'Assurance non-vie', 'Reporting', 'Fiabilisation des données', 'Modélisation', 'Prédiction'] },
-    { type: 'Expérience', date: 'Mai 2026 · Saint-Denis, France', title: 'Data Engineering & BI', org: 'GRDF', points: ['Expérience précédente en Data Engineering et Business Intelligence.', 'Pipelines de données, tableaux de bord Power BI et analyses pour le pilotage métier .'], tags: ['Data Engineering', 'Power BI', 'SQL', 'Python', 'BI'] },
-    { type: 'Expérience', date: 'Été 2025 · Maroc', title: 'Développeur Data & Web', org: 'HAMATEL S.A.R.L', points: ['Base de données relationnelle, modélisation, normalisation et SQL.', 'Application interne Flask pour gestion et visualisation de données.'], tags: ['Flask', 'SQL', 'Python', 'Data Analysis'] },
-    { type: 'Formation', date: '2024-2027 · Lille, France', title: 'Cycle Ingénieur ISIA', org: 'Polytech Lille', points: ['Informatique, Statistiques et Intelligence Artificielle: ML, data mining, SQL/NoSQL, modèles markoviens, statistiques, algorithmique, big data et architecture SI.'], tags: ['ISIA', 'ML', 'Statistiques', 'Big Data'] },
-    { type: 'Formation', date: '2022-2024 · Fès, Maroc', title: 'Classes Préparatoires MPSI / MP', org: 'Lycée Moulay Idriss Fès', points: ['Algèbre linéaire, analyse, algorithmique, Python et statistiques.'], tags: ['Mathématiques', 'Python', 'Statistiques'] },
-    { type: 'Formation', date: '2022 · Taounate, Maroc', title: 'Baccalauréat Sciences Mathématiques', org: 'Mention Très Bien', points: ['Formation scientifique à dominante mathématique.'], tags: ['Mathématiques'] }
-  ],
-  en: [
-    { type: 'Experience', date: 'Sept. 2026 - Aug. 2027 · Roubaix, France', title: 'Actuarial Studies Analyst', org: 'Swiss Life', current: true, points: ['Actuarial studies in non-life insurance, reporting and data analysis.', 'Data reliability work, analysis automation and improvement of reporting processes.', 'Modelling and prediction work to support activity monitoring and steering.', 'Tailored actuarial studies, analysis of risk and performance indicators, and development of decision-support tools.'], tags: ['Actuarial', 'Non-life insurance', 'Reporting', 'Data reliability', 'Modelling', 'Prediction'] },
-    { type: 'Experience', date: 'May 2026 · Saint-Denis, France', title: 'Data Engineering & BI', org: 'GRDF', points: ['Previous experience in Data Engineering and Business Intelligence.', 'Data pipelines, Power BI dashboards and business reporting analyses .'], tags: ['Data Engineering', 'Power BI', 'SQL', 'Python', 'BI'] },
-    { type: 'Experience', date: 'Summer 2025 · Morocco', title: 'Data & Web Developer', org: 'HAMATEL S.A.R.L', points: ['Relational database design, modelling, normalization and SQL.', 'Internal Flask application for data management and visualisation.'], tags: ['Flask', 'SQL', 'Python', 'Data Analysis'] },
-    { type: 'Education', date: '2024-2027 · Lille, France', title: 'Engineering Cycle ISIA', org: 'Polytech Lille', points: ['Computer Science, Statistics and Artificial Intelligence: ML, data mining, SQL/NoSQL, Markov models, statistics, algorithms, big data and IS architecture.'], tags: ['ISIA', 'ML', 'Statistics', 'Big Data'] },
-    { type: 'Education', date: '2022-2024 · Fes, Morocco', title: 'Preparatory Classes MPSI / MP', org: 'Lycee Moulay Idriss Fes', points: ['Linear algebra, analysis, algorithms, Python and statistics.'], tags: ['Mathematics', 'Python', 'Statistics'] },
-    { type: 'Education', date: '2022 · Taounate, Morocco', title: 'Mathematics Baccalaureate', org: 'Highest Honors', points: ['Scientific curriculum with a focus on mathematics.'], tags: ['Mathematics'] }
-  ],
-  ar: [
-    { type: 'خبرة', date: '01/09/2026 - 31/08/2027 · Roubaix, France', title: 'مكلف بدراسات اكتوارية', org: 'Swiss Life', current: true, points: ['دراسات اكتوارية في التأمين غير الحياة، التقارير وتحليل البيانات.', 'تحسين موثوقية البيانات، أتمتة التحليلات وتحسين عمليات التقارير.', 'أعمال نمذجة وتنبؤ لدعم تتبع وتوجيه النشاط.', 'إنتاج دراسات اكتوارية مخصصة، تحليل مؤشرات المخاطر والأداء، وتطوير أدوات مساعدة على القرار.'], tags: ['اكتواريا', 'تأمين غير الحياة', 'تقارير', 'موثوقية البيانات', 'نمذجة', 'تنبؤ'] },
-    { type: 'خبرة', date: 'ماي 2026 · Saint-Denis, France', title: 'هندسة بيانات وذكاء أعمال', org: 'GRDF', points: ['تجربة سابقة في هندسة البيانات وذكاء الأعمال.', 'خطوط بيانات، لوحات Power BI وتحليلات للتوجيه المهني حسب المحتوى الموجود.'], tags: ['Data Engineering', 'Power BI', 'SQL', 'Python', 'BI'] },
-    { type: 'خبرة', date: 'صيف 2025 · المغرب', title: 'مطوّر بيانات وويب', org: 'HAMATEL S.A.R.L', points: ['تصميم قاعدة بيانات علائقية، نمذجة، تطبيع وSQL.', 'تطبيق Flask داخلي لإدارة وتصور البيانات.'], tags: ['Flask', 'SQL', 'Python', 'Data Analysis'] },
-    { type: 'تكوين', date: '2024-2027 · Lille, France', title: 'سلك الهندسة ISIA', org: 'Polytech Lille', points: ['معلوماتية، إحصاء وذكاء اصطناعي: تعلم آلة، تنقيب بيانات، SQL/NoSQL، نماذج ماركوف، إحصاء، خوارزميات، بيانات ضخمة وبنية نظم معلومات.'], tags: ['ISIA', 'ML', 'إحصاء', 'Big Data'] },
-    { type: 'تكوين', date: '2022-2024 · Fes, Morocco', title: 'أقسام تحضيرية MPSI / MP', org: 'Lycee Moulay Idriss Fes', points: ['جبر خطي، تحليل، خوارزميات، Python وإحصاء.'], tags: ['رياضيات', 'Python', 'إحصاء'] },
-    { type: 'تكوين', date: '2022 · Taounate, Morocco', title: 'بكالوريا علوم رياضية', org: 'ميزة حسن جدا', points: ['محفوظ كعلامة أكاديمية.'], tags: ['رياضيات'] }
-  ]
-};
-
-const storage = {
-  get(key) { try { return localStorage.getItem(key); } catch (_) { return null; } },
-  set(key, value) { try { localStorage.setItem(key, value); } catch (_) { /* Optional preference storage. */ } }
-};
-let currentLang = storage.get('lang') || 'fr';
-let currentFilter = 'all';
-
-function translate(key) {
-  return translations[currentLang][key] || translations.fr[key] || key;
-}
-
-function createElement(tag, className, text) {
-  const node = document.createElement(tag);
-  if (className) node.className = className;
-  if (text !== undefined) node.textContent = text;
-  return node;
-}
-
-function getProjectText(projectId) {
-  const data = projectTexts[currentLang][projectId] || projectTexts.fr[projectId];
-  return {
-    title: data[0],
-    problem: data[1],
-    projectData: data[2],
-    method: data[3],
-    result: data[4],
-    summary: data[5]
-  };
-}
-
-function renderActions(links) {
-  const actions = createElement('div', 'card-actions');
-  [['demo', 'action.demo'], ['github', 'action.github'], ['case', 'action.case']].forEach(([key, label]) => {
-    if (!links[key]) return;
-    const action = createElement('a', '', translate(label));
-    action.href = links[key];
-    if (key !== 'case') {
-      action.target = '_blank';
-      action.rel = 'noopener noreferrer';
+  /* ------------------------------------------------------------------
+     Textes de l'interface
+     ------------------------------------------------------------------ */
+  var I18N = {
+    fr: {
+      'a11y.skip': 'Aller au contenu', 'a11y.nav': 'Navigation principale', 'a11y.lang': 'Langue', 'a11y.menu': 'Menu',
+      'a11y.filters': 'Filtrer les projets', 'a11y.light': 'Passer au thème clair', 'a11y.dark': 'Passer au thème sombre',
+      'nav.about': 'Profil', 'nav.experience': 'Expérience', 'nav.projects': 'Projets', 'nav.skills': 'Compétences',
+      'nav.education': 'Formation', 'nav.contact': 'Contact', 'nav.cv': 'CV',
+      'palette.open': 'Recherche rapide', 'palette.short': 'Rechercher', 'palette.ph': 'Aller à une section, un projet, une action',
+      'palette.hint': '↑ ↓ pour choisir · Entrée pour ouvrir · Échap pour fermer', 'palette.none': 'Aucun résultat',
+      'hero.eyebrow': 'Data science · Actuariat · Polytech Lille',
+      'hero.title': "Des données d'assurance fiables, des modèles qu'on peut expliquer.",
+      'hero.lede': "Je suis Amine Nakrou, futur ingénieur en alternance à l'<strong>actuariat santé collective de Swiss Life</strong>. J'automatise les contrôles de prestations, je fiabilise les données et je construis des modèles de sinistralité interprétables.",
+      'hero.available': 'Disponible en CDI à partir de septembre 2027 · France et Luxembourg',
+      'hero.projects': 'Voir les projets', 'hero.cv': 'Télécharger le CV (PDF)',
+      'fig.num': 'Fig. 1', 'fig.title': 'Triangle de développement et projection Chain-Ladder',
+      'fig.observed': 'Observé · payé', 'fig.projected': 'Projeté · réserve (Chain-Ladder)',
+      'fig.replay': 'Rejouer le calcul', 'fig.bars': 'Payé et réserve estimée par année de survenance, en k€',
+      'fig.note': "Montants cumulés simulés en k€, à titre d'illustration. Les facteurs de développement sont recalculés en direct dans le navigateur.",
+      'fig.corner': 'Surv.', 'fig.ult': 'Ultime', 'fig.factors': 'Facteurs',
+      'fig.total': 'Réserve totale estimée : {r} k€ · survolez ou touchez une ligne pour le détail',
+      'fig.row': 'Survenance {y} : ultime estimé {u} k€ · réserve {r} k€',
+      'figures.label': 'Repères chiffrés',
+      'figures.f1': 'Reporting financier automatisé chez HAMATEL', 'figures.f2': 'Tableaux de bord Power BI livrés à la DSI de GRDF',
+      'figures.f3': 'Outils du SI réunis dans un même modèle de données', 'figures.v4': '343',
+      'figures.f4': 'Triangles de sinistres réels backtestés (provisionnement)',
+      'about.p1': "Élève-ingénieur en dernière année à <strong>Polytech Lille</strong>, spécialité Informatique, Statistiques et IA (grade Master), je travaille en alternance au service <strong>Actuariat sur mesure de Swiss Life</strong>, sur les contrats santé collectifs d'entreprise.",
+      'about.p2': "J'y rapproche les prestations versées par les délégataires de gestion avec le système interne, j'industrialise les contrôles et je développe un <strong>modèle de prédiction de la sinistralité</strong> (XGBoost, SHAP), comparé à la méthode Chain-Ladder.",
+      'about.p3': "Avant cela, j'ai construit les tableaux de bord de pilotage de la DSI de <strong>GRDF</strong> et automatisé des rapports financiers au Maroc. Je cherche un premier poste en <strong>actuariat, data science ou data engineering</strong>, idéalement là où les trois se rencontrent.",
+      'about.caption': 'Lille, 2026',
+      'exp.now': 'En poste',
+      'proj.sub': "Chaque projet s'ouvre sur le problème, les données, la méthode et le résultat.",
+      'proj.github': 'Voir le code', 'proj.demo': 'Démo en ligne', 'proj.private': 'Projet de cours : code disponible sur demande.',
+      'facts.problem': 'Problème', 'facts.data': 'Données', 'facts.method': 'Méthode', 'facts.result': 'Résultat', 'facts.stack': 'Outils',
+      'lab.title': 'En cours de construction', 'lab.status': 'En cours',
+      'lab.sub': "Un projet public qui prolonge mon travail en actuariat. Il apparaîtra ici avec son code dès qu'il sera terminé.",
+      'more.title': 'Autres travaux', 'more.project': 'Projet', 'more.domain': 'Domaine', 'more.desc': 'Description', 'more.links': 'Liens', 'more.demo': 'démo',
+      'contact.lead': 'Vous recrutez en actuariat, en data science ou en data engineering ? Écrivez-moi, je réponds sous 24 heures.',
+      'contact.copy': "Copier l'adresse", 'contact.copied': 'Adresse copiée', 'contact.copyFail': "Copie impossible : sélectionnez l'adresse à la main", 'contact.cv': 'CV (PDF)',
+      'footer.text': '© 2026 Amine Nakrou. Site codé à la main en HTML, CSS et JavaScript. Mis à jour en novembre 2026.', 'footer.top': 'Haut de page ↑',
+      'wanted.label': 'Le poste que je cherche', 'wanted.k1': 'Postes visés', 'wanted.v1': "Chargé d'études actuarielles, data scientist, data engineer",
+      'wanted.k2': 'Secteurs', 'wanted.v2': 'Assurance, réassurance, banque, conseil', 'wanted.k3': 'Lieux', 'wanted.v3': 'Paris, Lille, Luxembourg',
+      'wanted.k4': 'Disponibilité', 'wanted.v4': 'CDI, septembre 2027', 'contact.cvMeta': 'CV : PDF, 1 page, mis à jour en novembre 2026',
+      'proj.meta': '{a} choisis · {b} autres',
+      'cmd.section': 'Section', 'cmd.project': 'Projet', 'cmd.action': 'Action', 'cmd.theme': 'Changer de thème',
+      'cmd.lang': 'Switch to English', 'cmd.cv': 'Ouvrir le CV (PDF)', 'cmd.copy': "Copier l'adresse email",
+      'cmd.github': 'Ouvrir GitHub', 'cmd.linkedin': 'Ouvrir LinkedIn'
+    },
+    en: {
+      'a11y.skip': 'Skip to content', 'a11y.nav': 'Main navigation', 'a11y.lang': 'Language', 'a11y.menu': 'Menu',
+      'a11y.filters': 'Filter projects', 'a11y.light': 'Switch to light theme', 'a11y.dark': 'Switch to dark theme',
+      'nav.about': 'About', 'nav.experience': 'Experience', 'nav.projects': 'Projects', 'nav.skills': 'Skills',
+      'nav.education': 'Education', 'nav.contact': 'Contact', 'nav.cv': 'Resume',
+      'palette.open': 'Quick search', 'palette.short': 'Search', 'palette.ph': 'Jump to a section, a project, an action',
+      'palette.hint': '↑ ↓ to choose · Enter to open · Esc to close', 'palette.none': 'No result',
+      'hero.eyebrow': 'Data science · Actuarial · Polytech Lille',
+      'hero.title': 'Reliable insurance data, models you can actually explain.',
+      'hero.lede': "I'm Amine Nakrou, an engineering student working in <strong>Swiss Life's group health actuarial team</strong>. I automate claims controls, make data reliable and build interpretable claims experience models.",
+      'hero.available': 'Available for a full-time role from September 2027 · France and Luxembourg',
+      'hero.projects': 'See the projects', 'hero.cv': 'Download resume (PDF)',
+      'fig.num': 'Fig. 1', 'fig.title': 'Development triangle and Chain-Ladder projection',
+      'fig.observed': 'Observed · paid', 'fig.projected': 'Projected · reserve (Chain-Ladder)',
+      'fig.replay': 'Replay the calculation', 'fig.bars': 'Paid and estimated reserve by accident year, in k€',
+      'fig.note': 'Simulated cumulative amounts in k€, for illustration. Development factors are recomputed live in your browser.',
+      'fig.corner': 'Acc. yr', 'fig.ult': 'Ultimate', 'fig.factors': 'Factors',
+      'fig.total': 'Total estimated reserve: {r} k€ · hover or tap a row for details',
+      'fig.row': 'Accident year {y}: estimated ultimate {u} k€ · reserve {r} k€',
+      'figures.label': 'Key figures',
+      'figures.f1': 'Financial reporting automated at HAMATEL', 'figures.f2': "Power BI dashboards delivered to GRDF's IT division",
+      'figures.f3': 'IT tools brought into a single data model', 'figures.v4': '343',
+      'figures.f4': 'Real claims triangles backtested (reserving)',
+      'about.p1': "Final-year engineering student at <strong>Polytech Lille</strong> (Computer Science, Statistics & AI, Master's level), I work in the <strong>Bespoke Actuarial team at Swiss Life</strong> on group health insurance contracts.",
+      'about.p2': 'I reconcile the claims paid by third-party administrators with the internal system, industrialise the controls and build a <strong>claims experience prediction model</strong> (XGBoost, SHAP), benchmarked against the Chain-Ladder method.',
+      'about.p3': "Before that, I built the management dashboards of <strong>GRDF</strong>'s IT division and automated financial reporting in Morocco. I'm looking for a first role in <strong>actuarial science, data science or data engineering</strong>, ideally where the three meet.",
+      'about.caption': 'Lille, 2026',
+      'exp.now': 'Current',
+      'proj.sub': 'Each project opens on the problem, the data, the method and the result.',
+      'proj.github': 'View the code', 'proj.demo': 'Live demo', 'proj.private': 'Course project: code available on request.',
+      'facts.problem': 'Problem', 'facts.data': 'Data', 'facts.method': 'Method', 'facts.result': 'Result', 'facts.stack': 'Tools',
+      'lab.title': 'In progress', 'lab.status': 'In progress',
+      'lab.sub': "A public project that extends my actuarial work. It will appear here with its code once finished.",
+      'more.title': 'Other work', 'more.project': 'Project', 'more.domain': 'Field', 'more.desc': 'Description', 'more.links': 'Links', 'more.demo': 'demo',
+      'contact.lead': "Hiring in actuarial science, data science or data engineering? Write to me, I reply within 24 hours.",
+      'contact.copy': 'Copy address', 'contact.copied': 'Address copied', 'contact.copyFail': 'Copy failed: select the address manually', 'contact.cv': 'Resume (PDF)',
+      'footer.text': '© 2026 Amine Nakrou. Hand-coded in HTML, CSS and JavaScript. Updated November 2026.', 'footer.top': 'Back to top ↑',
+      'wanted.label': "The role I'm looking for", 'wanted.k1': 'Target roles', 'wanted.v1': 'Actuarial analyst, data scientist, data engineer',
+      'wanted.k2': 'Sectors', 'wanted.v2': 'Insurance, reinsurance, banking, consulting', 'wanted.k3': 'Locations', 'wanted.v3': 'Paris, Lille, Luxembourg',
+      'wanted.k4': 'Availability', 'wanted.v4': 'Full-time, September 2027', 'contact.cvMeta': 'Resume: PDF, 1 page, in French, updated November 2026',
+      'proj.meta': '{a} selected · {b} more',
+      'cmd.section': 'Section', 'cmd.project': 'Project', 'cmd.action': 'Action', 'cmd.theme': 'Toggle theme',
+      'cmd.lang': 'Passer en français', 'cmd.cv': 'Open resume (PDF)', 'cmd.copy': 'Copy email address',
+      'cmd.github': 'Open GitHub', 'cmd.linkedin': 'Open LinkedIn'
     }
-    actions.appendChild(action);
-  });
-  return actions.children.length ? actions : null;
-}
-
-function renderProjectCard(project, index, featured) {
-  const text = getProjectText(project.id);
-  const category = project.category[currentLang] || project.category.fr;
-  const card = createElement('article', featured ? 'featured-card project-card' : 'project-card');
-  card.dataset.project = project.id;
-  if (featured) {
-    const visual = createElement('div', 'project-visual');
-    const img = createElement('img');
-    img.src = 'assets/img/projects/' + project.id + '.svg';
-    img.alt = ''; img.width = 800; img.height = 400; img.loading = 'lazy'; img.decoding = 'async';
-    visual.append(img, createElement('span', 'visual-label', translate('visual.caption')));
-    card.appendChild(visual);
-  }
-  const content = createElement('div', 'project-body');
-  card.appendChild(content);
-  card.dataset.area = category;
-
-  const top = createElement('div', 'project-top');
-  const titleWrap = createElement('div', 'project-title-wrap');
-  const labelRow = createElement('div', 'project-label-row');
-  labelRow.appendChild(createElement('span', 'project-label', featured ? translate('nav.featured') : translate('projects.kicker')));
-  labelRow.appendChild(createElement('span', 'project-area', category));
-  titleWrap.appendChild(labelRow);
-  titleWrap.appendChild(createElement('h3', '', text.title));
-  top.appendChild(titleWrap);
-  top.appendChild(createElement('span', 'project-index', String(index).padStart(2, '0')));
-  content.appendChild(top);
-
-  content.appendChild(createElement('p', 'project-summary', text.summary));
-
-  const facts = createElement('div', 'project-facts');
-  const list = createElement('dl');
-  [
-    ['label.problem', text.problem],
-    ['label.data', text.projectData],
-    ['label.method', text.method],
-    ['label.result', text.result]
-  ].forEach(([label, value]) => {
-    const item = createElement('div', 'fact-item');
-    item.appendChild(createElement('dt', '', translate(label)));
-    item.appendChild(createElement('dd', '', value));
-    list.appendChild(item);
-  });
-  facts.appendChild(list);
-  const details = createElement('details', 'project-details');
-  const summary = createElement('summary', '', translate('action.details'));
-  details.append(summary, facts);
-  content.appendChild(details);
-
-  const footer = createElement('div', 'project-footer');
-  const tags = createElement('div', 'project-tags');
-  project.tech.forEach(item => tags.appendChild(createElement('span', '', item)));
-  footer.appendChild(tags);
-  const actions = renderActions(project.links);
-  if (actions) footer.appendChild(actions);
-  content.appendChild(footer);
-  return card;
-}
-
-function renderProjects() {
-  const featuredRoot = document.getElementById('featuredProjects');
-  const otherRoot = document.getElementById('otherProjects');
-  if (!featuredRoot || !otherRoot) return;
-  featuredRoot.textContent = '';
-  otherRoot.textContent = '';
-  projects.filter(project => project.featured).forEach((project, index) => {
-    featuredRoot.appendChild(renderProjectCard(project, index + 1, true));
-  });
-  projects.filter(project => !project.featured && (currentFilter === 'all' || projectGroup(project.id) === currentFilter)).forEach((project, index) => {
-    otherRoot.appendChild(renderProjectCard(project, index + 1, false));
-  });
-  document.getElementById('filterStatus').textContent = `${otherRoot.children.length} ${translate('filter.count')}`;
-  document.querySelectorAll('[data-project-title]').forEach(node => {
-    node.textContent = getProjectText(node.dataset.projectTitle).title;
-  });
-}
-
-function renderSkills() {
-  const root = document.getElementById('skillsGrid');
-  if (!root) return;
-  root.textContent = '';
-  const titles = {
-    fr: ['Actuariat & statistiques', 'Data Science & ML', 'Data Engineering', 'Programmation', 'Visualisation & BI', 'Bases de données & outils'],
-    en: ['Actuarial & statistics', 'Data Science & ML', 'Data Engineering', 'Programming', 'Visualisation & BI', 'Databases & tools'],
-    ar: ['الاكتواريا والإحصاء', 'علم البيانات وتعلم الآلة', 'هندسة البيانات', 'البرمجة', 'تصور البيانات وذكاء الأعمال', 'قواعد البيانات والأدوات']
   };
-  const labels = {
-    en: {'Actuariat':'Actuarial studies','Statistiques avancées':'Advanced statistics','Modélisation':'Modelling','Chaînes de Markov':'Markov chains','Recherche opérationnelle':'Operations research','Pipelines données':'Data pipelines','Architecture SI':'IS architecture'},
-    ar: {'Actuariat':'دراسات اكتوارية','Statistiques avancées':'إحصاء متقدم','Modélisation':'نمذجة','Chaînes de Markov':'سلاسل ماركوف','Recherche opérationnelle':'بحوث العمليات','Pipelines données':'خطوط البيانات','Architecture SI':'بنية نظم المعلومات'}
+
+  /* ------------------------------------------------------------------
+     Contenu
+     ------------------------------------------------------------------ */
+  var JOBS = [
+    {
+      current: true, org: 'Swiss Life France',
+      role: { fr: "Chargé d'études actuarielles (alternance)", en: 'Actuarial Analyst (work-study)' },
+      date: { fr: 'Sept. 2026 – août 2027', en: 'Sep 2026 – Aug 2027' },
+      place: { fr: 'Métropole lilloise', en: 'Lille area, France' },
+      team: { fr: 'Direction technique · Assurance non-vie · Actuariat sur mesure, santé collective', en: 'Technical division · Non-life · Bespoke actuarial, group health' },
+      result: { fr: 'Contrôles de prestations automatisés, modèle de sinistralité en cours', en: 'Automated claims controls, claims model in progress' },
+      points: {
+        fr: [
+          "<strong>Automatise le rapprochement des prestations santé</strong> entre les délégataires de gestion et le système de gestion interne (SAS 9.4, SQL), puis analyse et explique les écarts.",
+          "<strong>Industrialise les rapports de contrôle</strong> : synthèses, matrices survenance × exercice et contrôles de cohérence produits en un seul traitement.",
+          "<strong>Fiabilise les données de prestations</strong> : normalisation des identifiants de contrat, détection et correction d'anomalies.",
+          "<strong>Développe un modèle de prédiction de la sinistralité</strong> par contrat collectif (XGBoost, SHAP), comparé à la méthode Chain-Ladder, en appui de la tarification et du renouvellement.",
+          "<strong>Diffuse les bonnes pratiques Python</strong> dans l'équipe : guide d'installation et modèle de projet."
+        ],
+        en: [
+          '<strong>Automates the reconciliation of health claims</strong> between third-party administrators and the internal policy system (SAS 9.4, SQL), then analyses and explains the gaps.',
+          '<strong>Industrialises control reports</strong>: summaries, accident-year × payment-year matrices and consistency checks produced in a single run.',
+          '<strong>Makes claims data reliable</strong>: contract identifier normalisation, anomaly detection and correction.',
+          '<strong>Builds a claims experience prediction model</strong> per group contract (XGBoost, SHAP), benchmarked against Chain-Ladder, to support pricing and renewals.',
+          '<strong>Spreads Python best practices</strong> in the team: setup guide and project template.'
+        ]
+      },
+      stack: 'SAS 9.4 · SQL · Python · XGBoost · SHAP · Excel'
+    },
+    {
+      org: 'GRDF, direction des systèmes d\'information',
+      orgEn: 'GRDF, IT division',
+      role: { fr: 'Stagiaire data engineering & BI', en: 'Data Engineering & BI Intern' },
+      date: { fr: 'Avr. – août 2026', en: 'Apr – Aug 2026' },
+      place: { fr: 'Saint-Denis', en: 'Saint-Denis, France' },
+      result: { fr: '≈ 10 tableaux de bord, 15 outils consolidés', en: '≈ 10 dashboards, 15 tools consolidated' },
+      points: {
+        fr: [
+          "<strong>Conçu une dizaine de tableaux de bord Power BI</strong> de pilotage de la DSI, consolidant les indicateurs clés d'une quinzaine d'outils (Jira, GitLab, SonarQube, outils de déploiement, Kubernetes).",
+          "<strong>Développé les pipelines d'extraction</strong> en Python (API REST et OData), automatisés en GitLab CI/CD et historisés.",
+          '<strong>Modélisé les données en étoile</strong> (Power Query, Dataflows) et défini les indicateurs DAX.'
+        ],
+        en: [
+          '<strong>Designed about ten Power BI dashboards</strong> for IT management, consolidating key indicators from around fifteen tools (Jira, GitLab, SonarQube, deployment tools, Kubernetes).',
+          '<strong>Built the extraction pipelines</strong> in Python (REST and OData APIs), automated with GitLab CI/CD and historised.',
+          '<strong>Designed the star-schema model</strong> (Power Query, Dataflows) and the DAX measures.'
+        ]
+      },
+      stack: 'Power BI · DAX · Power Query · Python · API REST · OData · GitLab CI/CD'
+    },
+    {
+      org: 'HAMATEL',
+      role: { fr: 'Stagiaire développeur data & web', en: 'Data & Web Developer Intern' },
+      date: { fr: 'Juin – août 2025', en: 'Jun – Aug 2025' },
+      place: { fr: 'Maroc', en: 'Morocco' },
+      result: { fr: 'Reporting financier : 1 semaine → 2 heures', en: 'Financial reporting: 1 week → 2 hours' },
+      points: {
+        fr: [
+          "<strong>Automatisé les rapports financiers</strong> d'un groupe de grande distribution : une semaine de travail ramenée à 2 heures.",
+          '<strong>Développé une application Flask</strong> de gestion des chantiers, des équipes et des interventions.'
+        ],
+        en: [
+          '<strong>Automated the financial reporting</strong> of a retail group: one week of work reduced to 2 hours.',
+          '<strong>Developed a Flask application</strong> to manage worksites, teams and interventions.'
+        ]
+      },
+      stack: 'Python · Flask · SQL'
+    }
+  ];
+
+  var FILTERS = [
+    { id: 'all', fr: 'Tous', en: 'All' },
+    { id: 'data', fr: 'Data engineering', en: 'Data engineering' },
+    { id: 'ml', fr: 'Machine learning', en: 'Machine learning' },
+    { id: 'risk', fr: 'Risque', en: 'Risk' },
+    { id: 'viz', fr: 'Visualisation', en: 'Visualisation' }
+  ];
+
+  var PROJECTS = [
+    {
+      id: 'pricing', cat: 'risk',
+      title: { fr: 'Tarification automobile', en: 'Motor insurance pricing' },
+      metric: { fr: 'Gini 0,37', en: 'Gini 0.37' },
+      summary: { fr: 'Une prime pure fréquence × coût sur 678 000 contrats : GLM Poisson et Gamma face à XGBoost.', en: 'A frequency × severity pure premium on 678,000 policies: Poisson and Gamma GLMs versus XGBoost.' },
+      facts: {
+        fr: ['Construire une prime pure lisible et vérifier ce que le machine learning apporte au GLM.', 'freMTPL2 : 678 013 contrats d\'assurance auto français (données publiques).', 'GLM Poisson (offset exposition) et Gamma, interactions avec le bonus-malus, XGBoost Poisson / Gamma, correction d\'équilibre, surcharge des sinistres graves, SHAP.', 'Gini 0,32 (GLM) → 0,33 (GLM + interactions) → 0,37 (XGBoost), écarts significatifs par bootstrap ; notebook exécuté et tests.'],
+        en: ['Build a readable pure premium and measure what machine learning adds to the GLM.', 'freMTPL2: 678,013 French motor policies (public data).', 'Poisson (exposure offset) and Gamma GLMs, bonus-malus interactions, Poisson / Gamma XGBoost, balance correction, large-claim loading, SHAP.', 'Gini 0.32 (GLM) → 0.33 (GLM + interactions) → 0.37 (XGBoost), significant by bootstrap; executed notebook and tests.']
+      },
+      stack: 'Python · statsmodels · XGBoost · pandas',
+      links: { github: GH + 'tarification-auto-glm-xgboost' }
+    },
+    {
+      id: 'reserving', cat: 'risk',
+      title: { fr: 'Provisionnement : Chain-Ladder face au ML', en: 'Reserving: Chain-Ladder versus ML' },
+      metric: { fr: '343 triangles', en: '343 triangles' },
+      summary: { fr: 'Chain-Ladder, Mack et Cape Cod comparés à XGBoost, avec un backtest sur des triangles réels.', en: 'Chain-Ladder, Mack and Cape Cod compared with XGBoost, backtested on real triangles.' },
+      facts: {
+        fr: ['Mesurer l\'erreur réelle des méthodes de provisionnement, ce qu\'un triangle seul ne permet pas.', 'CAS Loss Reserving Database : 343 triangles réels de 6 branches, avec les paiements réalisés après la date d\'estimation (données publiques).', 'Chain-Ladder, Mack et Cape Cod codés et validés sur RAA (Mack 1993) ; XGBoost en correction de Chain-Ladder, validation croisée par compagnie, sans fuite.', 'Erreur quadratique 6,6 % → 4,5 % des primes ; l\'intervalle à 95 % de Mack ne couvre que 77 % des réserves réelles.'],
+        en: ['Measure the actual error of reserving methods, which a single triangle cannot show.', 'CAS Loss Reserving Database: 343 real triangles across 6 lines, with payments made after the valuation date (public data).', 'Chain-Ladder, Mack and Cape Cod implemented and validated on RAA (Mack 1993); XGBoost as a Chain-Ladder correction, company-level cross-validation, no leakage.', 'Root mean squared error 6.6% → 4.5% of premium; the Mack 95% interval covers only 77% of actual reserves.']
+      },
+      stack: 'Python · NumPy · XGBoost · SciPy',
+      links: { github: GH + 'provisionnement-chain-ladder-ml' }
+    },
+    {
+      id: 'medallion', cat: 'data',
+      title: { fr: 'Pipeline de données médaillon', en: 'Medallion data pipeline' },
+      metric: { fr: 'SCD2 · Dagster', en: 'SCD2 · Dagster' },
+      summary: { fr: "Ingestion quotidienne et modélisation bronze, silver et gold des données d'une compagnie aérienne, orchestrée avec Dagster.", en: "Daily ingestion and bronze, silver and gold modelling of an airline's data, orchestrated with Dagster." },
+      facts: {
+        fr: ["Rendre exploitables des données opérationnelles qui arrivent chaque jour, sans perdre l'historique.", 'Jeu de référence et flux quotidiens d\'une compagnie aérienne, fournis pour le cours de data engineering.', 'Architecture médaillon sur DuckDB : bronze (brut), silver (nettoyé et typé), gold (tables analytiques). Historisation SCD2, orchestration Dagster avec backfill.', "Pipeline complet et documenté (diagramme d'architecture), compatible de DuckDB 0.10 à 2.0."],
+        en: ['Make operational data that arrives every day usable, without losing history.', "An airline's reference dataset and daily feeds, provided for the data engineering course.", 'Medallion architecture on DuckDB: bronze (raw), silver (clean, typed), gold (analytical tables). SCD2 history, Dagster orchestration with backfill.', 'Complete, documented pipeline (architecture diagram), compatible from DuckDB 0.10 to 2.0.']
+      },
+      stack: 'Python · DuckDB · SQL · Dagster',
+      links: { github: GH + 'tp-polytech-sujet-2026' }
+    },
+    {
+      id: 'churn', cat: 'ml',
+      title: { fr: 'Prédiction du churn client', en: 'Customer churn prediction' },
+      metric: { fr: 'AUC 0,85', en: 'AUC 0.85' },
+      summary: { fr: "Un projet de machine learning complet, de l'analyse des données jusqu'à une application Streamlit en ligne, conteneurisée avec Docker.", en: 'A complete machine learning project, from data analysis to an online Streamlit app, containerised with Docker.' },
+      facts: {
+        fr: ["Repérer les clients sur le point de résilier pour cibler les actions de fidélisation.", 'Données clients d\'un opérateur télécom (environ 7 000 clients), classes déséquilibrées.', 'Régression logistique, Random Forest et SVM comparés ; prétraitement, encodage et normalisation ; application Streamlit : tableau de bord, prédiction individuelle et en lot.', 'AUC de 0,85 avec la régression logistique, retenue pour sa lisibilité ; application en ligne et image Docker.'],
+        en: ['Identify customers about to cancel in order to target retention actions.', "A telecom operator's customer data (about 7,000 customers), imbalanced classes.", 'Logistic regression, Random Forest and SVM compared; preprocessing, encoding and scaling; Streamlit app: dashboard, single and batch prediction.', 'AUC of 0.85 with logistic regression, chosen for its interpretability; online app and Docker image.']
+      },
+      stack: 'Python · scikit-learn · Streamlit · Docker',
+      links: { github: GH + 'Projet-de-prediction-du-churn-client', demo: 'https://aminenakrou-churn-prediction.streamlit.app' }
+    },
+    {
+      id: 'credit', cat: 'risk',
+      title: { fr: 'Scoring de crédit', en: 'Credit scoring' },
+      metric: { fr: 'ROC · Youden', en: 'ROC · Youden' },
+      summary: { fr: "Évaluer le risque d'un client avant l'octroi d'un crédit, sur des données fortement déséquilibrées.", en: 'Assess a customer\'s risk before granting credit, on heavily imbalanced data.' },
+      facts: {
+        fr: ["Décider d'accorder ou non un crédit en limitant le risque de défaut.", 'Données financières avec un fort déséquilibre de classes.', 'Régression logistique, arbre de décision et forêt aléatoire ; rééquilibrage SMOTE ; courbes ROC et seuil de Youden.', 'Comparaison des modèles dans un rapport R Markdown interactif.'],
+        en: ['Decide whether to grant credit while limiting default risk.', 'Financial data with strong class imbalance.', 'Logistic regression, decision tree and random forest; SMOTE rebalancing; ROC curves and Youden threshold.', 'Model comparison in an interactive R Markdown report.']
+      },
+      stack: 'R · R Markdown · SMOTE · ROC',
+      links: { github: GH + 'scoring-credit-courbe-roc', demo: PAGES + 'scoring-credit-courbe-roc/' }
+    },
+    {
+      id: 'health', cat: 'ml',
+      title: { fr: 'Diagnostic sur radiographies thoraciques', en: 'Chest X-ray diagnosis' },
+      metric: { fr: '14 pathologies', en: '14 conditions' },
+      summary: { fr: 'Un réseau de neurones qui détecte 14 pathologies, évalué comme on évalue un test médical.', en: 'A neural network that detects 14 conditions, evaluated the way a medical test is evaluated.' },
+      facts: {
+        fr: ['Aider au diagnostic en détectant 14 pathologies sur des radiographies thoraciques.', 'NIH ChestX-ray8 : images annotées multi-label, classes très déséquilibrées, séparation par patient pour éviter toute fuite de données.', 'Transfer learning DenseNet121, perte pondérée, Grad-CAM pour montrer les zones qui justifient chaque prédiction.', 'AUC par pathologie, sensibilité et spécificité, VPP et VPN, intervalles de confiance par bootstrap, calibration de Platt.'],
+        en: ['Support diagnosis by detecting 14 conditions on chest X-rays.', 'NIH ChestX-ray8: multi-label annotated images, highly imbalanced classes, patient-level split to prevent leakage.', 'DenseNet121 transfer learning, weighted loss, Grad-CAM to show the regions behind each prediction.', 'Per-class AUC, sensitivity and specificity, PPV and NPV, bootstrap confidence intervals, Platt calibration.']
+      },
+      stack: 'TensorFlow · Keras · DenseNet121 · scikit-learn',
+      links: {}
+    },
+    {
+      id: 'dashboard', cat: 'viz',
+      title: { fr: 'Tableau de bord de santé publique', en: 'Public health dashboard' },
+      metric: { fr: '2000 – 2018', en: '2000 – 2018' },
+      summary: { fr: 'Une application web pour lire 19 ans de statistiques américaines par État, sexe et âge.', en: 'A web app to read 19 years of US statistics by state, sex and age.' },
+      facts: {
+        fr: ['Rendre lisibles des tendances longues de santé publique.', 'Données publiques américaines, 2000 à 2018.', 'HTML, CSS, JavaScript et Plotly : indicateurs clés, import de fichiers CSV par glisser-déposer, trois vues (tableau de bord, analyse, indicateurs).', 'Démo en ligne, utilisable sans installation.'],
+        en: ['Make long-term public health trends readable.', 'US public data, 2000 to 2018.', 'HTML, CSS, JavaScript and Plotly: key indicators, drag-and-drop CSV import, three views (dashboard, analysis, indicators).', 'Online demo, no installation needed.']
+      },
+      stack: 'JavaScript · Plotly · HTML · CSS',
+      links: { github: GH + 'dashboard-suicide-usa', demo: PAGES + 'dashboard-suicide-usa/' }
+    },
+    {
+      id: 'water', cat: 'viz',
+      title: { fr: 'Accès à l\'eau potable dans le monde', en: 'Access to drinking water worldwide' },
+      metric: { fr: '776 M sans accès', en: '776 M without access' },
+      summary: { fr: 'Un tableau de bord Tableau pour aider une ONG à choisir les pays et le domaine où investir.', en: 'A Tableau dashboard to help an NGO choose the countries and the field to invest in.' },
+      facts: {
+        fr: ['Repérer les pays en difficulté d\'accès à l\'eau potable et où concentrer les efforts, pour trois domaines : création, modernisation, conseil.', 'Données publiques OMS et FAO, 2000 à 2017 : accès à l\'eau, population, stabilité politique, mortalité.', 'Modèle de données Tableau (jointure et relations), indicateurs pondérés par la population, calculs FIXED, histoire en quatre tableaux de bord accessibles.', 'Publié sur Tableau Public ; chiffres clés vérifiés indépendamment avec pandas.'],
+        en: ['Identify countries struggling with access to drinking water and where to focus, across three fields: building, upgrading, advising.', 'Public WHO and FAO data, 2000 to 2017: water access, population, political stability, mortality.', 'Tableau data model (join and relationships), population-weighted indicators, FIXED calculations, a story of four accessible dashboards.', 'Published on Tableau Public; key figures independently cross-checked with pandas.']
+      },
+      stack: 'Tableau · Python · pandas',
+      links: { github: GH + 'acces-eau-potable-tableau', demo: 'https://public.tableau.com/app/profile/amine.nakrou/viz/AccsleaupotabledanslemondeDWFA/HistoireDWFA' }
+    }
+  ];
+
+  var LAB = [
+    { title: { fr: 'Tableau de bord de portefeuille', en: 'Portfolio dashboard' }, text: { fr: 'Sinistralité, fréquence et coût moyen par segment, publiés sur Tableau Public.', en: 'Loss experience, frequency and severity by segment, published on Tableau Public.' } }
+  ];
+
+  var OTHERS = [
+    { title: { fr: 'Promenade aléatoire du cavalier', en: 'Random knight walk' }, dom: { fr: 'Probabilités', en: 'Probability' }, desc: { fr: 'Chaînes de Markov, simulations Python, rapport LaTeX', en: 'Markov chains, Python simulations, LaTeX report' }, gh: 'promenade-aleatoire-cavalier-markov', demo: true },
+    { title: { fr: 'PageRank sur Wikispeedia', en: 'PageRank on Wikispeedia' }, dom: { fr: 'Graphes', en: 'Graphs' }, desc: { fr: 'PageRank standard et personnalisé', en: 'Standard and personalised PageRank' }, gh: 'pagerank-wikispeedia', demo: true },
+    { title: { fr: 'Algorithme de Dinic', en: 'Dinic algorithm' }, dom: { fr: 'Algorithmique', en: 'Algorithms' }, desc: { fr: 'Flot maximum en C, graphes DIMACS', en: 'Maximum flow in C, DIMACS graphs' }, gh: 'dinic-flot-maximum', demo: true },
+    { title: { fr: 'Optimisation de la production', en: 'Production optimisation' }, dom: { fr: 'Recherche opérationnelle', en: 'Operations research' }, desc: { fr: 'Programmation linéaire et analyse de robustesse (Lindo)', en: 'Linear programming and robustness analysis (Lindo)' } },
+    { title: { fr: 'CKOALA', en: 'CKOALA' }, dom: { fr: 'Java', en: 'Java' }, desc: { fr: 'Moteur de recherche dans des arbres de typologies', en: 'Search engine over typology trees' }, gh: 'ckoala-recherche-typologies', demo: true },
+    { title: { fr: 'Pente', en: 'Pente' }, dom: { fr: 'C', en: 'C' }, desc: { fr: 'Jeu de plateau 19 × 19 : coups, captures, alignements', en: '19 × 19 board game: moves, captures, alignments' }, gh: 'pente-jeu-de-plateau' },
+    { title: { fr: 'Flood It', en: 'Flood It' }, dom: { fr: 'Web', en: 'Web' }, desc: { fr: 'Puzzle de couleurs jouable dans le navigateur', en: 'Colour puzzle playable in the browser' }, gh: 'flood-it-jeu', demo: true },
+    { title: { fr: 'QUESACO', en: 'QUESACO' }, dom: { fr: 'Conception d\'interface', en: 'Interface design' }, desc: { fr: 'Maquettes React d\'une application d\'identification de la faune et de la flore', en: 'React mock-ups of a wildlife and plant identification app' }, gh: 'quesaco-maquettes', demo: true }
+  ];
+
+  var SKILLS = [
+    { k: { fr: 'Actuariat et assurance', en: 'Actuarial & insurance' }, v: { fr: 'Santé collective, sinistralité, Chain-Ladder, logique survenance / exercice, contrôle des prestations, gestion déléguée', en: 'Group health, claims experience, Chain-Ladder, accident / payment year logic, claims controls, delegated administration' } },
+    { k: { fr: 'Machine learning', en: 'Machine learning' }, v: { fr: 'Régression, classification, Random Forest, XGBoost, SHAP, deep learning (TensorFlow / Keras, PyTorch), statistiques', en: 'Regression, classification, Random Forest, XGBoost, SHAP, deep learning (TensorFlow / Keras, PyTorch), statistics' } },
+    { k: { fr: 'Langages', en: 'Languages' }, v: 'Python, R, SQL, SAS, VBA, HTML / CSS / JavaScript' },
+    { k: { fr: 'Librairies', en: 'Libraries' }, v: 'pandas, NumPy, scikit-learn, Matplotlib, Plotly, Flask, Streamlit, R Markdown' },
+    { k: { fr: 'Bases de données', en: 'Databases' }, v: 'SAS Enterprise Guide, Snowflake, DuckDB, PostgreSQL, MySQL, MongoDB' },
+    { k: { fr: 'Data engineering et MLOps', en: 'Data engineering & MLOps' }, v: 'Spark, Airflow, Dagster, Docker, Kubernetes, MLflow, Git / GitHub, GitLab CI/CD, API REST / OData' },
+    { k: { fr: 'BI et reporting', en: 'BI & reporting' }, v: { fr: 'Power BI (DAX, Power Query, Dataflows), Tableau, Excel avancé', en: 'Power BI (DAX, Power Query, Dataflows), Tableau, advanced Excel' } },
+    { k: { fr: 'Cloud et systèmes', en: 'Cloud & systems' }, v: 'Azure, AWS, Linux' },
+    { k: { fr: 'Outils', en: 'Tools' }, v: 'Jupyter, VS Code, Jira, SonarQube, SharePoint, LeanIX' },
+    { k: { fr: 'Langues', en: 'Languages spoken' }, v: { fr: 'Français courant, anglais C1, arabe langue maternelle, espagnol A2', en: 'French (fluent), English (C1), Arabic (native), Spanish (A2)' } }
+  ];
+
+  var EDU = [
+    { date: '2024 – 2027', title: { fr: "Diplôme d'ingénieur, grade Master", en: "Engineering degree, Master's level" }, org: 'Polytech Lille · ISIA', text: { fr: 'Informatique, statistiques et intelligence artificielle : machine learning, data mining, MLOps, data engineering, optimisation. Dernière année en alternance.', en: 'Computer science, statistics and artificial intelligence: machine learning, data mining, MLOps, data engineering, optimisation. Final year as a work-study.' } },
+    { date: '2022 – 2024', title: { fr: 'Classes préparatoires MPSI / MP', en: 'Preparatory classes MPSI / MP' }, org: 'Lycée Moulay Idriss, Fès', text: { fr: "Deux ans de mathématiques, de physique et d'algorithmique intensives, avant les concours des écoles d'ingénieurs.", en: 'Two years of intensive mathematics, physics and algorithms ahead of the engineering school entrance exams.' } },
+    { date: '2022', title: { fr: 'Baccalauréat Sciences mathématiques', en: 'Baccalaureate in Mathematical Sciences' }, org: { fr: 'Mention Très bien · Maroc', en: 'Highest honours · Morocco' }, text: { fr: 'Filière scientifique à dominante mathématique.', en: 'Science track with a mathematics focus.' } }
+  ];
+
+  /* ------------------------------------------------------------------
+     Outils
+     ------------------------------------------------------------------ */
+  var $ = function (s, r) { return (r || document).querySelector(s); };
+  var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+  var lang = 'fr';
+  function t(k, vars) {
+    var s = (I18N[lang] && I18N[lang][k]) || I18N.fr[k] || k;
+    if (vars) Object.keys(vars).forEach(function (n) { s = s.replace('{' + n + '}', vars[n]); });
+    return s;
+  }
+  var L = function (o) { return typeof o === 'string' ? o : (o[lang] || o.fr); };
+  var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
+  var store = {
+    get: function (k) { try { return localStorage.getItem(k); } catch (_) { return null; } },
+    set: function (k, v) { try { localStorage.setItem(k, v); } catch (_) { /* sans stockage */ } }
   };
-  skills.forEach((group, index) => {
-    const card = createElement('article', 'skill-card anim-fade-up');
-    card.appendChild(createElement('span', 'skill-number', String(index + 1).padStart(2, '0')));
-    card.appendChild(createElement('h3', '', titles[currentLang][index]));
-    const tags = createElement('div', 'project-tags');
-    group.items.forEach(item => tags.appendChild(createElement('span', '', labels[currentLang]?.[item] || item)));
-    card.appendChild(tags);
-    root.appendChild(card);
-  });
-}
-
-function renderTimeline() {
-  const root = document.getElementById('timeline');
-  if (!root) return;
-  root.textContent = '';
-  timelineTexts[currentLang].forEach(item => {
-    const card = createElement('article', item.current ? 'timeline-card current anim-fade-up' : 'timeline-card anim-fade-up');
-    const meta = createElement('div');
-    meta.appendChild(createElement('span', 'timeline-meta', item.type));
-    meta.appendChild(createElement('p', '', item.date));
-    const body = createElement('div');
-    body.appendChild(createElement('h3', '', item.title));
-    body.appendChild(createElement('p', '', item.org));
-    const points = createElement('ul');
-    item.points.forEach(point => points.appendChild(createElement('li', '', point)));
-    body.appendChild(points);
-    const tags = createElement('div', 'project-tags');
-    item.tags.forEach(tag => tags.appendChild(createElement('span', '', tag)));
-    body.appendChild(tags);
-    card.appendChild(meta);
-    card.appendChild(body);
-    root.appendChild(card);
-  });
-}
-
-function syncStaticTranslations() {
-  document.querySelectorAll('[data-i18n]').forEach(node => {
-    node.textContent = translate(node.dataset.i18n);
-  });
-  document.documentElement.lang = currentLang;
-  document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
-  document.body.classList.toggle('rtl', currentLang === 'ar');
-  document.title = currentLang === 'en' ? 'Amine Nakrou — Actuarial Studies & Data Science' : currentLang === 'ar' ? 'أمين نقرو — الاكتواريا وعلم البيانات' : SITE_TITLE;
-  document.querySelectorAll('[data-i18n-aria]').forEach(node => node.setAttribute('aria-label', translate(node.dataset.i18nAria)));
-  document.querySelectorAll('.lang-btn').forEach(btn => {
-    const isActive = btn.dataset.lang === currentLang;
-    btn.classList.toggle('active', isActive);
-    btn.setAttribute('aria-pressed', String(isActive));
-  });
-  const cvHref = CV[currentLang] || CV.fr;
-  ['cvLink', 'cvLinkHero', 'cvLinkContact', 'cvLinkList'].forEach(id => {
-    const link = document.getElementById(id);
-    if (link) link.href = cvHref;
-  });
-}
-
-function applyLang(lang) {
-  currentLang = translations[lang] ? lang : 'fr';
-  storage.set('lang', currentLang);
-  syncStaticTranslations();
-  renderProjects();
-  renderTimeline();
-  renderSkills();
-  syncThemeIcon();
-  syncMenuLabel();
-}
-
-const scrollProgress = document.getElementById('scrollProgress');
-window.addEventListener('scroll', () => {
-  const total = Math.max(document.documentElement.scrollHeight - window.innerHeight, 1);
-  const progress = Math.min((window.scrollY / total) * 100, 100);
-  if (scrollProgress) scrollProgress.style.width = `${progress}%`;
-  document.getElementById('navbar')?.classList.toggle('scrolled', window.scrollY > 20);
-  let active = '';
-  document.querySelectorAll('main section[id]').forEach(section => {
-    if (window.scrollY >= section.offsetTop - 130) active = section.id;
-  });
-  document.querySelectorAll('.nav-item').forEach(item => {
-    item.classList.toggle('active', item.getAttribute('href') === `#${active}`);
-  });
-}, { passive: true });
-
-document.querySelectorAll('.lang-btn').forEach(btn => {
-  btn.addEventListener('click', () => applyLang(btn.dataset.lang));
-});
-
-const themeToggle = document.getElementById('themeToggle');
-const themeIcon = document.getElementById('themeIcon');
-
-function syncThemeIcon() {
-  const light = document.documentElement.getAttribute('data-theme') === 'light';
-  if (themeIcon) themeIcon.textContent = light ? '☾' : '☀';
-  if (themeToggle) {
-    const label = translate(light ? 'a11y.dark' : 'a11y.light');
-    themeToggle.setAttribute('aria-label', label);
-    themeToggle.title = label;
+  function fmt(n, d) { return n.toLocaleString(lang === 'fr' ? 'fr-FR' : 'en-GB', { minimumFractionDigits: d || 0, maximumFractionDigits: d || 0 }); }
+  function toast(msg) {
+    var el = $('#toast');
+    el.textContent = msg;
+    el.classList.add('show');
+    clearTimeout(toast.timer);
+    toast.timer = setTimeout(function () { el.classList.remove('show'); }, 2400);
   }
-}
 
-themeToggle?.addEventListener('click', () => {
-  const light = document.documentElement.getAttribute('data-theme') === 'light';
-  if (light) {
-    document.documentElement.removeAttribute('data-theme');
-    storage.set('theme', 'dark');
-  } else {
-    document.documentElement.setAttribute('data-theme', 'light');
-    storage.set('theme', 'light');
+  /* ------------------------------------------------------------------
+     Fig. 1 : triangle de développement et Chain-Ladder
+     Montants simulés de façon déterministe, puis projetés avec les
+     facteurs de développement calculés sur la partie observée.
+     ------------------------------------------------------------------ */
+  var TRI = (function () {
+    var years = [2019, 2020, 2021, 2022, 2023, 2024, 2025];
+    var ultimates = [812, 846, 889, 905, 951, 998, 1034];
+    var pattern = [0.58, 0.83, 0.93, 0.968, 0.987, 0.996, 1];
+    var n = years.length, C = [], i, j;
+    for (i = 0; i < n; i++) {
+      C[i] = [];
+      var cum = 0;
+      for (j = 0; j < n; j++) {
+        var share = pattern[j] - (j ? pattern[j - 1] : 0);
+        cum += ultimates[i] * share * (1 + 0.09 * Math.sin(i * 1.9 + j * 2.7));
+        C[i][j] = i + j <= n - 1 ? Math.round(cum) : null;
+      }
+    }
+    var f = [];
+    for (j = 0; j < n - 1; j++) {
+      var num = 0, den = 0;
+      for (i = 0; i + j + 1 <= n - 1; i++) { num += C[i][j + 1]; den += C[i][j]; }
+      f[j] = num / den;
+    }
+    var P = C.map(function (row) { return row.slice(); });
+    for (i = 0; i < n; i++) for (j = 1; j < n; j++) if (P[i][j] === null) P[i][j] = P[i][j - 1] * f[j - 1];
+    var rows = years.map(function (y, k) {
+      var latest = C[k][n - 1 - k], ult = P[k][n - 1];
+      return { year: y, ult: ult, reserve: ult - latest };
+    });
+    return { years: years, n: n, C: C, P: P, f: f, rows: rows };
+  }());
+
+  function renderTriangle(play) {
+    stopPlay();
+    var tbl = $('#triangle'), n = TRI.n, html = '<thead><tr><th scope="col">' + esc(t('fig.corner')) + '</th>';
+    for (var j = 0; j < n; j++) html += '<th scope="col">' + (j + 1) + '</th>';
+    html += '<th scope="col">' + esc(t('fig.ult')) + '</th></tr></thead><tbody>';
+    for (var i = 0; i < n; i++) {
+      html += '<tr data-row="' + i + '" tabindex="0"><th scope="row">' + TRI.years[i] + '</th>';
+      for (j = 0; j < n; j++) {
+        var obs = TRI.C[i][j] !== null;
+        html += '<td class="cell ' + (obs ? 'obs' : 'prj') + '" data-i="' + i + '" data-j="' + j + '">' + fmt(TRI.P[i][j]) + '</td>';
+      }
+      html += '<td class="cell ult' + (i > 0 ? ' est' : '') + '" data-i="' + i + '" data-j="' + n + '">' + fmt(TRI.rows[i].ult) + '</td></tr>';
+    }
+    html += '</tbody><tfoot><tr><th scope="row">' + esc(t('fig.factors')) + '</th>';
+    for (j = 0; j < n; j++) html += '<td class="f" data-j="' + j + '">' + (j < n - 1 ? fmt(TRI.f[j], 3) : '') + '</td>';
+    html += '<td></td></tr></tfoot>';
+    tbl.innerHTML = html;
+    renderBars();
+    if (play && !reduceMotion) playTriangle(); else showTotal();
   }
-  syncThemeIcon();
-});
 
-const burger = document.getElementById('burger');
-const mobileMenu = document.getElementById('mobileMenu');
+  function renderBars() {
+    var max = Math.max.apply(null, TRI.rows.map(function (r) { return r.ult; }));
+    $('#bars').innerHTML = TRI.rows.map(function (r, i) {
+      var paid = r.ult - r.reserve, wp = paid / max * 100, wr = r.reserve / max * 100;
+      var label = t('fig.row', { y: r.year, u: fmt(r.ult), r: fmt(r.reserve) });
+      return '<div class="bar" data-row="' + i + '" role="img" aria-label="' + esc(label) + '">' +
+        '<span class="bar-y">' + r.year + '</span>' +
+        '<span class="bar-track"><span class="bar-fill" style="--i:' + i + '">' +
+        '<span class="seg paid' + (r.reserve < 0.5 ? ' last' : '') + '" style="width:' + wp.toFixed(2) + '%"></span>' +
+        (r.reserve >= 0.5 ? '<span class="seg res" style="width:' + wr.toFixed(2) + '%"></span>' : '') +
+        '</span></span><span class="bar-v">' + fmt(r.ult) + '</span></div>';
+    }).join('');
+  }
 
-function syncMenuLabel() {
-  burger?.setAttribute('aria-label', translate(burger.getAttribute('aria-expanded') === 'true' ? 'a11y.close' : 'a11y.open'));
-}
-function closeMenu(returnFocus = false) {
-  if (!burger || !mobileMenu) return;
-  burger.setAttribute('aria-expanded', 'false');
-  mobileMenu.hidden = true;
-  syncMenuLabel();
-  if (returnFocus) burger.focus();
-}
-burger?.addEventListener('click', () => {
-  const open = burger.getAttribute('aria-expanded') === 'true';
-  burger.setAttribute('aria-expanded', String(!open));
-  mobileMenu.hidden = open;
-  syncMenuLabel();
-  if (!open) mobileMenu.querySelector('a')?.focus();
-});
-document.querySelectorAll('.mobile-link').forEach(link => link.addEventListener('click', () => closeMenu()));
-document.addEventListener('keydown', event => {
-  if (event.key === 'Escape' && !mobileMenu.hidden) closeMenu(true);
-});
-document.addEventListener('pointerdown', event => {
-  if (!mobileMenu.hidden && !mobileMenu.contains(event.target) && !burger.contains(event.target)) closeMenu();
-});
-document.addEventListener('focusin', event => {
-  if (!mobileMenu.hidden && !mobileMenu.contains(event.target) && !burger.contains(event.target)) closeMenu();
-});
-window.matchMedia('(min-width: 981px)').addEventListener('change', event => { if (event.matches) closeMenu(); });
-function projectGroup(id) {
-  if (['water', 'markov', 'pagerank', 'optimization'].includes(id)) return 'data';
-  if (['dinic', 'ckoala'].includes(id)) return 'software';
-  return 'web';
-}
-document.querySelectorAll('[data-filter]').forEach(button => {
-  button.addEventListener('click', () => {
-    currentFilter = button.dataset.filter;
-    document.querySelectorAll('[data-filter]').forEach(node => node.setAttribute('aria-pressed', String(node === button)));
-    renderProjects();
-  });
-});
-// Native fragment navigation preserves history, keyboard focus and reduced motion.
-applyLang(currentLang);
+  /* Séquence : cellules observées, puis pour chaque colonne le facteur
+     de développement et les cellules projetées, puis l'ultime et les barres. */
+  var playTimers = [];
+  function later(fn, ms) { playTimers.push(setTimeout(fn, ms)); }
+  function stopPlay() {
+    playTimers.forEach(clearTimeout); playTimers = [];
+    var btn = $('#replay'); if (btn) btn.disabled = false;
+  }
+  function countTo(el, to, dec, ms) {
+    var t0 = null;
+    function step(ts) {
+      if (t0 === null) t0 = ts;
+      var p = Math.min(1, (ts - t0) / ms), e = 1 - Math.pow(1 - p, 3);
+      el.textContent = fmt(1 + (to - 1) * e, dec);
+      if (p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  function playTriangle() {
+    var tbl = $('#triangle'), n = TRI.n, bars = $('#bars'), btn = $('#replay');
+    btn.disabled = true;
+    $$('td.cell, td.f', tbl).forEach(function (c) { c.classList.add('pending'); });
+    bars.classList.add('pending');
+    $('#figReadout').textContent = '';
+    var cell = function (i, j) { return tbl.querySelector('td[data-i="' + i + '"][data-j="' + j + '"]'); };
+    var t0 = 450, step = 360;
+    // 1. Diagonales observées
+    for (var i = 0; i < n; i++) for (var j = 0; j < n; j++) {
+      if (TRI.C[i][j] !== null) (function (c, d) { later(function () { c.classList.remove('pending'); }, t0 + d * 55); }(cell(i, j), i + j));
+    }
+    var t1 = t0 + n * 55 + 250;
+    // 2. Balayage colonne par colonne
+    for (var jj = 0; jj < n - 1; jj++) (function (j) {
+      var start = t1 + j * step;
+      var pair = [];
+      for (var r = 0; r + j + 1 <= n - 1; r++) { pair.push(cell(r, j), cell(r, j + 1)); }
+      later(function () {
+        pair.forEach(function (c) { c.classList.add('scan'); });
+        var f = tbl.querySelector('td.f[data-j="' + j + '"]');
+        f.classList.remove('pending'); f.classList.add('hot');
+        countTo(f, TRI.f[j], 3, step * 0.8);
+      }, start);
+      for (var i2 = 0; i2 < n; i2++) {
+        if (TRI.C[i2][j + 1] === null) (function (c, k) {
+          later(function () { c.classList.remove('pending'); c.classList.add('flash'); }, start + 140 + k * 35);
+          later(function () { c.classList.remove('flash'); }, start + 640 + k * 35);
+        }(cell(i2, j + 1), i2));
+      }
+      later(function () {
+        pair.forEach(function (c) { c.classList.remove('scan'); });
+        tbl.querySelector('td.f[data-j="' + j + '"]').classList.remove('hot');
+      }, start + step);
+    }(jj));
+    // 3. Ultimes, barres, réserve totale
+    var t2 = t1 + (n - 1) * step + 120;
+    for (var u = 0; u < n; u++) (function (c, k) { later(function () { c.classList.remove('pending'); }, t2 + k * 45); }(cell(u, n), u));
+    later(function () { tbl.querySelector('td.f[data-j="' + (n - 1) + '"]').classList.remove('pending'); bars.classList.remove('pending'); }, t2 + 120);
+    later(function () { showTotal(); btn.disabled = false; }, t2 + 700);
+  }
+
+  function showTotal() {
+    var total = TRI.rows.reduce(function (s, r) { return s + r.reserve; }, 0);
+    $('#figReadout').textContent = t('fig.total', { r: fmt(total) });
+  }
+  function bindTriangle() {
+    var tbl = $('#triangle'), bars = $('#bars');
+    function select(i) {
+      $$('tr.hl', tbl).concat($$('.bar.hl', bars)).forEach(function (x) { x.classList.remove('hl'); });
+      if (i === null || isNaN(i)) { showTotal(); return; }
+      var tr = tbl.querySelector('tbody tr[data-row="' + i + '"]'), bar = bars.querySelector('.bar[data-row="' + i + '"]');
+      if (tr) tr.classList.add('hl');
+      if (bar) bar.classList.add('hl');
+      var r = TRI.rows[i];
+      $('#figReadout').textContent = t('fig.row', { y: r.year, u: fmt(r.ult), r: fmt(r.reserve) });
+    }
+    var rowOf = function (e) { var el = e.target.closest('tbody tr, .bar'); return el ? +el.dataset.row : null; };
+    [tbl, bars].forEach(function (root) {
+      root.addEventListener('pointerover', function (e) { var i = rowOf(e); if (i !== null) select(i); });
+      root.addEventListener('pointerleave', function () { select(null); });
+      root.addEventListener('click', function (e) { var i = rowOf(e); if (i !== null) select(i); });
+    });
+    tbl.addEventListener('focusin', function (e) { var i = rowOf(e); if (i !== null) select(i); });
+    tbl.addEventListener('focusout', function (e) { if (!tbl.contains(e.relatedTarget)) select(null); });
+    $('#replay').addEventListener('click', function () { renderTriangle(true); });
+  }
+
+  /* Halo lumineux qui suit la souris dans l'ouverture */
+  function initCursorGlow() {
+    if (reduceMotion || !window.matchMedia('(pointer: fine)').matches) return;
+    var hero = $('#hero'), glow = $('.hero-glow'), dot = $('.cursor-glow');
+    hero.addEventListener('pointermove', function (e) {
+      var r = glow.getBoundingClientRect();
+      dot.style.setProperty('--cx', (e.clientX - r.left) + 'px');
+      dot.style.setProperty('--cy', (e.clientY - r.top) + 'px');
+    }, { passive: true });
+  }
+
+  /* Apparitions au défilement pour les navigateurs sans « scroll-driven animations ».
+     Seuls les éléments situés sous l'écran au chargement sont masqués, puis révélés. */
+  function initRevealFallback() {
+    var supported = window.CSS && CSS.supports && CSS.supports('animation-timeline: view()');
+    if (supported || reduceMotion || !('IntersectionObserver' in window)) return;
+    var sel = '.entry, article.proj, .skills > div, .lab li, .wanted > div, .prose > p, .portrait, .others tbody tr, .sub-title, .contact-lead, .mail-row, .figures-list > div';
+    var obs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
+    }, { rootMargin: '0px 0px -8% 0px' });
+    function arm() {
+      $$(sel).forEach(function (el, k) {
+        if (el.classList.contains('rv')) return;
+        if (el.getBoundingClientRect().top < window.innerHeight) return;
+        el.classList.add('rv');
+        el.style.setProperty('--rd', (k % 4) * 60 + 'ms');
+        obs.observe(el);
+      });
+    }
+    document.documentElement.classList.add('io');
+    arm();
+    armReveal = arm;
+  }
+  var armReveal = function () {};
+
+  /* Titre révélé mot par mot (au premier affichage seulement) */
+  function splitTitle() {
+    var h1 = $('.hero h1');
+    var words = h1.textContent.trim().split(/\s+/);
+    h1.setAttribute('aria-label', h1.textContent.trim());
+    h1.innerHTML = words.map(function (w, i) { return '<span class="w" aria-hidden="true"><span style="--i:' + i + '">' + esc(w) + '</span></span>'; }).join(' ');
+  }
+
+  /* Compteurs des repères chiffrés */
+  function initCounters() {
+    var els = $$('.count');
+    if (reduceMotion || !('IntersectionObserver' in window)) return;
+    var obs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        obs.unobserve(e.target);
+        var el = e.target, to = parseFloat(el.dataset.to), dec = parseInt(el.dataset.dec || '0', 10), t0 = null;
+        (function step(ts) {
+          if (!ts) { requestAnimationFrame(step); return; }
+          if (t0 === null) t0 = ts;
+          var p = Math.min(1, (ts - t0) / 1400), k = 1 - Math.pow(1 - p, 4);
+          el.textContent = fmt(to * k, dec);
+          if (p < 1) requestAnimationFrame(step);
+        }());
+      });
+    }, { threshold: 0.8 });
+    els.forEach(function (el) { obs.observe(el); });
+  }
+
+  /* ------------------------------------------------------------------
+     Rendu des sections
+     ------------------------------------------------------------------ */
+  function renderJobs() {
+    $('#jobs').innerHTML = JOBS.map(function (j) {
+      var org = lang === 'en' && j.orgEn ? j.orgEn : j.org;
+      return '<li class="entry"><div class="when">' + esc(L(j.date)) + '<br />' + esc(L(j.place)) +
+        (j.current ? '<br /><span class="now"><span class="dot" aria-hidden="true"></span>' + esc(t('exp.now')) + '</span>' : '') + '</div>' +
+        '<div><h3>' + esc(L(j.role)) + '</h3><p class="org">' + esc(org) + '</p>' +
+        (j.team ? '<p class="team">' + esc(L(j.team)) + '</p>' : '') +
+        '<span class="result">' + esc(L(j.result)) + '</span>' +
+        '<ul>' + j.points[lang].map(function (p) { return '<li>' + p + '</li>'; }).join('') + '</ul>' +
+        '<p class="stack">' + esc(j.stack) + '</p></div></li>';
+    }).join('');
+  }
+
+  function renderEdu() {
+    $('#edu').innerHTML = EDU.map(function (e) {
+      return '<li class="entry"><div class="when">' + esc(e.date) + '</div><div><h3>' + esc(L(e.title)) + '</h3>' +
+        '<p class="org">' + esc(L(e.org)) + '</p><p class="edu-text">' + esc(L(e.text)) + '</p></div></li>';
+    }).join('');
+  }
+
+  var activeFilter = 'all';
+  var openIds = {};
+  function catLabel(id) { var c = FILTERS.filter(function (f) { return f.id === id; })[0]; return c ? c[lang] : ''; }
+
+  function renderFilters() {
+    $('#filters').innerHTML = FILTERS.map(function (f) {
+      return '<button type="button" data-filter="' + f.id + '" aria-pressed="' + (f.id === activeFilter) + '">' + esc(f[lang]) + '</button>';
+    }).join('');
+  }
+
+  function renderProjects() {
+    var keys = ['facts.problem', 'facts.data', 'facts.method', 'facts.result'];
+    $('#projects').innerHTML = PROJECTS.map(function (p) {
+      var open = !!openIds[p.id];
+      var links = '';
+      if (p.links.github) links += '<a class="btn small" href="' + p.links.github + '" target="_blank" rel="noopener noreferrer">' + esc(t('proj.github')) + ' ↗</a>';
+      if (p.links.demo) links += '<a class="btn small" href="' + p.links.demo + '" target="_blank" rel="noopener noreferrer">' + esc(t('proj.demo')) + ' ↗</a>';
+      if (!links) links = '<span class="note">' + esc(t('proj.private')) + '</span>';
+      return '<article class="proj' + (open ? ' open' : '') + '" data-id="' + p.id + '" data-cat="' + p.cat + '">' +
+        '<button class="proj-head" type="button" aria-expanded="' + open + '" aria-controls="panel-' + p.id + '">' +
+        '<span class="proj-cat">' + esc(catLabel(p.cat)) + '</span>' +
+        '<span class="proj-title">' + esc(L(p.title)) + '</span>' +
+        '<span class="proj-metric">' + esc(L(p.metric)) + '</span>' +
+        '<span class="proj-toggle" aria-hidden="true"></span></button>' +
+        '<p class="proj-sum">' + esc(L(p.summary)) + '</p>' +
+        '<div class="proj-panel" id="panel-' + p.id + '" role="region"><div><div class="proj-inner"><dl class="facts">' +
+        p.facts[lang].map(function (f, i) { return '<dt>' + esc(t(keys[i])) + '</dt><dd>' + esc(f) + '</dd>'; }).join('') +
+        '<dt>' + esc(t('facts.stack')) + '</dt><dd class="mono">' + esc(p.stack) + '</dd></dl>' +
+        '<div class="proj-links">' + links + '</div></div></div></div></article>';
+    }).join('');
+    applyFilter();
+  }
+  function applyFilter() {
+    $$('.proj').forEach(function (el) { el.classList.toggle('off', activeFilter !== 'all' && el.dataset.cat !== activeFilter); });
+  }
+  function toggleProject(id, force) {
+    var el = $('.proj[data-id="' + id + '"]');
+    if (!el) return;
+    var open = typeof force === 'boolean' ? force : !el.classList.contains('open');
+    el.classList.toggle('open', open);
+    $('.proj-head', el).setAttribute('aria-expanded', String(open));
+    if (open) openIds[id] = true; else delete openIds[id];
+  }
+
+  function renderLab() {
+    $('#lab').innerHTML = LAB.map(function (x) {
+      return '<li><span class="status">' + esc(t('lab.status')) + '</span><h4>' + esc(L(x.title)) + '</h4><p>' + esc(L(x.text)) + '</p></li>';
+    }).join('');
+  }
+
+  function renderOthers() {
+    var head = '<thead><tr><th scope="col">' + esc(t('more.project')) + '</th><th scope="col">' + esc(t('more.domain')) + '</th><th scope="col">' + esc(t('more.desc')) + '</th><th scope="col">' + esc(t('more.links')) + '</th></tr></thead>';
+    var body = OTHERS.map(function (o) {
+      var links = '';
+      if (o.gh) links += '<a href="' + GH + o.gh + '" target="_blank" rel="noopener noreferrer">GitHub</a>';
+      if (o.demo) links += '<a href="' + PAGES + o.gh + '/" target="_blank" rel="noopener noreferrer">' + esc(t('more.demo')) + '</a>';
+      return '<tr><td>' + esc(L(o.title)) + '</td><td class="dom">' + esc(L(o.dom)) + '</td><td class="desc">' + esc(L(o.desc)) + '</td><td class="lk">' + (links || '–') + '</td></tr>';
+    }).join('');
+    $('#others').innerHTML = head + '<tbody>' + body + '</tbody>';
+    $('#projMeta').textContent = t('proj.meta', { a: PROJECTS.length, b: OTHERS.length });
+  }
+
+  function renderSkills() {
+    $('#skills').innerHTML = SKILLS.map(function (s) {
+      return '<div><dt>' + esc(L(s.k)) + '</dt><dd>' + esc(L(s.v)) + '</dd></div>';
+    }).join('');
+  }
+
+  /* ------------------------------------------------------------------
+     Langue et thème
+     ------------------------------------------------------------------ */
+  function applyLang(next, opts) {
+    opts = opts || {};
+    lang = next === 'en' ? 'en' : 'fr';
+    document.documentElement.lang = lang;
+    $$('[data-i18n]').forEach(function (el) { el.textContent = t(el.dataset.i18n); });
+    $$('[data-i18n-html]').forEach(function (el) { el.innerHTML = t(el.dataset.i18nHtml); el.removeAttribute('aria-label'); });
+    $$('.count').forEach(function (el) { el.textContent = fmt(parseFloat(el.dataset.to), parseInt(el.dataset.dec || '0', 10)); });
+    $$('[data-i18n-placeholder]').forEach(function (el) { el.placeholder = t(el.dataset.i18nPlaceholder); });
+    $$('[data-i18n-aria]').forEach(function (el) { el.setAttribute('aria-label', t(el.dataset.i18nAria)); });
+    $$('[data-i18n-title]').forEach(function (el) { el.title = t(el.dataset.i18nTitle); });
+    $$('.lang button').forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.lang === lang)); });
+    $$('.cv-link').forEach(function (a) { a.href = CV_URL; });
+    document.title = lang === 'fr' ? 'Amine Nakrou — Data science & actuariat' : 'Amine Nakrou — Data science & actuarial';
+    renderTriangle(!!opts.animate);
+    renderJobs(); renderFilters(); renderProjects(); renderLab(); renderOthers(); renderSkills(); renderEdu();
+    armReveal();
+    updateThemeLabel();
+    if (!opts.silent) store.set('lang', lang);
+  }
+
+  function currentTheme() {
+    var set = document.documentElement.getAttribute('data-theme');
+    if (set) return set;
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+  function updateThemeLabel() {
+    $('#themeBtn').setAttribute('aria-label', currentTheme() === 'dark' ? t('a11y.light') : t('a11y.dark'));
+  }
+  function toggleTheme() {
+    var next = currentTheme() === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    store.set('theme', next);
+    updateThemeLabel();
+  }
+
+  /* ------------------------------------------------------------------
+     Défilement : en-tête et section active
+     ------------------------------------------------------------------ */
+  function initScroll() {
+    var top = $('#top');
+    var onScroll = function () { top.classList.toggle('stuck', window.scrollY > 8); };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+    if (!('IntersectionObserver' in window)) return;
+    var links = $$('.nav a');
+    var obs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) links.forEach(function (a) { a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id); });
+      });
+    }, { rootMargin: '-40% 0px -55% 0px' });
+    ['profil', 'experience', 'projets', 'competences', 'formation', 'contact'].forEach(function (id) {
+      var s = document.getElementById(id); if (s) obs.observe(s);
+    });
+  }
+
+  /* ------------------------------------------------------------------
+     Recherche rapide (Ctrl / ⌘ + K)
+     ------------------------------------------------------------------ */
+  var palette = $('#palette'), pInput = $('#paletteInput'), pList = $('#paletteList'), pItems = [], pSel = 0;
+  function norm(s) { return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, ''); }
+  function go(id) { return function () { var el = document.getElementById(id); if (el) el.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth' }); }; }
+  function paletteData() {
+    var sections = [['profil', 'nav.about'], ['experience', 'nav.experience'], ['projets', 'nav.projects'], ['competences', 'nav.skills'], ['formation', 'nav.education'], ['contact', 'nav.contact']];
+    var list = sections.map(function (s) { return { label: t(s[1]), kind: t('cmd.section'), run: go(s[0]) }; });
+    PROJECTS.forEach(function (p) {
+      list.push({ label: L(p.title), kind: t('cmd.project'), run: function () {
+        activeFilter = 'all'; renderFilters(); applyFilter(); toggleProject(p.id, true);
+        var el = $('.proj[data-id="' + p.id + '"]'); if (el) el.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
+      } });
+    });
+    list.push(
+      { label: t('cmd.cv'), kind: t('cmd.action'), href: CV_URL },
+      { label: t('cmd.copy'), kind: t('cmd.action'), run: copyMail },
+      { label: t('cmd.theme'), kind: t('cmd.action'), run: toggleTheme },
+      { label: t('cmd.lang'), kind: t('cmd.action'), run: function () { applyLang(lang === 'fr' ? 'en' : 'fr'); } },
+      { label: t('cmd.github'), kind: t('cmd.action'), href: 'https://github.com/aminenakrou' },
+      { label: t('cmd.linkedin'), kind: t('cmd.action'), href: 'https://linkedin.com/in/amine-nakrou' }
+    );
+    return list;
+  }
+  function renderPalette() {
+    var q = norm(pInput.value.trim());
+    pItems = paletteData().filter(function (i) { return !q || norm(i.label + ' ' + i.kind).indexOf(q) !== -1; });
+    pSel = Math.min(pSel, Math.max(0, pItems.length - 1));
+    pList.innerHTML = pItems.length ? pItems.map(function (i, k) {
+      return '<li role="option" data-k="' + k + '" aria-selected="' + (k === pSel) + '"><span>' + esc(i.label) + '</span><small>' + esc(i.kind) + '</small></li>';
+    }).join('') : '<li class="empty">' + esc(t('palette.none')) + '</li>';
+    var sel = pList.querySelector('[aria-selected="true"]');
+    if (sel && sel.scrollIntoView) sel.scrollIntoView({ block: 'nearest' });
+  }
+  function openPalette() {
+    pInput.value = ''; pSel = 0; renderPalette();
+    if (typeof palette.showModal === 'function') palette.showModal(); else palette.setAttribute('open', '');
+    setTimeout(function () { pInput.focus(); }, 10);
+  }
+  function closePalette() { if (palette.open) { if (typeof palette.close === 'function') palette.close(); else palette.removeAttribute('open'); } }
+  function runPalette(k) {
+    var item = pItems[k];
+    if (!item) return;
+    closePalette();
+    if (item.href) { window.open(item.href, '_blank', 'noopener'); return; }
+    setTimeout(item.run, 50);
+  }
+
+  /* ------------------------------------------------------------------
+     Copie de l'adresse (lue dans le lien de contact de la page)
+     ------------------------------------------------------------------ */
+  function copyMail() {
+    var link = $('#mail');
+    var addr = link ? link.textContent.trim() : '';
+    if (!addr) return;
+    var selectIt = function () {
+      var r = document.createRange(); r.selectNodeContents(link);
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      toast(t('contact.copyFail'));
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(addr).then(function () { toast(t('contact.copied')); }, selectIt);
+    } else selectIt();
+  }
+
+  /* ------------------------------------------------------------------
+     Branchements
+     ------------------------------------------------------------------ */
+  function bind() {
+    $$('.lang button').forEach(function (b) { b.addEventListener('click', function () { applyLang(b.dataset.lang); }); });
+    $('#themeBtn').addEventListener('click', toggleTheme);
+    $('#copyMail').addEventListener('click', copyMail);
+
+    var menuBtn = $('#menuBtn'), menu = $('#menu');
+    menuBtn.addEventListener('click', function () {
+      var open = menuBtn.getAttribute('aria-expanded') === 'true';
+      menuBtn.setAttribute('aria-expanded', String(!open));
+      menu.hidden = open;
+    });
+    $$('a', menu).forEach(function (a) { a.addEventListener('click', function () { menuBtn.setAttribute('aria-expanded', 'false'); menu.hidden = true; }); });
+
+    $('#filters').addEventListener('click', function (e) {
+      var b = e.target.closest('button'); if (!b) return;
+      activeFilter = b.dataset.filter;
+      $$('#filters button').forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
+      applyFilter();
+    });
+    $('#projects').addEventListener('click', function (e) {
+      var head = e.target.closest('.proj-head'); if (!head) return;
+      toggleProject(head.parentElement.dataset.id);
+    });
+
+    bindTriangle();
+
+    var isMac = /Mac|iPhone|iPad/.test(navigator.platform || navigator.userAgent);
+    $('#kbd').textContent = isMac ? '⌘K' : 'Ctrl K';
+    $('#paletteBtn').addEventListener('click', openPalette);
+    document.addEventListener('keydown', function (e) {
+      if ((e.ctrlKey || e.metaKey) && e.key && e.key.toLowerCase() === 'k') {
+        e.preventDefault();
+        if (palette.open) closePalette(); else openPalette();
+      }
+    });
+    pInput.addEventListener('input', function () { pSel = 0; renderPalette(); });
+    pInput.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowDown') { e.preventDefault(); pSel = Math.min(pItems.length - 1, pSel + 1); renderPalette(); }
+      else if (e.key === 'ArrowUp') { e.preventDefault(); pSel = Math.max(0, pSel - 1); renderPalette(); }
+      else if (e.key === 'Enter') { e.preventDefault(); runPalette(pSel); }
+    });
+    pList.addEventListener('click', function (e) { var li = e.target.closest('li[data-k]'); if (li) runPalette(+li.dataset.k); });
+    palette.addEventListener('click', function (e) { if (e.target === palette) closePalette(); });
+
+    var mq = window.matchMedia('(prefers-color-scheme: dark)');
+    if (mq.addEventListener) mq.addEventListener('change', updateThemeLabel); else if (mq.addListener) mq.addListener(updateThemeLabel);
+  }
+
+  function init() {
+    bind();
+    var saved = store.get('lang');
+    var initial = saved || ((navigator.language || 'fr').toLowerCase().indexOf('fr') === 0 ? 'fr' : 'en');
+    if (!reduceMotion) document.documentElement.classList.add('intro');
+    applyLang(initial, { silent: true, animate: true });
+    if (!reduceMotion) splitTitle();
+    initScroll();
+    initCounters();
+    initCursorGlow();
+    initRevealFallback();
+  }
+
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
+}());

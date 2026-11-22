@@ -1,70 +1,45 @@
-# Amine Nakrou - Portfolio
+# Amine Nakrou — Portfolio
 
-![Aperçu du portfolio](assets/img/og-preview.png)
+Portfolio personnel publié avec GitHub Pages : **https://aminenakrou.github.io/portfolio/**
 
-Dépôt de mon portfolio personnel, publié avec GitHub Pages.
+Ingénieur data science & actuariat (Polytech Lille, ISIA), en alternance à l'actuariat santé collective de Swiss Life.
+Disponible en CDI dès septembre 2027, en France ou au Luxembourg.
 
-Site en ligne :
-https://aminenakrou.github.io/portfolio/
+## Ce que contient le site
 
-Le site présente mon profil, mon parcours et mes projets autour de l'actuariat, des statistiques, de la data science, du machine learning, de la data engineering et de la BI.
+- profil, expériences (Swiss Life, GRDF, HAMATEL) et formation ;
+- projets phares avec, pour chacun, le problème, les données, la méthode et le résultat ;
+- laboratoire actuariel en cours (tarification GLM, Chain-Ladder vs ML, tableau de bord Tableau) ;
+- compétences avec recherche instantanée ;
+- version française et anglaise, thème clair et sombre, recherche rapide (`Ctrl K` / `⌘K`).
 
-La stack reste volontairement simple : HTML, CSS et JavaScript. C'est suffisant pour un portfolio rapide, lisible et facile à maintenir.
+## Choix techniques
 
-## Contenu
-
-- présentation du profil et de la recherche de CDI pour la suite
-- expérience actuelle chez Swiss Life et expériences précédentes
-- projets phares avec problème, données, méthode, résultat et liens
-- portfolio technique plus large avec les projets publics disponibles
-- pages de case study pour les projets les mieux documentés
-- CV, LinkedIn, GitHub et email
-- versions française, anglaise et arabe
-
-## Projets mis en avant
-
-- Customer Churn Prediction
-- Scoring de crédit
-- Dashboard interactif
-- Accès à l'eau potable (Tableau)
-- Analyse EA Sports FC / FIFA
-- PageRank sur Wikispeedia
-- Promenade aléatoire du cavalier
-- Dinic / flot maximum
-- CKOALA
-- Flood It
-- Pente
-- QUESACO
+- HTML, CSS et JavaScript natifs, **sans framework ni dépendance** : le site se charge vite et reste simple à maintenir ;
+- tout le contenu (textes FR / EN, projets, compétences) est centralisé dans `script.js` ;
+- accessibilité : navigation au clavier, contrastes vérifiés dans les deux thèmes, respect de `prefers-reduced-motion` ;
+- animation du hero en `<canvas>`, mise en pause quand elle n'est pas visible.
 
 ## Lancer en local
 
 ```bash
-python3 -m http.server 8000
-```
-
-Puis ouvrir :
-
-```text
-http://localhost:8000/
+python -m http.server 8000
+# puis ouvrir http://localhost:8000/
 ```
 
 ## Organisation
 
 ```text
-index.html
-style.css
-script.js
-case-studies/
-assets/
-.github/workflows/static.yml
+index.html        structure de la page
+style.css         design system (thèmes, composants, responsive)
+script.js         contenu FR / EN et interactions
+assets/           CV, photo, favicon, image de partage
+case-studies/     anciennes URL, redirigées vers la page principale
+.github/workflows/static.yml   déploiement GitHub Pages depuis main
 ```
-
-## Déploiement
-
-Le déploiement se fait avec GitHub Pages depuis la branche `main`.
 
 ## Contact
 
-- Email : aminenakrou635@gmail.com
 - LinkedIn : https://linkedin.com/in/amine-nakrou
 - GitHub : https://github.com/aminenakrou
+- Email : voir la section Contact du site
