@@ -1,5 +1,7 @@
 # Amine Nakrou - Portfolio
 
+![Aperçu du portfolio](assets/img/og-preview.png)
+
 Dépôt de mon portfolio personnel, publié avec GitHub Pages.
 
 Site en ligne :
@@ -24,6 +26,7 @@ La stack reste volontairement simple : HTML, CSS et JavaScript. C'est suffisant 
 - Customer Churn Prediction
 - Scoring de crédit
 - Dashboard interactif
+- Accès à l'eau potable (Tableau)
 - Analyse EA Sports FC / FIFA
 - PageRank sur Wikispeedia
 - Promenade aléatoire du cavalier
